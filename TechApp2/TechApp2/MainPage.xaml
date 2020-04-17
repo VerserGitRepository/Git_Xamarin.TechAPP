@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TechApp2.MainPage">
+
+    <StackLayout BackgroundColor="Orange">
+        <Grid>
+            <!--<StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
+                
+            </StackLayout>--> <!--https://verser.com.au/wp-content/uploads/2018/05/logo.png-->
+
+            <StackLayout Padding="0" Margin="10,100,10,0" HorizontalOptions="FillAndExpand">
+                
+                <Frame  BackgroundColor="White" HeightRequest="500" HasShadow="True" Padding="0" Margin="0">
+                    <StackLayout>
+
+                        <StackLayout Margin="20">
+                            <Label Text="VERSER TECHAPP" TextColor="Orange" FontSize="Medium" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+                        </StackLayout>
+                        <StackLayout Margin="20">
+                            <Label Text="JMS Login" TextColor="DarkGray" FontSize="Small" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+                        </StackLayout>
+                        <StackLayout Padding="0" Margin="25,20">
+                            <Entry Placeholder="UserID" TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
+                            <Entry Placeholder="Password" IsPassword="True"   TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,20,10,0"/>
+                            <Button Text="SIGN IN" BackgroundColor="DarkGray" Clicked="BtnLogin_Clicked"   TextColor="White" CornerRadius="30"  Margin="0,20,10,0"/>
+                        </StackLayout>
+                    </StackLayout>
+                </Frame>
+            </StackLayout>
+        </Grid>
+    </StackLayout>
+</ContentPage>

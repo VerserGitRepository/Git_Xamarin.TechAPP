@@ -1,0 +1,15 @@
+C:\Users\bpatil\Source\Repos\TechApp2\TechApp2\TechApp2\bin\Debug\netstandard2.0\TechApp2.deps.json
+C:\Users\bpatil\Source\Repos\TechApp2\TechApp2\TechApp2\bin\Debug\netstandard2.0\TechApp2.dll
+C:\Users\bpatil\Source\Repos\TechApp2\TechApp2\TechApp2\bin\Debug\netstandard2.0\ref\TechApp2.dll
+C:\Users\bpatil\Source\Repos\TechApp2\TechApp2\TechApp2\bin\Debug\netstandard2.0\TechApp2.pdb
+C:\Users\bpatil\Source\Repos\TechApp2\TechApp2\TechApp2\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\bpatil\Source\Repos\TechApp2\TechApp2\TechApp2\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Users\bpatil\Source\Repos\TechApp2\TechApp2\TechApp2\obj\Debug\netstandard2.0\Views\Login.xaml.g.cs
+C:\Users\bpatil\Source\Repos\TechApp2\TechApp2\TechApp2\obj\Debug\netstandard2.0\TechApp2.AssemblyInfoInputs.cache
+C:\Users\bpatil\Source\Repos\TechApp2\TechApp2\TechApp2\obj\Debug\netstandard2.0\TechApp2.AssemblyInfo.cs
+C:\Users\bpatil\Source\Repos\TechApp2\TechApp2\TechApp2\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\bpatil\Source\Repos\TechApp2\TechApp2\TechApp2\obj\Debug\netstandard2.0\TechApp2.dll
+C:\Users\bpatil\Source\Repos\TechApp2\TechApp2\TechApp2\obj\Debug\netstandard2.0\ref\TechApp2.dll
+C:\Users\bpatil\Source\Repos\TechApp2\TechApp2\TechApp2\obj\Debug\netstandard2.0\TechApp2.pdb
+C:\Users\bpatil\Source\Repos\TechApp2\TechApp2\TechApp2\obj\Debug\netstandard2.0\TechApp2.csprojAssemblyReference.cache
+C:\Users\bpatil\Source\Repos\TechApp2\TechApp2\TechApp2\obj\Debug\netstandard2.0\Views\JobList.xaml.g.cs

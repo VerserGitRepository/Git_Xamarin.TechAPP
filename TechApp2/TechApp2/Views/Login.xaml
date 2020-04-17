@@ -1,0 +1,57 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TechApp2.Views.Login">
+    <ContentPage.Content>
+
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"  />
+                <RowDefinition Height="*"  />
+                <RowDefinition Height="50"  />
+            </Grid.RowDefinitions>
+            <StackLayout Margin="0,10,0,0" Padding="0,30,0,0" >
+                <Label Text="JMS Login" FontSize="Medium" HorizontalOptions="Center" TextColor="Gray" />
+            </StackLayout>
+
+            <Grid Grid.Row="1" Margin="20,0,20,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"  />
+                <RowDefinition Height="50"  />
+                <RowDefinition Height="50"  />
+                    <RowDefinition Height="Auto"  />
+                    <RowDefinition Height="40"  />
+                    <RowDefinition Height="40"  />
+                    <RowDefinition Height="*"  />
+                </Grid.RowDefinitions>
+                <Label Grid.Row="1" Text="" x:Name="lblErrorMsg" HorizontalTextAlignment="Center" VerticalTextAlignment="End" IsVisible="False" TextColor="Red"/>
+                <Entry Grid.Row="2" Text="" x:Name="txtUserName" Placeholder="User Name" PlaceholderColor="#bababa" HorizontalTextAlignment="Center" VerticalTextAlignment="End" TextColor="Black"/>
+                <Entry Grid.Row="3" Text="" x:Name="txtPassword" Placeholder="Password" HorizontalTextAlignment="Center" VerticalTextAlignment="End"  TextColor="Black"/>
+                
+                <!--<Image Grid.Row="3" HorizontalOptions="End" HeightRequest="30" Grid.Column="0" x:Name="ImageShowHide" >
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ShowPass" NumberOfTapsRequired="1"/>
+                    </Image.GestureRecognizers>
+                </Image>-->
+
+
+                <Button Text="Login" x:Name="btnLogin" BackgroundColor="Blue" Clicked="btnLogin_Clicked" TextColor="White" HeightRequest="50" VerticalOptions="Center"></Button>
+                <ActivityIndicator x:Name="Process_IMG" HeightRequest="50" WidthRequest="50" HorizontalOptions="Center" VerticalOptions="Center" />
+                <Grid Grid.Row="5">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="auto" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                </Grid>
+                
+                
+            </Grid>
+
+        </Grid>
+        
+    </ContentPage.Content>
+</ContentPage>
