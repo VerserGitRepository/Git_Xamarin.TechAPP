@@ -44,6 +44,10 @@ namespace TechApp2.Views
         private void btnstats_Clicked(object sender, EventArgs e)
         {
             Application.Current.MainPage = new NavigationPage(new Statastics());
+        }       
+        private void btnMenu_Clicked(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new NavigationPage(new MasterNavigation());
         }
     }
 }
