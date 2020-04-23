@@ -4,6 +4,11 @@ public class MonoPackageManager_Resources {
 		/* We need to ensure that "TechApp2.Android.dll" comes first in this list. */
 		"TechApp2.Android.dll",
 		"FormsViewGroup.dll",
+		"Newtonsoft.Json.Bson.dll",
+		"Newtonsoft.Json.dll",
+		"System.Net.Http.Extensions.dll",
+		"System.Net.Http.Formatting.dll",
+		"System.Net.Http.Primitives.dll",
 		"TechApp2.dll",
 		"Xamarin.Android.Arch.Core.Common.dll",
 		"Xamarin.Android.Arch.Core.Runtime.dll",

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\bpatil\\Source\\Repos\\TechApp2\\TechApp2\\TechApp2\\TechApp2.csproj": {}
+    "C:\\Users\\bpatil\\Source\\Repos\\GitXamarin.TechAPP\\Git_Xamarin.TechAPP\\TechApp2\\TechApp2\\TechApp2.csproj": {}
   },
   "projects": {
-    "C:\\Users\\bpatil\\Source\\Repos\\TechApp2\\TechApp2\\TechApp2\\TechApp2.csproj": {
+    "C:\\Users\\bpatil\\Source\\Repos\\GitXamarin.TechAPP\\Git_Xamarin.TechAPP\\TechApp2\\TechApp2\\TechApp2.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\bpatil\\Source\\Repos\\TechApp2\\TechApp2\\TechApp2\\TechApp2.csproj",
+        "projectUniqueName": "C:\\Users\\bpatil\\Source\\Repos\\GitXamarin.TechAPP\\Git_Xamarin.TechAPP\\TechApp2\\TechApp2\\TechApp2.csproj",
         "projectName": "TechApp2",
-        "projectPath": "C:\\Users\\bpatil\\Source\\Repos\\TechApp2\\TechApp2\\TechApp2\\TechApp2.csproj",
+        "projectPath": "C:\\Users\\bpatil\\Source\\Repos\\GitXamarin.TechAPP\\Git_Xamarin.TechAPP\\TechApp2\\TechApp2\\TechApp2.csproj",
         "packagesPath": "C:\\Users\\bpatil\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\bpatil\\Source\\Repos\\TechApp2\\TechApp2\\TechApp2\\obj\\",
+        "outputPath": "C:\\Users\\bpatil\\Source\\Repos\\GitXamarin.TechAPP\\Git_Xamarin.TechAPP\\TechApp2\\TechApp2\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -43,11 +43,27 @@
       "frameworks": {
         "netstandard2.0": {
           "dependencies": {
+            "Microsoft.AspNet.WebApi.Client": {
+              "target": "Package",
+              "version": "[5.2.7, )"
+            },
+            "Microsoft.Net.Http": {
+              "target": "Package",
+              "version": "[2.2.29, )"
+            },
             "NETStandard.Library": {
               "suppressParent": "All",
               "target": "Package",
               "version": "[2.0.3, )",
               "autoReferenced": true
+            },
+            "Newtonsoft.Json": {
+              "target": "Package",
+              "version": "[12.0.3, )"
+            },
+            "System.Net.Http": {
+              "target": "Package",
+              "version": "[4.3.4, )"
             },
             "Xamarin.Essentials": {
               "target": "Package",
@@ -68,7 +84,7 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.100\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

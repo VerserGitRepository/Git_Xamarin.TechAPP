@@ -1,4 +1,5 @@
 ﻿using System;
+using TechApp2.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -9,8 +10,9 @@ namespace TechApp2
         public App()
         {
             InitializeComponent();
-
-            MainPage = new MainPage();
+           // MainPage = new NavigationPage(n);
+           MainPage = new MainPage();
+          //  MainPage = new Login();
         }
 
         protected override void OnStart()

@@ -5,7 +5,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TechApp2.Views;
+using TechApp2.Models;
 using Xamarin.Forms;
+using TechApp2.ServiceHelper;
+using System.Net.Http;
+
 namespace TechApp2
 {
     // Learn more about making custom code visible in the Xamarin.Forms previewer
@@ -20,12 +24,22 @@ namespace TechApp2
 
         private  void BtnLogin_Clicked(object sender, EventArgs e)
         {
-            var MyEntry = new Entry { IsPassword = true, Placeholder = "Password" };
+            var UserID = UserName.Text;
+            var _Password = Password.Text;
+            var user = new LoginModel {  UserName = UserID.ToString(), Password = _Password };
 
-            var username = new Entry { Placeholder = "UserID" };
-            //  Navigation.PushModalAsync(new JobList()); //working
-            Application.Current.MainPage = new NavigationPage(new JobList()); //working
+            //  Task<LoginModel> userReturn = LoginService.Login(user);
+
+            //if (userReturn.Result.IsLoggedIn == true)
+            //{ 
+
+            //}           
+            // Navigation.PushModalAsync(new SSNLookUp()); //working
+            //Application.Current.MainPage = new NavigationPage(new JobList()); //working
+            Application.Current.MainPage = new NavigationPage(new Assets()); 
 
         }
+
+      
     }
 }

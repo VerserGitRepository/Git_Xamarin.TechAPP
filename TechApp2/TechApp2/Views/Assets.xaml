@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TechApp2.Views.Assets">
+    <ContentPage.Content>
+       
+            <StackLayout>
+                
+            <StackLayout Padding="0" Margin="25,20">
+
+                <SearchBar Placeholder="Search items..."
+           CancelButtonColor="Orange"
+           PlaceholderColor="Orange"
+           TextColor="Orange"
+           HorizontalTextAlignment="Center"
+           FontSize="Medium"
+           FontAttributes="Italic" />
+                
+            </StackLayout>
+        
+        <StackLayout Orientation="Horizontal">
+            <Label Text="Asset"></Label>
+            
+            <Label Text="{Binding SSN}" />
+            <Label Text="{Binding Make}" />
+            <Label Text="{Binding Model}" />
+            <Label Text="{Binding Grade}" />
+
+                <Button Text="Jobs" x:Name="btnJobs" BackgroundColor="Blue" Clicked="btnJobs_Clicked"  TextColor="White" HeightRequest="50" VerticalOptions="Center"></Button>
+            </StackLayout>
+                
+        </StackLayout>
+    </ContentPage.Content>
+
+    <!--<ListView x:Name="AssetsViewData">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="{Binding SSN}" TextColor="Black"></Label>
+                        <Label Text="{Binding Make}" TextColor="Black"></Label>
+                        <Label Text="{Binding Model}" TextColor="Black"></Label>
+                        <Label Text="{Binding Grade}" TextColor="Black"></Label>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>-->
+    
+</ContentPage>
