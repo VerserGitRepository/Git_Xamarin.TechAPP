@@ -18,10 +18,14 @@
                     <StackLayout>
 
                         <StackLayout Margin="20">
-                            <Label Text="VERSER TECHAPP" TextColor="Orange" FontSize="Medium" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+                            <Label Text="Lgo here " TextColor="Orange" FontSize="Small" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
                         </StackLayout>
-                        <StackLayout Margin="20">
-                            <Label Text="JMS Login" TextColor="DarkGray" FontSize="Small" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+                        
+                        <StackLayout Margin="10">
+                            <Label Text="VERSER TECHAPP" TextColor="Orange" FontSize="Small" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+                        </StackLayout>
+                        <StackLayout Margin="1">
+                            <Label Text="JMS Login" TextColor="DarkGray" FontSize="Micro"  HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
                         </StackLayout>
                         <StackLayout Padding="0" Margin="25,20">
                             <Entry x:Name="UserName" Placeholder="UserID" TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
