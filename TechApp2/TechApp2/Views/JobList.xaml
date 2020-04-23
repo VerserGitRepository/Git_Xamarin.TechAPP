@@ -7,10 +7,30 @@
              x:Class="TechApp2.Views.JobList">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="JOb List Page"
+            <Label Text="Job List Page"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
 
+            <ListView x:Name="JobListView"
+            ItemsSource="{Binding jobs}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="20,0,20,0">
+                                <Grid x:Name="grd">
+                                    <Label Text="{Binding JobNo}" TextColor="Gray" FontSize="Small" HorizontalOptions="StartAndExpand" HeightRequest="20" />
+                                    <!--<Label Text="{Binding JobStatus}" />-->
+                                    <!--<Label Text="{Binding SiteName}" />
+                                    <Label Text="{Binding ProjectName}" />
+                                    <Label Text="{Binding JobDate}" />-->
+                                </Grid>
+                            </StackLayout>
+                        </ViewCell>                   
+
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            
             <StackLayout HorizontalOptions="Start" VerticalOptions="StartAndExpand">
                 <Button Text="BACK" x:Name="btnback" BackgroundColor="Blue" Clicked="btnback_Clicked"   TextColor="White" HeightRequest="50" VerticalOptions="Center"></Button>
             </StackLayout>
