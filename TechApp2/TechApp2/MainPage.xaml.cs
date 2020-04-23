@@ -20,6 +20,8 @@ namespace TechApp2
         public MainPage()
         {
             InitializeComponent();
+            var assembly = typeof(MainPage);
+            logoIcon.Source = ImageSource.FromResource("TechApp2.Images.logo.jpg", assembly);
         }
 
         private  void BtnLogin_Clicked(object sender, EventArgs e)

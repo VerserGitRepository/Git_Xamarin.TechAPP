@@ -6,21 +6,14 @@
              mc:Ignorable="d"
              x:Class="TechApp2.MainPage">
 
-    <StackLayout BackgroundColor="Orange">
-        <Grid>
-            <!--<StackLayout Padding="0" Margin="0" HorizontalOptions="FillAndExpand">
-                
-            </StackLayout>--> <!--https://verser.com.au/wp-content/uploads/2018/05/logo.png-->
-
-            <StackLayout Padding="0" Margin="10,100,10,0" HorizontalOptions="FillAndExpand">
-                
+    <StackLayout BackgroundColor="Orange">      
+        <Grid>  
+            <StackLayout Padding="0" Margin="10,80,10,0" HorizontalOptions="FillAndExpand">                
                 <Frame  BackgroundColor="White" HeightRequest="500" HasShadow="True" Padding="0" Margin="0">
                     <StackLayout>
-
-                        <StackLayout Margin="20">
-                            <Label Text="Lgo here " TextColor="Orange" FontSize="Small" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
+                        <StackLayout Margin="10">
+                            <Image x:Name="logoIcon" Aspect="AspectFit" HorizontalOptions="FillAndExpand" Margin="0,0,0,20"/>
                         </StackLayout>
-                        
                         <StackLayout Margin="10">
                             <Label Text="VERSER TECHAPP" TextColor="Orange" FontSize="Small" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
                         </StackLayout>

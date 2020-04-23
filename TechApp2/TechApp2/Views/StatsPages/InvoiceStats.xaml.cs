@@ -7,18 +7,14 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace TechApp2.Views
+namespace TechApp2.Views.StatsPages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Statastics : TabbedPage
+    public partial class InvoiceStats : ContentPage
     {
-        public Statastics()
+        public InvoiceStats()
         {
             InitializeComponent();
-        }
-        private void ToolbarItem_Clicked(object sender, EventArgs e)
-        {
-            Application.Current.MainPage = new NavigationPage(new NavigationDashBoard());
         }
     }
 }
