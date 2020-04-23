@@ -26,17 +26,25 @@ namespace TechApp2
 
         private  void BtnLogin_Clicked(object sender, EventArgs e)
         {
-            var UserID = UserName.Text;
-            var _Password = Password.Text;
-            var user = new LoginModel {  UserName = UserID.ToString(), Password = _Password };
-
-           //   Task<LoginModel> userReturn = LoginService.Login(user);
-            //if (userReturn.Result.IsLoggedIn == true)
-            //{ 
-            //}           
+        
+            bool isEmailEmpty = string.IsNullOrEmpty(UserName.Text);
+            bool isPasswordEmpty = string.IsNullOrEmpty(Password.Text);
+            if (isEmailEmpty || isPasswordEmpty)
+            {
+                DisplayAlert("Warning","Email Or Password Is Empty", "OK");
+            }
+            else
+            {
+                var user = new LoginModel { UserName = UserName.Text.ToString(), Password = Password.Text.ToString() };
+                //   Task<LoginModel> userReturn = LoginService.Login(user);
+                //if (userReturn.Result.IsLoggedIn == true)
+                //{ 
+                //} 
+                Application.Current.MainPage = new NavigationPage(new NavigationDashBoard());
+            }         
             // Navigation.PushModalAsync(new SSNLookUp()); //working
             //Application.Current.MainPage = new NavigationPage(new JobList()); //working
-            Application.Current.MainPage = new NavigationPage(new NavigationDashBoard()); 
+           
 
         }
 

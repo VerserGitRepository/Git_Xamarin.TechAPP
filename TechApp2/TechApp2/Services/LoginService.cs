@@ -13,18 +13,15 @@ namespace TechApp2.ServiceHelper
         //   string BaseUri = ConfigurationManager.AppSettings["LoginManagerBase"]; 
         public async static Task<LoginModel> Login(LoginModel login)
         {
-            var returnmessage = new LoginModel();
-            HttpClient client = new System.Net.Http.HttpClient();          
-            
-            //   var uri = new Uri(string.Format("https://customers.verser.com.au/JMSLoginManager/Login/AuthenticateUser", string.Empty));
-               string json = JsonConvert.SerializeObject(login);
-                HttpContent content = new System.Net.Http.StringContent(json, System.Text.Encoding.UTF8, "application/json");
-                HttpResponseMessage response =   client.PostAsync("https://customers.verser.com.au/JMSLoginManager/Login/AuthenticateUser", content).Result;
-                if (response.IsSuccessStatusCode)
-                {
-                    var result = await response.Content.ReadAsStringAsync();
-                    returnmessage = JsonConvert.DeserializeObject<LoginModel>(result) as LoginModel;
-                }  
+            var returnmessage = new LoginModel();            
+            var postdata = JsonConvert.SerializeObject(login);
+
+            HttpClient client = new HttpClient();
+            HttpContent content = new StringContent(postdata, System.Text.Encoding.UTF8, "application/json");
+            var response = await client.PostAsJsonAsync("https://customers.verser.com.au/JMSLoginManager/Login/AuthenticateUser", content);
+            var result = await response.Content.ReadAsStringAsync();
+            returnmessage = JsonConvert.DeserializeObject<LoginModel>(result);
+
             return returnmessage;
         }
         public async static Task<List<ListItems>> UserRoleList(string UserName)
