@@ -4,17 +4,15 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="TechApp2.Views.JobList">
+             x:Class="TechApp2.Views.BlancooReports">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="JOb List Page"
+            <Label Text="Welcome to Xamarin.Forms!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-
             <StackLayout HorizontalOptions="Start" VerticalOptions="StartAndExpand">
-                <Button Text="BACK" x:Name="btnback" BackgroundColor="Blue" Clicked="btnback_Clicked"   TextColor="White" HeightRequest="50" VerticalOptions="Center"></Button>
+                <Button Text="BACK" x:Name="btnback" BackgroundColor="Blue" Clicked="btnback_Clicked"    TextColor="White" HeightRequest="50" VerticalOptions="Center"></Button>
             </StackLayout>
         </StackLayout>
-       
     </ContentPage.Content>
 </ContentPage>

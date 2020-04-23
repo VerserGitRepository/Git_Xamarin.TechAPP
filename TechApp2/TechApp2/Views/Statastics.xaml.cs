@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace TechApp2.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class JobList : ContentPage
+    public partial class Statastics : ContentPage
     {
-        public JobList()
+        public Statastics()
         {
             InitializeComponent();
         }

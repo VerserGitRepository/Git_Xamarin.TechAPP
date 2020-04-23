@@ -28,15 +28,13 @@ namespace TechApp2
             var _Password = Password.Text;
             var user = new LoginModel {  UserName = UserID.ToString(), Password = _Password };
 
-            //  Task<LoginModel> userReturn = LoginService.Login(user);
-
+           //   Task<LoginModel> userReturn = LoginService.Login(user);
             //if (userReturn.Result.IsLoggedIn == true)
             //{ 
-
             //}           
             // Navigation.PushModalAsync(new SSNLookUp()); //working
             //Application.Current.MainPage = new NavigationPage(new JobList()); //working
-            Application.Current.MainPage = new NavigationPage(new Assets()); 
+            Application.Current.MainPage = new NavigationPage(new NavigationDashBoard()); 
 
         }
 

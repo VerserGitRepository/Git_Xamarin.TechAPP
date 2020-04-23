@@ -19,10 +19,10 @@ namespace TechApp2.Model
         public string ClientAssetTag { get; set; }
         public int? ItemTypeId { get; set; }
         public int? LoadId { get; set; }
-        public int ProjectId { get; set; }
+        public int? ProjectId { get; set; }
         public int? WarehouseId { get; set; }
         public int? LocationId { get; set; }
-        public int AssetStatusId { get; set; }
+        public int? AssetStatusId { get; set; }
         public int? DispatchId { get; set; }
         public string Jobs { get; set; }
         public int? QtyOnHand { get; set; }

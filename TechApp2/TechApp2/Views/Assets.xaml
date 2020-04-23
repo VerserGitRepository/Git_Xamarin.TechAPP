@@ -1,39 +1,56 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"             
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              mc:Ignorable="d"
              x:Class="TechApp2.Views.Assets">
-    <ContentPage.Content>
-       
-            <StackLayout>
-                
-            <StackLayout Padding="0" Margin="25,20">
-
-                <SearchBar Placeholder="Search items..."
-           CancelButtonColor="Orange"
-           PlaceholderColor="Orange"
-           TextColor="Orange"
-           HorizontalTextAlignment="Center"
-           FontSize="Medium"
-           FontAttributes="Italic" />
-                
+    
+    <!--
+    xmlns:local="clr-namespace:TechApp2.Model"
+    <ContentPage.BindingContext>
+        <local:AssetMVVMModel />
+    </ContentPage.BindingContext>-->
+      
+        
+  <StackLayout>                
+            <StackLayout Padding="0" Margin="10,10">              
+           <Entry Grid.Row="2" Text="" x:Name="txtSSN"   Placeholder="Search SSN ..." PlaceholderColor="#bababa" HorizontalTextAlignment="Center" VerticalTextAlignment="End" TextColor="Black"/>
+           <Button Text="Search" x:Name="btnSearch" BackgroundColor="Blue" Clicked="btnSearch_Clicked"   TextColor="White" HeightRequest="40" WidthRequest="50"  VerticalOptions="Center"></Button>
             </StackLayout>
         
-        <StackLayout Orientation="Horizontal">
-            <Label Text="Asset"></Label>
-            
-            <Label Text="{Binding SSN}" />
-            <Label Text="{Binding Make}" />
-            <Label Text="{Binding Model}" />
-            <Label Text="{Binding Grade}" />
-
-                <Button Text="Jobs" x:Name="btnJobs" BackgroundColor="Blue" Clicked="btnJobs_Clicked"  TextColor="White" HeightRequest="50" VerticalOptions="Center"></Button>
-            </StackLayout>
-                
+        <StackLayout Orientation="Vertical"  Margin="5" HeightRequest="415" >
+                <Label Text="SSN" />
+                <Label Text="{Binding SSN}" />
+                <Label Text="Make"/>
+                <Label Text="{Binding Make}" />
+                <Label Text="Model"/>
+                <Label Text="{Binding Model}" />
+                <Label Text="Grade"/>
+                <Label Text="{Binding Grade}" />
+                <Label Text="SerialNo"/>
+                <Label Text="{Binding SerialNo}" />
+                <Label Text="ProjectId"/>
+                <Label Text="{Binding ProjectId}" />
+                <Label Text="AssetStatusId"/>
+                <Label Text="{Binding AssetStatusId}" />
+                <Label Text="ItemTypeId"/>
+                <Label Text="{Binding ItemTypeId}" />
+                <Label Text="ClientPO"/>
+                <Label Text="{Binding ClientPO}" />
+                <Label Text="ClientRef"/>
+                <Label Text="{Binding ClientRef}" />              
+                <Label Text="AssetTag"/>
+                <Label Text="{Binding AssetTag}" />
+                <Label Text="BuyPrice"/>
+                <Label Text="{Binding BuyPrice}" />
+                <Label Text="SellPrice"/>
+                <Label Text="{Binding SellPrice}" />
         </StackLayout>
-    </ContentPage.Content>
+            <StackLayout HorizontalOptions="Start" VerticalOptions="StartAndExpand">
+                <Button Text="BACK" x:Name="btnback" BackgroundColor="Blue" Clicked="btnback_Clicked"  TextColor="White" HeightRequest="50" VerticalOptions="Center"></Button>
+            </StackLayout>
+        </StackLayout>
 
     <!--<ListView x:Name="AssetsViewData">
         <ListView.ItemTemplate>
