@@ -21,7 +21,7 @@ namespace TechApp2
         {
             InitializeComponent();
             var assembly = typeof(MainPage);
-            logoIcon.Source = ImageSource.FromResource("TechApp2.Images.logo.jpg", assembly);
+            //logoIcon.Source = ImageSource.FromResource("TechApp2.Images.logo.jpg", assembly);
         }
 
         private  void BtnLogin_Clicked(object sender, EventArgs e)
@@ -41,7 +41,7 @@ namespace TechApp2
                 //{ 
                 //} 
                 // MasterNavigation
-                Application.Current.MainPage = new NavigationPage(new NavigationDashBoard());
+                Application.Current.MainPage = new NavigationPage(new MasterNavigation());
             }         
             // Navigation.PushModalAsync(new SSNLookUp()); //working
             //Application.Current.MainPage = new NavigationPage(new JobList()); //working

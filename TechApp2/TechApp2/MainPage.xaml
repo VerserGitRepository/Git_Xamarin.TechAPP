@@ -12,7 +12,8 @@
                 <Frame  BackgroundColor="White" HeightRequest="500" HasShadow="True" Padding="0" Margin="0">
                     <StackLayout>
                         <StackLayout Margin="10">
-                            <Image x:Name="logoIcon" Aspect="AspectFit" HorizontalOptions="FillAndExpand" Margin="0,0,0,20"/>
+                            <Image Source="logo.png"  BackgroundColor="Transparent" HeightRequest="100"
+                                               WidthRequest="200"  VerticalOptions="Center" />
                         </StackLayout>
                         <StackLayout Margin="10">
                             <Label Text="VERSER TECHAPP" TextColor="Orange" FontSize="Small" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>

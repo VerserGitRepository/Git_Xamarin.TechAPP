@@ -31,14 +31,7 @@ namespace TechApp2
 
             public MasterNavigationMasterViewModel()
             {
-                MenuItems = new ObservableCollection<MasterNavigationMasterMenuItem>(new[]
-                {
-                    new MasterNavigationMasterMenuItem { Id = 0, Title = "SSN Search" },
-                    new MasterNavigationMasterMenuItem { Id = 1, Title = "Jobs List" },
-                    new MasterNavigationMasterMenuItem { Id = 2, Title = "SerialNo" },
-                    new MasterNavigationMasterMenuItem { Id = 3, Title = "Stats" },
-                    new MasterNavigationMasterMenuItem { Id = 4, Title = "Logout" },
-                });
+                //new NavigationPage(new BrowseProducts());
             }
 
             #region INotifyPropertyChanged Implementation
@@ -53,9 +46,9 @@ namespace TechApp2
             #endregion
         }
 
-        private void btnback_Clicked(object sender, EventArgs e)
-        {
-            Application.Current.MainPage = new NavigationPage(new NavigationDashBoard());
-        }
+        //private void btnback_Clicked(object sender, EventArgs e)
+        //{
+        //    Application.Current.MainPage = new NavigationPage(new NavigationDashBoard());
+        //}
     }
 }

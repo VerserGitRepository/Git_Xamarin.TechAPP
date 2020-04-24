@@ -6,31 +6,78 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using TechApp2.Views;
 
 namespace TechApp2
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MasterNavigation : MasterDetailPage
     {
+        List<MenuItems> menu;
         public MasterNavigation()
         {
             InitializeComponent();
-            MasterPage.ListView.ItemSelected += ListView_ItemSelected;
+            menu = new List<MenuItems>();
+
+            menu.Add(new MenuItems { OptionName = "Job List" });
+            menu.Add(new MenuItems { OptionName = "SSN Search" });
+            menu.Add(new MenuItems { OptionName = "Serial Number Search" });
+            menu.Add(new MenuItems { OptionName = "Stats" });
+            menu.Add(new MenuItems { OptionName = "Logout" });
+            navigationList.ItemsSource = menu;
+            Detail = new NavigationPage(new JobList());
         }
 
-        private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private void Item_Tapped(object sender, ItemTappedEventArgs e)
         {
-            var item = e.SelectedItem as MasterNavigationMasterMenuItem;
-            if (item == null)
-                return;
+            try
+            {
+                var item = e.Item as MenuItems;
 
-            var page = (Page)Activator.CreateInstance(item.TargetType);
-            page.Title = item.Title;
+                switch (item.OptionName)
+                {
+                    case "Job List":
+                        {
+                            Detail = new NavigationPage(new JobList());
+                            IsPresented = true;
+                        }
+                        break;
+                    case "SSN Search":
+                        {
+                            Detail = new NavigationPage(new Assets());
+                            IsPresented = false;
+                        }
+                        break;
+                    case "Serial Number Search":
+                        {
+                            Detail.Navigation.PushAsync(new SerialNoSearchView());
+                            IsPresented = false;
+                        }
+                        break;
+                    case "Stats":
+                        {
+                            Detail.Navigation.PushAsync(new Statastics());
+                            IsPresented = false;
+                        }
+                        break;
+                    case "Logout"://
+                        {
+                            Application.Current.MainPage = new NavigationPage(new MainPage());
+                            IsPresented = false;
+                        }
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
 
-            Detail = new NavigationPage(page);
-            IsPresented = false;
-
-            MasterPage.ListView.SelectedItem = null;
+            }
         }
+    }
+
+
+    public class MenuItems
+    {
+        public string OptionName { get; set; }
     }
 }

@@ -24,9 +24,9 @@ namespace TechApp2.Views
             JobListView.ItemsSource = jobs;
         }
 
-        private void btnback_Clicked(object sender, EventArgs e)
-        {
-            Application.Current.MainPage = new NavigationPage(new NavigationDashBoard());
-        }
+        //private void btnback_Clicked(object sender, EventArgs e)
+        //{
+        //    Application.Current.MainPage = new NavigationPage(new NavigationDashBoard());
+        //}
     }
 }

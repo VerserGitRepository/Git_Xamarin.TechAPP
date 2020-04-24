@@ -48,7 +48,7 @@
                 <Label Text="{Binding SellPrice}" />
         </StackLayout>
             <StackLayout HorizontalOptions="Start" VerticalOptions="StartAndExpand">
-                <Button Text="BACK" x:Name="btnback" BackgroundColor="Blue" Clicked="btnback_Clicked"  TextColor="White" HeightRequest="50" VerticalOptions="Center"></Button>
+                <!--<Button Text="BACK" x:Name="btnback" BackgroundColor="Blue" Clicked="btnback_Clicked"  TextColor="White" HeightRequest="50" VerticalOptions="Center"></Button>-->
             </StackLayout>
         </StackLayout>
 
