@@ -120,8 +120,7 @@ namespace TechApp2.Views
             //assetmvmmodeldata.Make = assetResponse.Make;
             //assetmvmmodeldata.Model = assetResponse.Model;
             //assetmvmmodeldata.Grade = assetResponse.Grade;
-            //assetmvmmodeldata.SerialNo = assetResponse.SerialNo;
-            
+            //assetmvmmodeldata.SerialNo = assetResponse.SerialNo;            
             
             SSN = assetResponse.SSN;
             Make = assetResponse.Make;

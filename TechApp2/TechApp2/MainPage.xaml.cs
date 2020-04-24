@@ -40,6 +40,7 @@ namespace TechApp2
                 //if (userReturn.Result.IsLoggedIn == true)
                 //{ 
                 //} 
+                // MasterNavigation
                 Application.Current.MainPage = new NavigationPage(new NavigationDashBoard());
             }         
             // Navigation.PushModalAsync(new SSNLookUp()); //working
