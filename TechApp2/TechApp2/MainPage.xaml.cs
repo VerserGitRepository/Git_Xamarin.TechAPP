@@ -36,12 +36,17 @@ namespace TechApp2
             else
             {
                 var user = new LoginModel { UserName = UserName.Text.ToString(), Password = Password.Text.ToString() };
-                //   Task<LoginModel> userReturn = LoginService.Login(user);
-                //if (userReturn.Result.IsLoggedIn == true)
-                //{ 
-                //} 
-                // MasterNavigation
-                Application.Current.MainPage = new NavigationPage(new MasterNavigation());
+                Task<LoginModel> userReturn = LoginService.Login(user);
+                if (userReturn.Result.IsLoggedIn == true)
+                {
+                    Application.Current.MainPage = new NavigationPage(new MasterNavigation());
+                }
+                else
+                {
+                    DisplayAlert("Warning", "The user id or password entered is incorrect.","OK");
+                    return;
+                }
+                
             }         
             // Navigation.PushModalAsync(new SSNLookUp()); //working
             //Application.Current.MainPage = new NavigationPage(new JobList()); //working
