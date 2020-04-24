@@ -19,11 +19,13 @@ namespace TechApp2
             InitializeComponent();
             menu = new List<MenuItems>();
 
-            menu.Add(new MenuItems { OptionName = "Job List" });
+            menu.Add(new MenuItems { OptionName = "Jobs DashBoard" });
             menu.Add(new MenuItems { OptionName = "SSN Search" });
-            menu.Add(new MenuItems { OptionName = "Serial Number Search" });
-            menu.Add(new MenuItems { OptionName = "Stats" });
-            menu.Add(new MenuItems { OptionName = "Logout" });
+            menu.Add(new MenuItems { OptionName = "SerialNo" });
+            menu.Add(new MenuItems { OptionName = "Search JOB" });
+            menu.Add(new MenuItems { OptionName = "Repoprts" }); 
+            menu.Add(new MenuItems { OptionName = "statistics" });
+            menu.Add(new MenuItems { OptionName = "LogOut" });
             navigationList.ItemsSource = menu;
             Detail = new NavigationPage(new JobList());
         }
@@ -36,7 +38,7 @@ namespace TechApp2
 
                 switch (item.OptionName)
                 {
-                    case "Job List":
+                    case "Jobs DashBoard":
                         {
                             Detail = new NavigationPage(new JobList());
                             IsPresented = true;
@@ -48,19 +50,32 @@ namespace TechApp2
                             IsPresented = false;
                         }
                         break;
-                    case "Serial Number Search":
+                    case "SerialNo":
                         {
                             Detail.Navigation.PushAsync(new SerialNoSearchView());
                             IsPresented = false;
                         }
                         break;
-                    case "Stats":
+                    case "Search JOB":
+                        {
+                            Detail.Navigation.PushAsync(new SearchJobNo());
+                            IsPresented = false;
+                        }
+                        break;
+                        
+                    case "Repoprts":
+                        {
+                            Detail.Navigation.PushAsync(new BlancooReports());
+                            IsPresented = false;
+                        }
+                        break;
+                    case "statistics":
                         {
                             Detail.Navigation.PushAsync(new Statastics());
                             IsPresented = false;
                         }
                         break;
-                    case "Logout"://
+                    case "LogOut":
                         {
                             Application.Current.MainPage = new NavigationPage(new MainPage());
                             IsPresented = false;
@@ -72,6 +87,11 @@ namespace TechApp2
             {
 
             }
+        }
+
+        private void btnBackToMenu_Clicked(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new NavigationPage(new MasterNavigation());
         }
     }
 

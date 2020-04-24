@@ -7,12 +7,63 @@
              x:Class="TechApp2.Views.SerialNoSearchView">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Padding="0" Margin="10,10">
+            <Entry Grid.Row="2" Text="" x:Name="txtSSN"  Margin="20,10,20,0"  Placeholder="Search Serial No..." PlaceholderColor="#bababa" HorizontalTextAlignment="Center" VerticalTextAlignment="End" TextColor="Black"/>
+            <Button Text="Search" x:Name="btnSerialSearch" Clicked="btnSerialSearch_Clicked" BackgroundColor="Blue" CornerRadius="10" Margin="50,10"  TextColor="White" HeightRequest="40" WidthRequest="50"  VerticalOptions="Center"></Button>
+        </StackLayout>
+        <StackLayout>
             
-            <StackLayout HorizontalOptions="Start" VerticalOptions="StartAndExpand">
-                <!--<Button Text="BACK" x:Name="btnback" BackgroundColor="Blue" Clicked="btnback_Clicked"  TextColor="White" HeightRequest="50" VerticalOptions="Center"></Button>-->
+            
+                <!--<Grid x:Name="controlGrid" RowSpacing="1" ColumnSpacing="1">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="20" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />                     
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                 
+                    <Button Text = "C" Grid.Row="1" Grid.Column="0"
+        Style="{StaticResource darkerButton}" />
+                    <Button Text = "+/-" Grid.Row="1" Grid.Column="1"
+        Style="{StaticResource darkerButton}" />
+                    <Button Text = "%" Grid.Row="1" Grid.Column="2"
+        Style="{StaticResource darkerButton}" />
+                    <Button Text = "div" Grid.Row="1" Grid.Column="3"
+        Style="{StaticResource orangeButton}" />
+                    
+                    <Button Text = "7" Grid.Row="2" Grid.Column="0"
+        Style="{StaticResource plainButton}" />
+                    <Button Text = "8" Grid.Row="2" Grid.Column="1"
+        Style="{StaticResource plainButton}" />
+                    <Button Text = "9" Grid.Row="2" Grid.Column="2"
+        Style="{StaticResource plainButton}" />
+                    <Button Text = "X" Grid.Row="2" Grid.Column="3"
+        Style="{StaticResource orangeButton}" />
+                    <Button Text = "4" Grid.Row="3" Grid.Column="0"
+        Style="{StaticResource plainButton}" />
+                    <Button Text = "5" Grid.Row="3" Grid.Column="1"
+        Style="{StaticResource plainButton}" />
+                    <Button Text = "6" Grid.Row="3" Grid.Column="2"
+        Style="{StaticResource plainButton}" />
+                    <Button Text = "-" Grid.Row="3" Grid.Column="3"
+        Style="{StaticResource orangeButton}" />
+                    <Button Text = "1" Grid.Row="4" Grid.Column="0"
+        Style="{StaticResource plainButton}" />
+                    <Button Text = "1" Grid.Row="4" Grid.Column="1"
+        Style="{StaticResource plainButton}" />
+                    <Button Text = "1" Grid.Row="4" Grid.Column="2"
+        Style="{StaticResource plainButton}" />
+                    <Button Text = "1" Grid.Row="4" Grid.Column="3"
+        Style="{StaticResource plainButton}" />
+
+                </Grid>-->
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

@@ -17,9 +17,14 @@ namespace TechApp2.Views
             InitializeComponent();
         }
 
-    //    private void btnback_Clicked(object sender, EventArgs e)
-    //    {
-    //        Application.Current.MainPage = new NavigationPage(new NavigationDashBoard());
-    //    }
+        private void btnReportSearch_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        //    private void btnback_Clicked(object sender, EventArgs e)
+        //    {
+        //        Application.Current.MainPage = new NavigationPage(new NavigationDashBoard());
+        //    }
     }
 }

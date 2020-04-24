@@ -7,16 +7,16 @@
              x:Class="TechApp2.Views.JobList">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Job List Page"
-                VerticalOptions="CenterAndExpand" 
+            <Label Text="JOBS ASSIGNED TO USER" FontSize="17"
+                VerticalOptions="CenterAndExpand" Margin="0,0,0,0"
                 HorizontalOptions="CenterAndExpand" />
-
-            <ListView x:Name="JobListView"
+            <DatePicker HorizontalOptions="End"  />
+            <ListView x:Name="JobListView" 
             ItemsSource="{Binding jobs}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Padding="20,0,20,0">
+                            <StackLayout Padding="10,0,20,0">
                                 <Grid x:Name="grd">
                                     <Label Text="{Binding JobNo}" TextColor="Gray" FontSize="Small" HorizontalOptions="StartAndExpand" HeightRequest="20" />
                                     <!--<Label Text="{Binding JobStatus}" />-->
