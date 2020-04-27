@@ -18,8 +18,59 @@
            <Entry Grid.Row="2" Text="" x:Name="txtSSN"   Placeholder="Search SSN ..." PlaceholderColor="#bababa" HorizontalTextAlignment="Center" VerticalTextAlignment="End" TextColor="Black"/>
            <Button Text="Search" x:Name="btnSearch" BackgroundColor="Blue" Clicked="btnSearch_Clicked"   TextColor="White" HeightRequest="40" WidthRequest="50"  VerticalOptions="Center"></Button>
             </StackLayout>
+
+        <StackLayout >
+            <Grid BackgroundColor="LightGray" Margin="10,0,10,0"  >
+                
+                <Grid.RowDefinitions  >
+                    <RowDefinition Height="50" FlexLayout.AlignSelf="Auto" ></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                    <RowDefinition Height="30"></RowDefinition>
+                </Grid.RowDefinitions>
+                
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Label Text="Search Results" Grid.ColumnSpan="3"/>
         
-        <StackLayout Orientation="Vertical"  Margin="5" HeightRequest="415" >
+                <Label Text="SSN" Grid.Row="1" Grid.Column="0" />
+                <Label Text="{Binding SSN}" Grid.Row="2" Grid.Column="0" />                
+                <Label Text="Make" Grid.Row="1" Grid.Column="1" />
+                <Label Text="{Binding Make}" Grid.Row="2" Grid.Column="1" />
+                <Label Text="Model" Grid.Row="1" Grid.Column="2" />
+                <Label Text="{Binding Grade}" Grid.Row="2" Grid.Column="2" />          
+                <Label Text="Serial" Grid.Row="1" Grid.Column="3" />
+                <Label Text="{Binding SerialNo}" Grid.Row="2" Grid.Column="3" />
+
+                <Label Text="Project" Grid.Row="3" Grid.Column="0" />
+                <Label Text="{Binding ProjectId}" Grid.Row="4" Grid.Column="0" />
+                <Label Text="Status" Grid.Row="3" Grid.Column="1" />
+                <Label Text="{Binding AssetStatusId}" Grid.Row="4" Grid.Column="1" />
+                <Label Text="ItemType" Grid.Row="3" Grid.Column="2" />
+                <Label Text="{Binding ItemTypeId}" Grid.Row="4" Grid.Column="2" />
+                <Label Text="ClientPO" Grid.Row="3" Grid.Column="3" />
+                <Label Text="{Binding ClientPO}" Grid.Row="4" Grid.Column="3" />
+
+                <Label Text="ClientRef" Grid.Row="5" Grid.Column="0" />
+                <Label Text="{Binding ClientRef}" Grid.Row="6" Grid.Column="0" />
+                <Label Text="AssetTag" Grid.Row="5" Grid.Column="1" />
+                <Label Text="{Binding AssetTag}" Grid.Row="6" Grid.Column="1" />
+                <Label Text="BuyPrice" Grid.Row="5" Grid.Column="2" />
+                <Label Text="{Binding BuyPrice}" Grid.Row="6" Grid.Column="2" />
+                <Label Text="SellPrice" Grid.Row="5" Grid.Column="3" />
+                <Label Text="{Binding SellPrice}" Grid.Row="6" Grid.Column="3" />
+                
+            </Grid>
+        </StackLayout>
+      
+        <!--<StackLayout Orientation="Vertical"  Margin="5" HeightRequest="415" >
                 <Label Text="SSN" />
                 <Label Text="{Binding SSN}" />
                 <Label Text="Make"/>
@@ -46,25 +97,7 @@
                 <Label Text="{Binding BuyPrice}" />
                 <Label Text="SellPrice"/>
                 <Label Text="{Binding SellPrice}" />
-        </StackLayout>
-            <StackLayout HorizontalOptions="Start" VerticalOptions="StartAndExpand">
-                <!--<Button Text="BACK" x:Name="btnback" BackgroundColor="Blue" Clicked="btnback_Clicked"  TextColor="White" HeightRequest="50" VerticalOptions="Center"></Button>-->
-            </StackLayout>
-        </StackLayout>
-
-    <!--<ListView x:Name="AssetsViewData">
-        <ListView.ItemTemplate>
-            <DataTemplate>
-                <ViewCell>
-                    <StackLayout Orientation="Horizontal">
-                        <Label Text="{Binding SSN}" TextColor="Black"></Label>
-                        <Label Text="{Binding Make}" TextColor="Black"></Label>
-                        <Label Text="{Binding Model}" TextColor="Black"></Label>
-                        <Label Text="{Binding Grade}" TextColor="Black"></Label>
-                    </StackLayout>
-                </ViewCell>
-            </DataTemplate>
-        </ListView.ItemTemplate>
-    </ListView>-->
-    
+        </StackLayout>-->      
+      
+        </StackLayout>    
 </ContentPage>

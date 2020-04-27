@@ -18,8 +18,19 @@ namespace TechApp2.Services
            // 15097672
             HttpClient httpClient = new HttpClient();
             var response = await httpClient.GetStringAsync(string.Format("https://customers.verser.com.au/AssetManagementService/inventorycontrol/assets/ssnlookup/{0}",ssn));
-            responsedata = JsonConvert.DeserializeObject<AssetViewModel>(response);          
+            responsedata = JsonConvert.DeserializeObject<AssetViewModel>(response);        
            
+            return responsedata;
+        }
+
+        public static async Task<AssetViewModel> SerialNoSearchRequest(string serialno)
+        {
+            var responsedata = new AssetViewModel();
+            // 15097672 //DV7V32S
+            HttpClient httpClient = new HttpClient();
+            var response = await httpClient.GetStringAsync(string.Format("https://customers.verser.com.au/AssetManagementServiceDev/TechAPP/{0}/FindSerialNo{0}", serialno));
+            responsedata = JsonConvert.DeserializeObject<AssetViewModel>(response);
+
             return responsedata;
         }
     }

@@ -16,7 +16,6 @@ namespace TechApp2.Views
         {
             InitializeComponent();
         }
-
         private void btnJobNoSearch_Clicked(object sender, EventArgs e)
         {
 

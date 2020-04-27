@@ -16,7 +16,6 @@ namespace TechApp2.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Assets : ContentPage, INotifyPropertyChanged
     {
-
         public string SSN
         {
             get { return (string)GetValue(SSNProperty); }
@@ -37,7 +36,6 @@ namespace TechApp2.Views
             get { return (string)GetValue(GradeProperty); }
             set { SetValue(GradeProperty, value); }
         }
-
         public string SerialNo
         {
             get { return (string)GetValue(SerialNoProperty); }
@@ -136,7 +134,6 @@ namespace TechApp2.Views
             ProjectId = assetResponse.ProjectId.ToString();
             ItemTypeId = assetResponse.ItemTypeId.ToString();
         }
-
         private void btnSearch_Clicked(object sender, EventArgs e)
         {  
             GetAsset(txtSSN.Text.ToString());

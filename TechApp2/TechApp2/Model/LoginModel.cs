@@ -12,4 +12,10 @@ namespace TechApp2.Models
         public string Password { get; set; }
         public bool IsLoggedIn { get; set; }
     }
+
+    public static class LoginDetails
+    {
+        public static string UserID{ get; set; }
+        public static bool _IsLoggedIn { get; set; }
+    }
 }

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using TechApp2.Model;
+using TechApp2.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,12 +16,19 @@ namespace TechApp2.Views
         public SerialNoSearchView()
         {
             InitializeComponent();
+            BindingContext = this;
         }
 
-        private void btnSerialSearch_Clicked(object sender, EventArgs e)
+        private async void btnSerialSearch_Clicked(object sender, EventArgs e)
         {
-
+            var responsedata = new AssetViewModel();
+            responsedata = await  SSNLookUpService.SerialNoSearchRequest(txtSerialNo.Text.ToString());          
         }
+
+        //private void btnSerialSearch_Clicked_1(object sender, EventArgs e)
+        //{
+
+        //}
 
         //private void btnback_Clicked(object sender, EventArgs e)
         //{

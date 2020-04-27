@@ -7,12 +7,19 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using TechApp2.Views;
+using TechApp2.Models;
 
 namespace TechApp2
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MasterNavigation : MasterDetailPage
     {
+        public string username
+        {
+            get { return (string)GetValue(userNameProperty); }
+            set { SetValue(userNameProperty, value); }
+
+        }
         List<MenuItems> menu;
         public MasterNavigation()
         {
@@ -28,8 +35,10 @@ namespace TechApp2
             menu.Add(new MenuItems { OptionName = "LogOut" });
             navigationList.ItemsSource = menu;
             Detail = new NavigationPage(new JobList());
+            BindingContext = this;
+            username = LoginDetails.UserID;
         }
-
+        public static readonly BindableProperty userNameProperty = BindableProperty.Create("username", typeof(string), typeof(Assets), "");
         private void Item_Tapped(object sender, ItemTappedEventArgs e)
         {
             try

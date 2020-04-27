@@ -35,7 +35,8 @@ namespace TechApp2
             }
             else
             {
-                //var user = new LoginModel { UserName = UserName.Text.ToString(), Password = Password.Text.ToString() };
+              var user = new LoginModel { UserName = UserName.Text.ToString(), Password = Password.Text.ToString() };
+                LoginDetails.UserID = UserName.Text.ToString();
                 //Task<LoginModel> userReturn = LoginService.Login(user);
                 //if (userReturn.Result.IsLoggedIn == true)
                 //{
