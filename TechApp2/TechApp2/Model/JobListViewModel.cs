@@ -12,6 +12,7 @@ namespace TechApp2.Model
         public string JobStatus { get; set; }
         public string SiteName { get; set; }
         public string ProjectName { get; set; }
+
         public DateTime? JobDate { get; set; }
         public Byte[] Logo { get; set; }
     }

@@ -11,18 +11,30 @@
                 VerticalOptions="CenterAndExpand" Margin="0,0,0,0"
                 HorizontalOptions="CenterAndExpand" />
             <DatePicker HorizontalOptions="End"  DateSelected="DatePicker_DateSelected" Date="{Binding SelectedDate}" />
-            <ListView x:Name="JobListView" 
+            <ListView x:Name="JobListView" ItemSelected="JobListView_ItemSelected" IsPullToRefreshEnabled="True"
             ItemsSource="{Binding jobs}">
                 <ListView.ItemTemplate>
+                    
                     <DataTemplate>
                         <ViewCell>
                             <StackLayout Padding="10,0,20,0">
                                 <Grid x:Name="grd">
-                                    <Label Text="{Binding JobNo}" TextColor="Gray" FontSize="Small" HorizontalOptions="StartAndExpand" HeightRequest="20" />
-                                    <!--<Label Text="{Binding JobStatus}" />-->
-                                    <!--<Label Text="{Binding SiteName}" />
-                                    <Label Text="{Binding ProjectName}" />
-                                    <Label Text="{Binding JobDate}" />-->
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                        <RowDefinition Height="*"></RowDefinition>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions >
+                                        <ColumnDefinition Width="50"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                    <ColumnDefinition Width="*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                    <Label Text="{Binding JobNo}"  Grid.Row="0" Grid.Column="0" TextColor="Gray" FontAttributes="Bold" FontSize="Small" HorizontalOptions="StartAndExpand" HeightRequest="20" />
+                                    <Label Text="{Binding ProjectName}" Grid.Row="0" Grid.Column="1" />
+                                    <Label Text="{Binding JobStatus}"  Grid.Row="0" Grid.Column="2"/>                                    
+                                    <Label Text="{Binding SiteName}" Grid.Row="1" Grid.Column="2"  />                                           
+                                    <Label Text="{Binding TechnicianName}" Grid.Row="1" Grid.Column="0" VerticalOptions="Start" />
+                                    <Label Text="{Binding JobDate}" Grid.Row="0" Grid.Column="3" VerticalOptions="EndAndExpand" />                                        
                                 </Grid>
                             </StackLayout>
                         </ViewCell>                   
@@ -31,9 +43,9 @@
                 </ListView.ItemTemplate>
             </ListView>
             
-            <StackLayout HorizontalOptions="Start" VerticalOptions="StartAndExpand">
-                <!--<Button Text="BACK" x:Name="btnback" BackgroundColor="Blue" Clicked="btnback_Clicked"   TextColor="White" HeightRequest="50" VerticalOptions="Center"></Button>-->
-            </StackLayout>
+            <!--<StackLayout HorizontalOptions="Start" VerticalOptions="StartAndExpand">
+            <Button Text="BACK" x:Name="btnback" BackgroundColor="Blue" Clicked="btnback_Clicked"   TextColor="White" HeightRequest="50" VerticalOptions="Center"></Button>
+            </StackLayout>-->
         </StackLayout>
        
     </ContentPage.Content>
