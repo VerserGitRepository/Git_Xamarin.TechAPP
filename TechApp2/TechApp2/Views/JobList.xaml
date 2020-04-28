@@ -1,52 +1,70 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
-             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d"
-             x:Class="TechApp2.Views.JobList">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="JOBS ASSIGNED TO USER" FontSize="17"
-                VerticalOptions="CenterAndExpand" Margin="0,0,0,0"
-                HorizontalOptions="CenterAndExpand" />
-            <DatePicker HorizontalOptions="End"  DateSelected="DatePicker_DateSelected" Date="{Binding SelectedDate}" />
-            <ListView x:Name="JobListView" ItemSelected="JobListView_ItemSelected" IsPullToRefreshEnabled="True"
-            ItemsSource="{Binding jobs}">
-                <ListView.ItemTemplate>
-                    
-                    <DataTemplate>
-                        <ViewCell>
-                            <StackLayout Padding="10,0,20,0">
-                                <Grid x:Name="grd">
-                                    <Grid.RowDefinitions>
-                                        <RowDefinition Height="*"></RowDefinition>
-                                        <RowDefinition Height="*"></RowDefinition>
-                                    </Grid.RowDefinitions>
-                                    <Grid.ColumnDefinitions >
-                                        <ColumnDefinition Width="50"></ColumnDefinition>
-                                        <ColumnDefinition Width="*"></ColumnDefinition>
-                                        <ColumnDefinition Width="*"></ColumnDefinition>
-                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
-                                    <Label Text="{Binding JobNo}"  Grid.Row="0" Grid.Column="0" TextColor="Gray" FontAttributes="Bold" FontSize="Small" HorizontalOptions="StartAndExpand" HeightRequest="20" />
-                                    <Label Text="{Binding ProjectName}" Grid.Row="0" Grid.Column="1" />
-                                    <Label Text="{Binding JobStatus}"  Grid.Row="0" Grid.Column="2"/>                                    
-                                    <Label Text="{Binding SiteName}" Grid.Row="1" Grid.Column="2"  />                                           
-                                    <Label Text="{Binding TechnicianName}" Grid.Row="1" Grid.Column="0" VerticalOptions="Start" />
-                                    <Label Text="{Binding JobDate}" Grid.Row="0" Grid.Column="3" VerticalOptions="EndAndExpand" />                                        
-                                </Grid>
-                            </StackLayout>
-                        </ViewCell>                   
 
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-            
-            <!--<StackLayout HorizontalOptions="Start" VerticalOptions="StartAndExpand">
-            <Button Text="BACK" x:Name="btnback" BackgroundColor="Blue" Clicked="btnback_Clicked"   TextColor="White" HeightRequest="50" VerticalOptions="Center"></Button>
-            </StackLayout>-->
-        </StackLayout>
+             x:Class="TechApp2.Views.JobList">
+    <StackLayout Padding="20" Spacing="0">
+
        
-    </ContentPage.Content>
+        <Frame BackgroundColor="Orange" BorderColor="DarkSlateGray" Padding="0">
+            <Grid Padding="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="3.0*" />
+                    <ColumnDefinition Width="3.5*" />
+                    <ColumnDefinition Width="3.5*" />
+                    <ColumnDefinition Width="3.5*" />
+                    <ColumnDefinition Width="3.5*" />
+                    
+                   
+                </Grid.ColumnDefinitions>
+                <Label Margin="10,0,10,0" Text="JobNo" VerticalOptions="Center" Grid.Column="0" />
+                <Label Margin="10,0,10,0" Text="Project&#x0a;Name" VerticalOptions="Center" Grid.Column="1"/>
+                <Label Margin="10,0,10,0" Text="Job\r\nStatus" VerticalOptions="Center" Grid.Column="2" />
+                <Label Margin="10,0,10,0" Text="SiteName" VerticalOptions="Center" Grid.Column="3" />
+                <Label Margin="10,0,10,0" Text="TechnicialName" VerticalOptions="Center" Grid.Column="4" />
+                
+                <BoxView BackgroundColor="AliceBlue" WidthRequest="1" Grid.Column="0" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand" />
+                <BoxView BackgroundColor="AliceBlue" WidthRequest="1" Grid.Column="1" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand" />
+                <BoxView BackgroundColor="AliceBlue" WidthRequest="1" Grid.Column="2" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand" />
+                <BoxView BackgroundColor="AliceBlue" WidthRequest="1" Grid.Column="3" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand" />
+                <BoxView BackgroundColor="AliceBlue" WidthRequest="1" Grid.Column="4" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand" />
+                
+            </Grid>
+        </Frame>
+        <ListView x:Name="JobListView" ItemSelected="JobListView_ItemSelected" IsPullToRefreshEnabled="True"
+            ItemsSource="{Binding jobs}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Frame BorderColor="AliceBlue" Padding="0">
+                            <Grid Padding="0">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3.0*" />
+                                    <ColumnDefinition Width="3.5*" />
+                                    <ColumnDefinition Width="3.5*" />
+                                    <ColumnDefinition Width="3.5*" />
+                                    <ColumnDefinition Width="3.5*" />
+                                    <ColumnDefinition Width="3.5*" />
+
+                                </Grid.ColumnDefinitions>
+                                <Label Margin="10,0,10,0" Text="{Binding JobNo}" VerticalOptions="Center" Grid.Column="0" />
+                                <Label Margin="10,0,10,0" Text="{Binding ProjectName }" VerticalOptions="Center" Grid.Column="1"/>
+                                <Label Margin="10,0,10,0" Text="{Binding JobStatus }" VerticalOptions="Center" Grid.Column="2" />
+                                <Label Margin="10,0,10,0" Text="{Binding SiteName }" VerticalOptions="Center" Grid.Column="3" />
+                                <Label Margin="10,0,10,0" Text="{Binding TechnicianName }" VerticalOptions="Center" Grid.Column="4" />
+
+                                <BoxView BackgroundColor="AliceBlue" WidthRequest="1" Grid.Column="0" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand" />
+                                <BoxView BackgroundColor="AliceBlue" WidthRequest="1" Grid.Column="1" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand" />
+                                <BoxView BackgroundColor="AliceBlue" WidthRequest="1" Grid.Column="2" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand" />
+                                <BoxView BackgroundColor="AliceBlue" WidthRequest="1" Grid.Column="3" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand" />
+                                <BoxView BackgroundColor="AliceBlue" WidthRequest="1" Grid.Column="4" HorizontalOptions="EndAndExpand" VerticalOptions="FillAndExpand" />
+
+                            </Grid>
+                            
+                        </Frame>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
 </ContentPage>

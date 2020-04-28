@@ -5,6 +5,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="TechApp2.MasterNavigation"
+             NavigationPage.HasNavigationBar="False"
              xmlns:pages="clr-namespace:TechApp2">
     <MasterDetailPage.Master>
         <ContentPage Title="Menu"  BackgroundColor="#fff">
