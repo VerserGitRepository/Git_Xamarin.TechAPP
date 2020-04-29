@@ -12,8 +12,17 @@
             <Button Text="Search" x:Name="btnSerialSearch" Clicked="btnSerialSearch_Clicked" BackgroundColor="Blue" CornerRadius="10" Margin="50,10"  TextColor="White" HeightRequest="40" WidthRequest="50"  VerticalOptions="Center"></Button>
         </StackLayout>
         <StackLayout>
-                <!--<Label  Text="{Binding SerailNo}" />
-                <Label Text="{Binding SSN}" />-->
+                <Label  Text="{Binding SSN}" />
+                <Label  Text="{Binding Make}" />
+                <Label Text="{Binding Model}" />
+                <Label Text="{Binding SerialNo}" />                
+                <Label Text="{Binding Grade}" />
+                <Label Text="{Binding ItemTypeId}" />
+                <Label Text="{Binding SellPrice}" />
+                <Label Text="{Binding BuyPrice}" />
+                <Label Text="{Binding AssetStatusId}" />
+                <Label Text="{Binding ProjectId}" />
+                <Label Text="{Binding WarehouseId}" />
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

@@ -16,13 +16,15 @@ namespace TechApp2.Views
         public SerialNoSearchView()
         {
             InitializeComponent();
-            BindingContext = this;
+           // BindingContext = this;
         }
 
         private async void btnSerialSearch_Clicked(object sender, EventArgs e)
         {
             var responsedata = new AssetViewModel();
-            responsedata = await  SSNLookUpService.SerialNoSearchRequest(txtSerialNo.Text.ToString());          
+            responsedata = await  SSNLookUpService.SerialNoSearchRequest(txtSerialNo.Text.ToString());
+
+            this.BindingContext = responsedata;
         }
 
         //private void btnSerialSearch_Clicked_1(object sender, EventArgs e)

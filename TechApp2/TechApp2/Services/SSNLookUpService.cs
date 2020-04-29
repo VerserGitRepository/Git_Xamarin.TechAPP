@@ -28,7 +28,7 @@ namespace TechApp2.Services
             var responsedata = new AssetViewModel();
             // 15097672 //DV7V32S
             HttpClient httpClient = new HttpClient();
-            var response = await httpClient.GetStringAsync(string.Format("https://customers.verser.com.au/AssetManagementServiceDev/TechAPP/{0}/FindSerialNo{0}", serialno));
+            var response = await httpClient.GetStringAsync(string.Format($"https://customers.verser.com.au/AssetManagementServiceDev/inventorycontrol/TechAPP/{serialno}/FindSerialNo"));
             responsedata = JsonConvert.DeserializeObject<AssetViewModel>(response);
 
             return responsedata;

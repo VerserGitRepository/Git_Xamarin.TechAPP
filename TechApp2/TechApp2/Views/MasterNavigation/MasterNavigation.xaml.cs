@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using TechApp2.Views;
@@ -31,12 +30,13 @@ namespace TechApp2
             menu.Add(new MenuItems { OptionName = "SerialNo" });
             menu.Add(new MenuItems { OptionName = "Search JOB" });
             menu.Add(new MenuItems { OptionName = "Repoprts" }); 
-            menu.Add(new MenuItems { OptionName = "statistics" });
+            menu.Add(new MenuItems { OptionName = "Statistics" });
+            menu.Add(new MenuItems { OptionName = "Browse Assets" });
             menu.Add(new MenuItems { OptionName = "LogOut" });
             navigationList.ItemsSource = menu;
             Detail = new NavigationPage(new JobList());
             BindingContext = this;
-            username = LoginDetails.UserID;
+            username ="Hello " + LoginDetails.UserID;
         }
         public static readonly BindableProperty userNameProperty = BindableProperty.Create("username", typeof(string), typeof(Assets), "");
         private void Item_Tapped(object sender, ItemTappedEventArgs e)
@@ -78,9 +78,15 @@ namespace TechApp2
                             IsPresented = false;
                         }
                         break;
-                    case "statistics":
+                    case "Statistics":
                         {
                             Detail.Navigation.PushAsync(new Statastics());
+                            IsPresented = false;
+                        }
+                        break;
+                    case "Browse Assets":
+                        {
+                            Detail.Navigation.PushAsync(new BroseAssets());
                             IsPresented = false;
                         }
                         break;
@@ -103,8 +109,6 @@ namespace TechApp2
             Application.Current.MainPage = new NavigationPage(new MasterNavigation());
         }
     }
-
-
     public class MenuItems
     {
         public string OptionName { get; set; }
