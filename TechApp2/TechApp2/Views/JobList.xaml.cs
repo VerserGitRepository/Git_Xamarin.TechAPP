@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -24,6 +25,8 @@ namespace TechApp2.Views
             base.OnAppearing();
             var jobs = await JobService.JobsListService();
             JobListView.ItemsSource = jobs;
+           // JobLogo.Source = ImageSource.FromStream(() => new MemoryStream(jobs.Single().Logo));
+
         }
         private void DatePicker_DateSelected(object sender, DateChangedEventArgs e)
         {
@@ -31,10 +34,12 @@ namespace TechApp2.Views
            string username = LoginDetails.UserID;
         }
 
-        private void JobListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private void JobListView_ItemSelected(object sender, SelectionChangedEventArgs e)
         {
-            var selectedjob = e.SelectedItem as JobListViewModel;
-            Application.Current.MainPage = new NavigationPage(new JobDetailsTabbed(selectedjob.JobNo.ToString()));
+            var evnt = e;
+            var selectedjob = e.CurrentSelection[0] as JobListViewModel;
+            //Application.Current.MainPage = new NavigationPage(new JobDetailsTabbed(selectedjob.JobNo.ToString()));
+            this.Navigation.PushAsync(new JobDetailsTabbed(selectedjob.JobNo.ToString()));
         }
 
         //private void btnback_Clicked(object sender, EventArgs e)
