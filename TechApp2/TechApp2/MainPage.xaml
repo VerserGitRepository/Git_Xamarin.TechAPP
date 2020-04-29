@@ -8,17 +8,17 @@
 
     <StackLayout BackgroundColor="Orange">      
         <Grid>  
-            <StackLayout Padding="0" Margin="10,80,10,0" HorizontalOptions="FillAndExpand">                
+            <StackLayout Padding="0" Margin="20,100,20,130" HorizontalOptions="FillAndExpand"  >                
                 <Frame  BackgroundColor="White" HeightRequest="500" HasShadow="True" Padding="0" Margin="0">
                     <StackLayout>
                         <StackLayout Margin="5" >
-                            <Image Source="logo.png"  BackgroundColor="Transparent" HeightRequest="80"
+                            <Image Source="logo.png"  BackgroundColor="Transparent" HeightRequest="75"
                                                WidthRequest="200"  VerticalOptions="Center" />
                         </StackLayout>
                         <StackLayout Margin="10">
                             <Label Text="VERSER TECHAPP" TextColor="Orange" FontSize="Small" HorizontalOptions="CenterAndExpand" FontAttributes="Bold"/>
                         </StackLayout>
-                        <StackLayout Padding="0" Margin="25,20">
+                        <StackLayout Padding="0" Margin="25,10">
                             <Entry x:Name="UserName" Placeholder="UserID" TextColor="Black" FontAttributes="None" HorizontalOptions="FillAndExpand" Margin="0,0,20,0"/>
                             <Entry x:Name="Password" Placeholder="Password" IsPassword="True"   TextColor="Black" FontAttributes="None"  HorizontalOptions="FillAndExpand" Margin="0,20,10,0"/>
                             <Button Text="SIGN IN" BackgroundColor="DarkGray" Clicked="BtnLogin_Clicked"   TextColor="White" CornerRadius="30"  Margin="0,20,10,0"/>
