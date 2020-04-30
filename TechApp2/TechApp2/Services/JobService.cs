@@ -33,6 +33,18 @@ namespace TechApp2.Services
             }
             return jobslistObject;
         }
+
+        public static async Task<JobDetailsViewModel> JobsDetailsByUserDateService(string UserId,DateTime jobdate)
+        {
+            var jobslistObject = new JobDetailsViewModel();
+            string jobDetailsURl = string.Format($"https://customers.verser.com.au/AssetManagementServiceDev/inventorycontrol/TechAPP/sthomas/10-10-2019/JoblistByUserDate");
+            using (HttpClient client = new HttpClient())
+            {
+                var response = await client.GetStringAsync(jobDetailsURl);
+                jobslistObject = JsonConvert.DeserializeObject<JobDetailsViewModel>(response);
+            }
+            return jobslistObject;
+        }
     }
 }
 //

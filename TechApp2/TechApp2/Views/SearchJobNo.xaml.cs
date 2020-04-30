@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using TechApp2.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -18,7 +18,11 @@ namespace TechApp2.Views
         }
         private void btnJobNoSearch_Clicked(object sender, EventArgs e)
         {
-
+            if (!string.IsNullOrEmpty(txtJobNoSearch.Text))
+            {
+                var JobData = JobService.JobsDetailsService(txtJobNoSearch.Text);
+                this.BindingContext = JobData;
+            }        
         }
     }
 }
