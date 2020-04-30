@@ -55,10 +55,10 @@ namespace TechApp2.Views
                 });
             };
            // await Navigation.PushAsync(scanPage);
-            if (bacodeData !=null)
-            {
-                GetAsset(bacodeData);
-            }
+            //if (bacodeData !=null)
+            //{
+            //    GetAsset(bacodeData);
+            //}
             
         }
 
