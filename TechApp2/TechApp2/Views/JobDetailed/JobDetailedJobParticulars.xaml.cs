@@ -24,6 +24,7 @@ namespace TechApp2.Views.JobDetailed
         {
             jobslistObject = JobService.jobDetailsModel;
             Console.WriteLine(jobslistObject);
+            this.BindingContext = jobslistObject;
         }
     }
 }

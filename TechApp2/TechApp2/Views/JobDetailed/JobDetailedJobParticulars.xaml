@@ -8,9 +8,53 @@
              Appearing="PopulateJobDetails">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Grid BackgroundColor="#EBECF0" Margin="10,30,10,0" RowSpacing="0" >
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="30"  FlexLayout.AlignSelf="Auto"  ></RowDefinition>
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="20"></RowDefinition>
+                    <RowDefinition Height="40"></RowDefinition>
+                    <RowDefinition Height="6"></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width="*" ></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <BoxView Color="#336BFF" Grid.ColumnSpan="4" Margin="0,0,0,0"  />
+                <Label Text="Search Results" Grid.ColumnSpan="3" FontSize="Medium" VerticalOptions="CenterAndExpand" Margin="5" TextColor="White"/>
+
+
+                <BoxView Color="#FFB533" Margin="0,0,0,0" Opacity="1" Grid.Row="1" Grid.RowSpan="1" Grid.ColumnSpan="4"/>
+                <Label Text="JobNo" Grid.Row="1" Grid.Column="0" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand" />
+                <Label Text="{Binding JobNo}" Grid.Row="2" Grid.Column="0"  />
+                <Label Text="DateRaised" Grid.Row="1" Grid.Column="1" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                <Label Text="{Binding DateRaised}" Grid.Row="2" Grid.Column="1" />
+                <Label Text="ClientRef" Grid.Row="1" Grid.Column="2" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                <Label Text="{Binding ClientRef}" Grid.Row="2" Grid.Column="2" />
+                <Label Text="ClientPO" Grid.Row="1" Grid.Column="3" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                <Label Text="{Binding ClientPO}" Grid.Row="2" Grid.Column="3" />
+
+                <BoxView Color="#FFB533" Margin="0,0,0,0" Opacity="1" Grid.Row="3" Grid.RowSpan="1" Grid.ColumnSpan="4"/>
+                <Label Text="JobType" Grid.Row="3" Grid.Column="0" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                <Label Text="{Binding JobType}" Grid.Row="4" Grid.Column="0" />
+                <Label Text="OrderComments" Grid.Row="3" Grid.Column="1" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                <Label Text="{Binding OrderComments}" Grid.Row="4" Grid.Column="1" />
+                <Label Text="WorkInstructions" Grid.Row="3" Grid.Column="2" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                <Label Text="{Binding WorkInstructions}" Grid.Row="4" Grid.Column="2" />
+                <Label Text="Status" Grid.Row="3" Grid.Column="3" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                <Label Text="{Binding Status}" Grid.Row="4" Grid.Column="3" />
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
