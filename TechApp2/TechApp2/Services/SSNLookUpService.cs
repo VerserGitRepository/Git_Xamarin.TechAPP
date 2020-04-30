@@ -17,7 +17,7 @@ namespace TechApp2.Services
             var responsedata = new AssetViewModel();
            // 15097672
             HttpClient httpClient = new HttpClient();
-            var response = await httpClient.GetStringAsync(string.Format("https://customers.verser.com.au/AssetManagementService/inventorycontrol/assets/ssnlookup/{0}",ssn));
+            var response = await httpClient.GetStringAsync(string.Format("https://customers.verser.com.au/AssetManagementServicedev/inventorycontrol/assets/TechAPPSSNSearch/{0}", ssn));
             responsedata = JsonConvert.DeserializeObject<AssetViewModel>(response);        
            
             return responsedata;

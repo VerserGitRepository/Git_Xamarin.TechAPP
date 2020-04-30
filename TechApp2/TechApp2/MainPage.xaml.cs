@@ -25,8 +25,7 @@ namespace TechApp2
         }
 
         private  void BtnLogin_Clicked(object sender, EventArgs e)
-        {
-        
+        {        
             bool isEmailEmpty = string.IsNullOrEmpty(UserName.Text);
             bool isPasswordEmpty = string.IsNullOrEmpty(Password.Text);
             if (isEmailEmpty || isPasswordEmpty)
@@ -36,8 +35,9 @@ namespace TechApp2
             else
             {
               var user = new LoginModel { UserName = UserName.Text.ToString(), Password = Password.Text.ToString() };
-                LoginDetails.UserID = UserName.Text.ToString();
-                Task<LoginModel> userReturn = LoginService.Login(user);
+              LoginDetails.UserID = UserName.Text.ToString();
+             
+                //  Task<LoginModel> userReturn = LoginService.Login(user);
                 //if (userReturn.Result.IsLoggedIn == true)
                 //{
                 //    Application.Current.MainPage = new NavigationPage(new MasterNavigation());
@@ -48,14 +48,16 @@ namespace TechApp2
                 //    return;
                 //}
                 //remove this code later once above login post working
+
                 Application.Current.MainPage = new NavigationPage(new MasterNavigation());
-            }         
+            }
+
             // Navigation.PushModalAsync(new SSNLookUp()); //working
             //Application.Current.MainPage = new NavigationPage(new JobList()); //working
-           
+            //{projectId}/{ItemTypeId}/{StatusId}/ProjectAssets
 
         }
 
-      
+
     }
 }

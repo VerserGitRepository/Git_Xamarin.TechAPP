@@ -52,5 +52,12 @@ namespace TechApp2.Model
         public string R2Grade { get; set; }
         public string Asset_DispatchBoxNo { get; set; }
         public string AssetComment { get; set; }
+        public ItemTypeModel ItemType { get; set; }
+        public LoadModel Load { get; set; }
+        public ProjectViewModel Project { get; set; }
+        public WarehouseModel Warehouse { get; set; }
+        public LocationModel Location { get; set; }
+        public AssetStatusModel AssetStatus { get; set; }
+        public ServiceJobModel ServiceJob { get; set; }
     }
 }

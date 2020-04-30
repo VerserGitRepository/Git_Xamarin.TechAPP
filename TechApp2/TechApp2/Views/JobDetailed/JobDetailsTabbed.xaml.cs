@@ -17,10 +17,9 @@ namespace TechApp2.Views.JobDetailed
             InitializeComponent();         
             JobDetailAPICall(JobNo);
         }
-
         private async void  JobDetailAPICall(string JobNo)
         {
             var Results = await JobService.JobsDetailsService(JobNo);
-        }
+        }       
     }
 }

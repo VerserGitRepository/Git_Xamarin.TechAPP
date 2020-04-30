@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using TechApp2.Model;
 using TechApp2.Services;
 using Xamarin.Forms;
@@ -23,18 +19,7 @@ namespace TechApp2.Views
         {
             var responsedata = new AssetViewModel();
             responsedata = await  SSNLookUpService.SerialNoSearchRequest(txtSerialNo.Text.ToString());
-
             this.BindingContext = responsedata;
         }
-
-        //private void btnSerialSearch_Clicked_1(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //private void btnback_Clicked(object sender, EventArgs e)
-        //{
-        //    Application.Current.MainPage = new NavigationPage(new NavigationDashBoard());
-        //}
     }
 }

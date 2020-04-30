@@ -44,7 +44,7 @@
                                VerticalOptions="End" />
                         <Label Grid.Row="2"
                                Grid.Column="1" 
-                               Text="{Binding JobStatus}"
+                               Text="{Binding JobDate}"
                                FontAttributes="Italic" 
                                VerticalOptions="End" />
                         <Label Grid.Row="3"

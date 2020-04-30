@@ -9,20 +9,90 @@
         <StackLayout>
         <StackLayout Padding="0" Margin="10,10">
             <Entry Grid.Row="2" Text="" x:Name="txtSerialNo"  Margin="20,10,20,0"  Placeholder="Search Serial No..." PlaceholderColor="#bababa" HorizontalTextAlignment="Center" VerticalTextAlignment="End" TextColor="Black"/>
-            <Button Text="Search" x:Name="btnSerialSearch" Clicked="btnSerialSearch_Clicked" BackgroundColor="Blue" CornerRadius="10" Margin="50,10"  TextColor="White" HeightRequest="40" WidthRequest="50"  VerticalOptions="Center"></Button>
+            <Button Text="Search" x:Name="btnSerialSearch" Clicked="btnSerialSearch_Clicked" BackgroundColor="Blue" CornerRadius="20" Margin="50,10"  TextColor="White" HeightRequest="40" WidthRequest="50"  VerticalOptions="Center"></Button>
         </StackLayout>
-        <StackLayout>
-                <Label  Text="{Binding SSN}" />
-                <Label  Text="{Binding Make}" />
-                <Label Text="{Binding Model}" />
-                <Label Text="{Binding SerialNo}" />                
-                <Label Text="{Binding Grade}" />
-                <Label Text="{Binding ItemTypeId}" />
-                <Label Text="{Binding SellPrice}" />
-                <Label Text="{Binding BuyPrice}" />
-                <Label Text="{Binding AssetStatusId}" />
-                <Label Text="{Binding ProjectId}" />
-                <Label Text="{Binding WarehouseId}" />
+            <StackLayout>
+                <Grid BackgroundColor="#EBECF0" Margin="10,30,10,0" RowSpacing="0" >
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"  FlexLayout.AlignSelf="Auto"  ></RowDefinition>
+                        <RowDefinition Height="20"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="20"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="20"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="20"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="20"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="6"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition Width="*" ></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <BoxView Color="#336BFF" Grid.ColumnSpan="4" Margin="0,0,0,0"  />
+                    <Label Text="Search Results" Grid.ColumnSpan="3" FontSize="Medium" VerticalOptions="CenterAndExpand" Margin="5" TextColor="White"/>
+
+
+                    <BoxView Color="#FFB533" Margin="0,0,0,0" Opacity="1" Grid.Row="1" Grid.RowSpan="1" Grid.ColumnSpan="4"/>
+                    <Label Text="SSN" Grid.Row="1" Grid.Column="0" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand" />
+                    <Label Text="{Binding SSN}" Grid.Row="2" Grid.Column="0"  />
+                    <Label Text="Make" Grid.Row="1" Grid.Column="1" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                    <Label Text="{Binding Make}" Grid.Row="2" Grid.Column="1" />
+                    <Label Text="Model" Grid.Row="1" Grid.Column="2" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                    <Label Text="{Binding Grade}" Grid.Row="2" Grid.Column="2" />
+                    <Label Text="Serial" Grid.Row="1" Grid.Column="3" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                    <Label Text="{Binding SerialNo}" Grid.Row="2" Grid.Column="3" />
+
+                    <BoxView Color="#FFB533" Margin="0,0,0,0" Opacity="1" Grid.Row="3" Grid.RowSpan="1" Grid.ColumnSpan="4"/>
+                    <Label Text="Project" Grid.Row="3" Grid.Column="0" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                    <Label Text="{Binding Project.ProjectName}" Grid.Row="4" Grid.Column="0" />
+                    <Label Text="Status" Grid.Row="3" Grid.Column="1" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                    <Label Text="{Binding AssetStatus.AssetStatusName}" Grid.Row="4" Grid.Column="1" />
+                    <Label Text="ItemType" Grid.Row="3" Grid.Column="2" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                    <Label Text="{Binding ItemType.ItemTypeName}" Grid.Row="4" Grid.Column="2" />
+                    <Label Text="ClientPO" Grid.Row="3" Grid.Column="3" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                    <Label Text="{Binding ClientPO}" Grid.Row="4" Grid.Column="3" />
+
+                    <BoxView Color="#FFB533" Margin="0,0,0,0" Opacity="1" Grid.Row="5" Grid.RowSpan="1" Grid.ColumnSpan="4"/>
+
+                    <Label Text="ClientRef" Grid.Row="5" Grid.Column="0" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                    <Label Text="{Binding ClientRef}" Grid.Row="6" Grid.Column="0" />
+                    <Label Text="AssetTag" Grid.Row="5" Grid.Column="1" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                    <Label Text="{Binding AssetTag}" Grid.Row="6" Grid.Column="1" />
+                    <Label Text="BuyPrice" Grid.Row="5" Grid.Column="2"  TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                    <Label Text="{Binding BuyPrice}" Grid.Row="6" Grid.Column="2" />
+                    <Label Text="SellPrice" Grid.Row="5" Grid.Column="3" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                    <Label Text="{Binding SellPrice}" Grid.Row="6" Grid.Column="3" />
+                    <BoxView Color="#FFB533" Margin="0,0,0,0" Opacity="1" Grid.Row="7" Grid.RowSpan="1" Grid.ColumnSpan="4"/>
+
+                    <Label Text="Warehouse" Grid.Row="7" Grid.Column="0" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                    <Label Text="{Binding Warehouse.WarehouseName}" Grid.Row="8" Grid.Column="0" />
+                    <Label Text="Location" Grid.Row="7" Grid.Column="1" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                    <Label Text="{Binding Location.LocationNo}" Grid.Row="8" Grid.Column="1" />
+                    <Label Text="LoadNo" Grid.Row="7" Grid.Column="2" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                    <Label Text="{Binding Load.LoadNo}" Grid.Row="8" Grid.Column="2" />
+                    <Label Text="Jobs" Grid.Row="7" Grid.Column="3" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                    <Label Text="{Binding Jobs}" Grid.Row="8" Grid.Column="3" />
+
+                    <BoxView Color="#FFB533" Margin="0,0,0,0" Opacity="1" Grid.Row="9" Grid.RowSpan="1" Grid.ColumnSpan="4"/>
+
+                    <Label Text="Inventory" Grid.Row="9" Grid.Column="0" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                    <Label Text="{Binding Warehouse.WarehouseName}" Grid.Row="10" Grid.Column="0" />
+                    <Label Text="DispatchNo" Grid.Row="9" Grid.Column="1" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                    <Label Text="{Binding Location.LocationNo}" Grid.Row="10" Grid.Column="1" />
+                    <Label Text="Dispatch Date" Grid.Row="9" Grid.Column="2" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                    <Label Text="{Binding Load.LoadNo}" Grid.Row="10" Grid.Column="2" />
+                    <Label Text="Date Received" Grid.Row="9" Grid.Column="3" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                    <Label Text="{Binding Jobs}" Grid.Row="10" Grid.Column="3" />
+
+                    <BoxView Color="#3339FF" Margin="0,0,0,0" Opacity="1" Grid.Row="11" Grid.RowSpan="1" Grid.ColumnSpan="4"/>
+                </Grid>
             </StackLayout>
         </StackLayout>
     </ContentPage.Content>

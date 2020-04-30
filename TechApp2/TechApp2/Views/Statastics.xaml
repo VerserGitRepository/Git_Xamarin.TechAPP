@@ -6,9 +6,6 @@
             xmlns:local="clr-namespace:TechApp2.Views.StatsPages"
              mc:Ignorable="d"
              x:Class="TechApp2.Views.Statastics">
-    
-       
-
     <local:JobStats Title="Jobs"  />
     <local:AssetStats Title="Assets" />
     <local:InvoiceStats Title="Invoices" />    
