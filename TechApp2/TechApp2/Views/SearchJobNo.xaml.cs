@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TechApp2.Services;
+using TechApp2.Views.JobDetailed;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -21,7 +22,7 @@ namespace TechApp2.Views
             if (!string.IsNullOrEmpty(txtJobNoSearch.Text))
             {
                 var JobData = JobService.JobsDetailsService(txtJobNoSearch.Text);
-                this.BindingContext = JobData;
+                this.Navigation.PushAsync(new JobDetailsTabbed(JobData.ToString()));
             }        
         }
     }

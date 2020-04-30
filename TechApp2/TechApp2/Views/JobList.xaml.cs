@@ -33,8 +33,8 @@ namespace TechApp2.Views
 
             var selectdate = ((DatePicker)sender).Date.ToString();
            string username = LoginDetails.UserID;
-            base.OnAppearing();
-            var jobs = await JobService.JobsDetailsByUserDateService(username, Convert.ToDateTime(selectdate).Date);
+           // base.OnAppearing();
+            JobListView.ItemsSource = await JobService.JobsDetailsByUserDateService(username, Convert.ToDateTime(selectdate).Date);
         }
 
         private void JobListView_ItemSelected(object sender, SelectionChangedEventArgs e)
