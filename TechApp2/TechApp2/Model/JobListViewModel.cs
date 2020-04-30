@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+//using System.ComponentModel.DataAnnotations;
 using System.Text;
 
 namespace TechApp2.Model
@@ -13,8 +13,8 @@ namespace TechApp2.Model
         public string JobStatus { get; set; }
         public string SiteName { get; set; }
         public string ProjectName { get; set; }
-        [DataType(DataType.Date)]
-        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
+        //[DataType(DataType.Date)]
+        //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/dd/yyyy}")]
         public DateTime? JobDate { get; set; }
         public Byte[] Logo { get; set; }
     }
