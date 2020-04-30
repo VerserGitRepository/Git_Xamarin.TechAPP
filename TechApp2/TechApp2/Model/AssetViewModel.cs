@@ -59,5 +59,7 @@ namespace TechApp2.Model
         public LocationModel Location { get; set; }
         public AssetStatusModel AssetStatus { get; set; }
         public ServiceJobModel ServiceJob { get; set; }
+        public DispatchModel Dispatch { get; set; }
+        
     }
 }
