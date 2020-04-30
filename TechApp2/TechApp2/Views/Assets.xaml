@@ -23,8 +23,7 @@
             <Button Text="Search" x:Name="btnSearch" BackgroundColor="Blue" CornerRadius="20" FontAttributes="Bold" Clicked="btnSearch_Clicked"   TextColor="White" HeightRequest="40" WidthRequest="50"  VerticalOptions="Center"/>
           
             <Button Text="SCAN BARCODE " x:Name="btnBarcodeScan" Margin="80,20,80,0" Clicked="btnBarcodeScan_Clicked"  BackgroundColor="Blue" CornerRadius="20" FontAttributes="Bold"   TextColor="White"  HeightRequest="35" WidthRequest="20"  VerticalOptions="CenterAndExpand"/>
-            <Label Text="" x:Name="Barcodetxt" TextColor="Red" HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+            </StackLayout>
 
         <StackLayout  >
             <Grid BackgroundColor="#EBECF0" Margin="10,20,10,0" RowSpacing="0" >
@@ -100,11 +99,11 @@
                 <Label Text="Inventory" Grid.Row="9" Grid.Column="0" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
                 <Label Text="{Binding Warehouse.WarehouseName}" Grid.Row="10" Grid.Column="0" />
                 <Label Text="DispatchNo" Grid.Row="9" Grid.Column="1" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
-                <Label Text="{Binding Location.LocationNo}" Grid.Row="10" Grid.Column="1" />
+                <Label Text="{Binding Location.Dispatch.DispatchNo}" Grid.Row="10" Grid.Column="1" />
                 <Label Text="Dispatch Date" Grid.Row="9" Grid.Column="2" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
-                <Label Text="{Binding Load.LoadNo}" Grid.Row="10" Grid.Column="2" />
+                <Label Text="{Binding Dispatch.DispatchDate}" Grid.Row="10" Grid.Column="2" />
                 <Label Text="Date Received" Grid.Row="9" Grid.Column="3" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
-                <Label Text="{Binding Jobs}" Grid.Row="10" Grid.Column="3" />
+                <Label Text="{Binding DateReceived}" Grid.Row="10" Grid.Column="3" />
 
                 <BoxView Color="#3339FF" Margin="0,0,0,0" Opacity="1" Grid.Row="11" Grid.RowSpan="1" Grid.ColumnSpan="4"/>
             </Grid>

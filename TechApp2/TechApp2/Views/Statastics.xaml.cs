@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
-
+using TechApp2.Model;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -15,10 +17,18 @@ namespace TechApp2.Views
         public Statastics()
         {
             InitializeComponent();
+          //  GetStats();
         }
-        //private void ToolbarItem_Clicked(object sender, EventArgs e)
+
+        //private async void GetStats()
         //{
-        //    Application.Current.MainPage = new NavigationPage(new NavigationDashBoard());
-        //}
+        //    var statsReponse = new TechAppStatsModel();
+        //    HttpClient httpClient = new HttpClient();
+        //    string Url = string.Format($"https://customers.verser.com.au/AssetManagementServiceDev/inventorycontrol/TechAPP/Stats");
+        //    var response = await httpClient.GetStringAsync(Url);
+        //    statsReponse = JsonConvert.DeserializeObject<TechAppStatsModel>(response);
+        //    this.BindingContext = statsReponse;
+
+        //}        
     }
 }
