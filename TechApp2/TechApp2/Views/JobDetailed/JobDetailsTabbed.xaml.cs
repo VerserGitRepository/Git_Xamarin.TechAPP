@@ -20,6 +20,11 @@ namespace TechApp2.Views.JobDetailed
         private async void  JobDetailAPICall(string JobNo)
         {
             var Results = await JobService.JobsDetailsService(JobNo);
-        }       
+          //  JobDetailedJobParticulars.jobslistObject = Results ;
+        }
+        private void PopulateDetails()
+        {
+           // JobDetailedJobParticulars.jobslistObject = results;
+        }
     }
 }
