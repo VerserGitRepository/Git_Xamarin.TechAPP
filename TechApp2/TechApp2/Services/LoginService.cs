@@ -18,9 +18,14 @@ namespace TechApp2.ServiceHelper
 
             HttpClient client = new HttpClient();
             HttpContent content = new StringContent(postdata, System.Text.Encoding.UTF8, "application/json");
-            var response = await client.PostAsJsonAsync("https://customers.verser.com.au/JMSLoginManager/Login/AuthenticateUser", content);
-            var result = await response.Content.ReadAsStringAsync();
-            returnmessage = JsonConvert.DeserializeObject<LoginModel>(result);
+            HttpResponseMessage response = await client.PostAsync("https://customers.verser.com.au/JMSLoginManager/Login/AuthenticateUser", content);
+            if (response.IsSuccessStatusCode)
+            {
+                var result = await response.Content.ReadAsStringAsync();
+                returnmessage = JsonConvert.DeserializeObject<LoginModel>(result);
+            }
+          //  var response = await client.PostAsJsonAsync("https://customers.verser.com.au/JMSLoginManager/Login/AuthenticateUser", content);
+          
 
             return returnmessage;
         }

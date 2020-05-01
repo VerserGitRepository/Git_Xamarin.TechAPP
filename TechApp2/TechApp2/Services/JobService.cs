@@ -12,14 +12,20 @@ namespace TechApp2.Services
     {
         public static string ListOfJobsURl = string.Format("https://customers.verser.com.au/AssetManagementServiceDev/inventorycontrol/order/sthomas/TechAssignedJobs");
         public static JobDetailsViewModel jobDetailsModel = new JobDetailsViewModel();
-        // public static string jobDetailsURl = ""; //078102/FindJob
+
         public static async Task<List<JobListViewModel>> JobsListService()
         {
             List<JobListViewModel> jobslistObject = new List<JobListViewModel>();
             using ( HttpClient client = new HttpClient() )
             {
-               var response= await client.GetStringAsync(ListOfJobsURl);
-                jobslistObject = JsonConvert.DeserializeObject<List<JobListViewModel>>(response);
+               //var response= await client.GetStringAsync(ListOfJobsURl);
+                HttpResponseMessage response = await client.GetAsync(ListOfJobsURl);
+                if (response.IsSuccessStatusCode)
+                {
+                    string result = await response.Content.ReadAsStringAsync();
+                    jobslistObject = JsonConvert.DeserializeObject<List<JobListViewModel>>(result);
+                }          
+            
             }
             return jobslistObject;
         }

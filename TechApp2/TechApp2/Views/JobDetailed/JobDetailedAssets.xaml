@@ -8,6 +8,7 @@
              Appearing="PopulateJobDetails">
     <ContentPage.Content>
         <StackLayout>
+            
             <Grid BackgroundColor="#EBECF0" Margin="10,30,10,0" RowSpacing="0" >
 
                 <Grid.RowDefinitions>

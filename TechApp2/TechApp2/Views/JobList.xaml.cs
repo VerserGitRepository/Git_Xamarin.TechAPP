@@ -25,7 +25,7 @@ namespace TechApp2.Views
             base.OnAppearing();
             var jobs = await JobService.JobsListService();
             JobListView.ItemsSource = jobs;
-           // JobLogo.Source = ImageSource.FromStream(() => new MemoryStream(jobs.Single().Logo));
+          // JobLogo.Source = ImageSource.FromStream(() => new MemoryStream(jobs.Single().Logo));
 
         }
         private async void DatePicker_DateSelected(object sender, DateChangedEventArgs e)
