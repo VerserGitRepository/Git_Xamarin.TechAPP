@@ -15,18 +15,18 @@ namespace TechApp2.ServiceHelper
         {
             var returnmessage = new LoginModel();            
             var postdata = JsonConvert.SerializeObject(login);
-
-            HttpClient client = new HttpClient();
             HttpContent content = new StringContent(postdata, System.Text.Encoding.UTF8, "application/json");
-            HttpResponseMessage response = await client.PostAsync("https://customers.verser.com.au/JMSLoginManager/Login/AuthenticateUser", content);
-            if (response.IsSuccessStatusCode)
-            {
-                var result = await response.Content.ReadAsStringAsync();
-                returnmessage = JsonConvert.DeserializeObject<LoginModel>(result);
-            }
-          //  var response = await client.PostAsJsonAsync("https://customers.verser.com.au/JMSLoginManager/Login/AuthenticateUser", content);
-          
 
+            using (HttpClient client = new HttpClient())
+            {
+
+                HttpResponseMessage response = await client.PostAsync("https://customers.verser.com.au/JMSLoginManager/Login/AuthenticateUser", content);
+                if (response.IsSuccessStatusCode)
+                {
+                    var result = await response.Content.ReadAsStringAsync();
+                    returnmessage = JsonConvert.DeserializeObject<LoginModel>(result);
+                }
+            }
             return returnmessage;
         }
         public async static Task<List<ListItems>> UserRoleList(string UserName)

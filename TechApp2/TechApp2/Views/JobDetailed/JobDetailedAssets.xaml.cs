@@ -21,8 +21,10 @@ namespace TechApp2.Views.JobDetailed
         public void PopulateJobDetails(object sender, EventArgs e)
         {
             jobslistObject = JobService.jobDetailsModel;
-            Console.WriteLine(jobslistObject);
-            this.BindingContext = jobslistObject.AssetsList;
+
+            JObAsetsList.ItemsSource= jobslistObject.AssetsList;
+            //Console.WriteLine(jobslistObject);
+            //this.BindingContext = jobslistObject.AssetsList;
         }
     }
 }

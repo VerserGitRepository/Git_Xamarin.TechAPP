@@ -12,8 +12,7 @@ using System.Net.Http;
 
 namespace TechApp2
 {
-    // Learn more about making custom code visible in the Xamarin.Forms previewer
-    // by visiting https://aka.ms/xamarinforms-previewer
+    
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
@@ -37,14 +36,15 @@ namespace TechApp2
               var user = new LoginModel { UserName = UserName.Text.ToString(), Password = Password.Text.ToString() };
               LoginDetails.UserID = UserName.Text.ToString();
              
-                //  Task<LoginModel> userReturn = LoginService.Login(user);
-                //if (userReturn.Result.IsLoggedIn == true)
+                //Task<LoginModel> userReturn = LoginService.Login(user);
+                //var LoginState = userReturn.Result;
+                //if (LoginState.IsLoggedIn)
                 //{
                 //    Application.Current.MainPage = new NavigationPage(new MasterNavigation());
                 //}
                 //else
                 //{
-                //    DisplayAlert("Warning", "The user id or password entered is incorrect.","OK");
+                //    DisplayAlert("Warning", "The user id or password entered is incorrect.", "OK");
                 //    return;
                 //}
                 //remove this code later once above login post working
