@@ -6,10 +6,37 @@
              mc:Ignorable="d"
              x:Class="TechApp2.Views.BroseAssets">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout Margin="5">
+            
+        
+            <Label Text="Browse Assets" HorizontalOptions="Center" TextColor="Blue" FontAttributes="Bold" />
+            <Picker x:Name="Projects" Title="Select Project">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Blue</x:String>
+                        <x:String>Green</x:String>
+
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Picker x:Name="ItemTypes" Title="Select Item Type">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Blue</x:String>
+                        <x:String>Green</x:String>
+
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Picker x:Name="Status" Title="Select Status">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Blue</x:String>
+                        <x:String>Green</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+            <Button Text="SEARCH" x:Name="btnSearchAssetList" Clicked="btnSearchAssetList_Clicked" BackgroundColor="Orange" TextColor="White" FontAttributes="Bold"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
