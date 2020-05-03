@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -15,6 +16,14 @@ namespace TechApp2.Views.JobDetailed
         public JobDetailedCustomerSign()
         {
             InitializeComponent();
+        }
+
+       
+
+        private async void SaveBtn_Clicked(object sender, EventArgs e)
+        {
+            Stream CustomerJObSign = await MainSignaturePad.GetImageStreamAsync(SignaturePad.Forms.SignatureImageFormat.Jpeg);
+            Stream TechSignJOb = await TechSign.GetImageStreamAsync(SignaturePad.Forms.SignatureImageFormat.Jpeg);
         }
     }
 }
