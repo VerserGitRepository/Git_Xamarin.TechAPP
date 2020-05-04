@@ -23,11 +23,11 @@ namespace TechApp2.Services
 
             using (HttpClient client = new HttpClient())
             {
-                HttpResponseMessage response = await client.GetAsync("https://customers.verser.com.au/AssetManagementServiceDev/inventorycontrol/TechAPP/ProjectList");
+                HttpResponseMessage response = await client.GetAsync("https://customers.verser.com.au/AssetManagementServiceDev/inventorycontrol/TechAPP/ProjectList").ConfigureAwait(false);
 
                 if (response.IsSuccessStatusCode)
                 {
-                    string result = await response.Content.ReadAsStringAsync();
+                    string result = await response.Content.ReadAsStringAsync().ConfigureAwait(false); 
                     Projectslist = JsonConvert.DeserializeObject<List<ListItems>>(result);
                 }
             }
@@ -39,10 +39,10 @@ namespace TechApp2.Services
             List<ListItems> itemtypes = new List<ListItems>();
             using (HttpClient client = new HttpClient())
             {
-                HttpResponseMessage response = await client.GetAsync("https://customers.verser.com.au/AssetManagementServiceDev/inventorycontrol/TechAPP/ItemTypeList");
+                HttpResponseMessage response = await client.GetAsync("https://customers.verser.com.au/AssetManagementServiceDev/inventorycontrol/TechAPP/ItemTypeList").ConfigureAwait(false); ;
                 if (response.IsSuccessStatusCode)
                 {
-                    string result = await response.Content.ReadAsStringAsync();
+                    string result = await response.Content.ReadAsStringAsync().ConfigureAwait(false); ;
                     itemtypes = JsonConvert.DeserializeObject<List<ListItems>>(result);
                 }
             }
@@ -54,10 +54,10 @@ namespace TechApp2.Services
             List<ListItems> assetStatus = new List<ListItems>();
             using (HttpClient client = new HttpClient())
             {
-                HttpResponseMessage response = await client.GetAsync("https://customers.verser.com.au/AssetManagementServiceDev/inventorycontrol/TechAPP/AssetStatusList");
+                HttpResponseMessage response = await client.GetAsync("https://customers.verser.com.au/AssetManagementServiceDev/inventorycontrol/TechAPP/AssetStatusList").ConfigureAwait(false); ;
                 if (response.IsSuccessStatusCode)
                 {
-                    string result = await response.Content.ReadAsStringAsync();
+                    string result = await response.Content.ReadAsStringAsync().ConfigureAwait(false); 
                     assetStatus = JsonConvert.DeserializeObject<List<ListItems>>(result);
                 }
             }

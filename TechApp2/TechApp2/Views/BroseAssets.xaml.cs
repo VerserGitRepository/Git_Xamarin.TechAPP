@@ -21,25 +21,25 @@ namespace TechApp2.Views
             var projectStinglist = new List<string>();
             var ItemTypeStringList = new List<string>();
             var StatusStringList = new List<string>();
-           //var projectLists = DropDownListService.ProjectList().Result;
-           // var ItemTypeList = DropDownListService.ItemTypesList().Result;
-           // var statusLists = DropDownListService.StatusList().Result;
+            var projectLists = DropDownListService.ProjectList().Result;
+            var ItemTypeList = DropDownListService.ItemTypesList().Result;
+            var statusLists = DropDownListService.StatusList().Result;
 
-           // foreach (var item in projectLists)
-           // {
-           //     projectStinglist.Add(item.Value);
-           // }
-           // foreach (var item in ItemTypeList)
-           // {
-           //     ItemTypeStringList.Add(item.Value);
-           // }
-           // foreach (var item in statusLists)
-           // {
-           //     StatusStringList.Add(item.Value);
-           // }
-           // Projects.ItemsSource = projectStinglist;
-           // ItemTypes.ItemsSource = ItemTypeStringList;
-           // Status.ItemsSource = StatusStringList;
+            foreach (var item in projectLists)
+            {
+                projectStinglist.Add(item.Value);
+            }
+            foreach (var item in ItemTypeList)
+            {
+                ItemTypeStringList.Add(item.Value);
+            }
+            foreach (var item in statusLists)
+            {
+                StatusStringList.Add(item.Value);
+            }
+            Projects.ItemsSource = projectStinglist;
+            ItemTypes.ItemsSource = ItemTypeStringList;
+            Status.ItemsSource = StatusStringList;
         }
 
         private void btnSearchAssetList_Clicked(object sender, EventArgs e)
