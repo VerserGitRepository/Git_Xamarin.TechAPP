@@ -57,11 +57,10 @@
                                         <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand"
                                                         VerticalOptions="Center">
 
-                                            <Image Source="option_pointer.png"
-                                                            HorizontalOptions="Start"
-                                                    VerticalOptions="Center" Margin="1,0,0,0" 
-                                                               HeightRequest="55"
-                                                                               WidthRequest="25"/>
+                                            <Image Source="{Binding Icon}"
+                                                            WidthRequest="40"
+                         HeightRequest="40"
+                         VerticalOptions="Center"/>
                                             <Label Text="{Binding OptionName}" FontAttributes="Bold"
                                                                FontSize="Default" Margin="0,0,0,2"
                                                        HorizontalOptions="Start"  VerticalOptions="Center"

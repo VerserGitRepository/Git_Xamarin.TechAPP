@@ -25,14 +25,14 @@ namespace TechApp2
             InitializeComponent();
             menu = new List<MenuItems>();
             
-            menu.Add(new MenuItems { OptionName = "JOBS DASHBOARD" });
-            menu.Add(new MenuItems { OptionName = "SSN LOOKUP" });
-            menu.Add(new MenuItems { OptionName = "SERIALNO LOOKUP" });
-            menu.Add(new MenuItems { OptionName = "SEARCH JOB" });
-            menu.Add(new MenuItems { OptionName = "BLANCCO REPORT" });             
-            menu.Add(new MenuItems { OptionName = "BROWSE ASSETS" });
-            menu.Add(new MenuItems { OptionName = "STATISTICS" });
-            menu.Add(new MenuItems { OptionName = "LOGOUT" });
+            menu.Add(new MenuItems { OptionName = "JOBS DASHBOARD",Icon="DashBoardIcon.png" });
+            menu.Add(new MenuItems { OptionName = "SSN LOOKUP", Icon = "LookUpIcon.png" });
+            menu.Add(new MenuItems { OptionName = "SERIALNO LOOKUP", Icon = "SerialNoLookupIcon.png" });
+            menu.Add(new MenuItems { OptionName = "SEARCH JOB", Icon = "SearchIcon.png" });
+            menu.Add(new MenuItems { OptionName = "BLANCCO REPORT", Icon = "ReportsIcon.png" });             
+            menu.Add(new MenuItems { OptionName = "BROWSE ASSETS", Icon = "BrowseIcon.png" });
+            menu.Add(new MenuItems { OptionName = "STATISTICS", Icon = "StatisticsIcon.png" });
+            menu.Add(new MenuItems { OptionName = "LOGOUT", Icon = "LogoutIcon.png" });
             navigationList.ItemsSource = menu;
             Detail = new NavigationPage(new JobList());
             BindingContext = this;
@@ -112,5 +112,6 @@ namespace TechApp2
     public class MenuItems
     {
         public string OptionName { get; set; }
+        public string Icon { get; set; }
     }
 }
