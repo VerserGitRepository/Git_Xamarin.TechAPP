@@ -2,6 +2,15 @@
   "version": 3,
   "targets": {
     "MonoAndroid,Version=v9.0": {
+      "FastAndroidCamera/2.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/MonoAndroid403/FastAndroidCamera.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid403/FastAndroidCamera.dll": {}
+        }
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.7": {
         "type": "package",
         "dependencies": {
@@ -68,6 +77,15 @@
         },
         "runtime": {
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
+        }
+      },
+      "System.ComponentModel.Annotations/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/MonoAndroid10/_._": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid10/_._": {}
         }
       },
       "System.Net.Http/4.3.4": {
@@ -842,6 +860,28 @@
           "build/monoandroid90/Xamarin.Android.Support.ViewPager.targets": {}
         }
       },
+      "Xamarin.Controls.SignaturePad/3.0.0": {
+        "type": "package",
+        "compile": {
+          "lib/MonoAndroid/SignaturePad.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid/SignaturePad.dll": {}
+        }
+      },
+      "Xamarin.Controls.SignaturePad.Forms/3.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Controls.SignaturePad": "3.0.0",
+          "Xamarin.Forms": "2.5.0.280555"
+        },
+        "compile": {
+          "lib/MonoAndroid/SignaturePad.Forms.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid/SignaturePad.Forms.dll": {}
+        }
+      },
       "Xamarin.Essentials/1.3.1": {
         "type": "package",
         "dependencies": {
@@ -890,6 +930,49 @@
           "build/Xamarin.Forms.targets": {}
         }
       },
+      "XamarinForms.CardView/1.1.1.5": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.5.0.122203"
+        },
+        "compile": {
+          "lib/portable45-net45+win8+wp8+wpa81/CardView.dll": {}
+        },
+        "runtime": {
+          "lib/portable45-net45+win8+wp8+wpa81/CardView.dll": {}
+        }
+      },
+      "ZXing.Net.Mobile/2.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Android.Support.v4": "23.0.1.3"
+        },
+        "compile": {
+          "lib/MonoAndroid403/ZXing.Net.Mobile.Core.dll": {},
+          "lib/MonoAndroid403/ZXingNetMobile.dll": {},
+          "lib/MonoAndroid403/zxing.portable.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid403/ZXing.Net.Mobile.Core.dll": {},
+          "lib/MonoAndroid403/ZXingNetMobile.dll": {},
+          "lib/MonoAndroid403/zxing.portable.dll": {}
+        }
+      },
+      "ZXing.Net.Mobile.Forms/2.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.0.0.6490",
+          "ZXing.Net.Mobile": "2.2.0"
+        },
+        "compile": {
+          "lib/MonoAndroid403/ZXing.Net.Mobile.Forms.Android.dll": {},
+          "lib/MonoAndroid403/ZXing.Net.Mobile.Forms.dll": {}
+        },
+        "runtime": {
+          "lib/MonoAndroid403/ZXing.Net.Mobile.Forms.Android.dll": {},
+          "lib/MonoAndroid403/ZXing.Net.Mobile.Forms.dll": {}
+        }
+      },
       "TechApp2/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -897,9 +980,13 @@
           "Microsoft.AspNet.WebApi.Client": "5.2.7",
           "Microsoft.Net.Http": "2.2.29",
           "Newtonsoft.Json": "12.0.3",
+          "System.ComponentModel.Annotations": "4.7.0",
           "System.Net.Http": "4.3.4",
+          "Xamarin.Controls.SignaturePad.Forms": "3.0.0",
           "Xamarin.Essentials": "1.3.1",
-          "Xamarin.Forms": "4.3.0.908675"
+          "Xamarin.Forms": "4.3.0.908675",
+          "XamarinForms.CardView": "1.1.1.5",
+          "ZXing.Net.Mobile.Forms": "2.2.0"
         },
         "compile": {
           "bin/placeholder/TechApp2.dll": {}
@@ -911,6 +998,22 @@
     }
   },
   "libraries": {
+    "FastAndroidCamera/2.0.0": {
+      "sha512": "RQix6VHmVyQXVdP3Y4+Khw1F7HirONNCa5ubGng58gUkmSAhlS4t1Qf1Biyfakx/LjCYJ3SZ99rWSjQgV15uVQ==",
+      "type": "package",
+      "path": "fastandroidcamera/2.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fastandroidcamera.2.0.0.nupkg.sha512",
+        "fastandroidcamera.nuspec",
+        "lib/MonoAndroid403/FastAndroidCamera.dll",
+        "lib/MonoAndroid403/FastAndroidCamera.xml",
+        "src/CameraExtensions.cs",
+        "src/FastJavaByteArray.cs",
+        "src/FastJavaByteArrayEnumerator.cs"
+      ]
+    },
     "Microsoft.AspNet.WebApi.Client/5.2.7": {
       "sha512": "/76fAHknzvFqbznS6Uj2sOyE9rJB3PltY+f53TH8dX9RiGhk02EhuFCWljSj5nnqKaTsmma8DFR50OGyQ4yJ1g==",
       "type": "package",
@@ -1155,6 +1258,95 @@
         "lib/netstandard1.3/Newtonsoft.Json.Bson.xml",
         "newtonsoft.json.bson.1.0.1.nupkg.sha512",
         "newtonsoft.json.bson.nuspec"
+      ]
+    },
+    "System.ComponentModel.Annotations/4.7.0": {
+      "sha512": "0YFqjhp/mYkDGpU0Ye1GjE53HMp9UVfGN7seGpAMttAC0C40v5gw598jCgpbBLMmCo0E5YRLBv5Z2doypO49ZQ==",
+      "type": "package",
+      "path": "system.componentmodel.annotations/4.7.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net45/_._",
+        "lib/net461/System.ComponentModel.Annotations.dll",
+        "lib/netcore50/System.ComponentModel.Annotations.dll",
+        "lib/netstandard1.4/System.ComponentModel.Annotations.dll",
+        "lib/netstandard2.0/System.ComponentModel.Annotations.dll",
+        "lib/netstandard2.1/System.ComponentModel.Annotations.dll",
+        "lib/netstandard2.1/System.ComponentModel.Annotations.xml",
+        "lib/portable-net45+win8/_._",
+        "lib/win8/_._",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net45/_._",
+        "ref/net461/System.ComponentModel.Annotations.dll",
+        "ref/net461/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/System.ComponentModel.Annotations.dll",
+        "ref/netcore50/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/de/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/es/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/fr/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/it/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/ja/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/ko/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/ru/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/zh-hans/System.ComponentModel.Annotations.xml",
+        "ref/netcore50/zh-hant/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/System.ComponentModel.Annotations.dll",
+        "ref/netstandard1.1/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/de/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/es/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/fr/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/it/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/ja/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/ko/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/ru/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/zh-hans/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.1/zh-hant/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/System.ComponentModel.Annotations.dll",
+        "ref/netstandard1.3/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/de/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/es/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/fr/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/it/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/ja/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/ko/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/ru/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/zh-hans/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.3/zh-hant/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/System.ComponentModel.Annotations.dll",
+        "ref/netstandard1.4/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/de/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/es/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/fr/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/it/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/ja/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/ko/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/ru/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/zh-hans/System.ComponentModel.Annotations.xml",
+        "ref/netstandard1.4/zh-hant/System.ComponentModel.Annotations.xml",
+        "ref/netstandard2.0/System.ComponentModel.Annotations.dll",
+        "ref/netstandard2.0/System.ComponentModel.Annotations.xml",
+        "ref/netstandard2.1/System.ComponentModel.Annotations.dll",
+        "ref/netstandard2.1/System.ComponentModel.Annotations.xml",
+        "ref/portable-net45+win8/_._",
+        "ref/win8/_._",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "system.componentmodel.annotations.4.7.0.nupkg.sha512",
+        "system.componentmodel.annotations.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
       ]
     },
     "System.Net.Http/4.3.4": {
@@ -2000,6 +2192,46 @@
         "xamarin.android.support.viewpager.nuspec"
       ]
     },
+    "Xamarin.Controls.SignaturePad/3.0.0": {
+      "sha512": "IlQWFnD5z8FFU9NLATkVHkiGZjdOl6dm5v7MsMXpbMzjHCKU1xFHQ5HlZYXW7jH3Qi2JmpLewNFJbwM3f1/BlA==",
+      "type": "package",
+      "path": "xamarin.controls.signaturepad/3.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid/SignaturePad.dll",
+        "lib/MonoAndroid/SignaturePad.xml",
+        "lib/Xamarin.iOS/SignaturePad.dll",
+        "lib/Xamarin.iOS/SignaturePad.xml",
+        "lib/uap10.0/SignaturePad.dll",
+        "lib/uap10.0/SignaturePad.pri",
+        "lib/uap10.0/SignaturePad.xml",
+        "lib/uap10.0/SignaturePad/SignaturePad.xr.xml",
+        "lib/uap10.0/SignaturePad/Themes/Generic.xbf",
+        "xamarin.controls.signaturepad.3.0.0.nupkg.sha512",
+        "xamarin.controls.signaturepad.nuspec"
+      ]
+    },
+    "Xamarin.Controls.SignaturePad.Forms/3.0.0": {
+      "sha512": "LGw5vKuHsx/pQLD4GNEO/zrQVTFXsXnh6gzKCIMk/bMQTtfwfk6fGKgMeVwcR6/5DpOyVDzZg2B39MVYblAvdA==",
+      "type": "package",
+      "path": "xamarin.controls.signaturepad.forms/3.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid/SignaturePad.Forms.dll",
+        "lib/MonoAndroid/SignaturePad.Forms.xml",
+        "lib/Xamarin.iOS/SignaturePad.Forms.dll",
+        "lib/Xamarin.iOS/SignaturePad.Forms.xml",
+        "lib/netstandard1.0/SignaturePad.Forms.dll",
+        "lib/netstandard1.0/SignaturePad.Forms.xml",
+        "lib/uap10.0/SignaturePad.Forms.dll",
+        "lib/uap10.0/SignaturePad.Forms.pri",
+        "lib/uap10.0/SignaturePad.Forms.xml",
+        "xamarin.controls.signaturepad.forms.3.0.0.nupkg.sha512",
+        "xamarin.controls.signaturepad.forms.nuspec"
+      ]
+    },
     "Xamarin.Essentials/1.3.1": {
       "sha512": "+51728AdZ/qtABGvcIaNXgEoL2jAtxAXLHS8PvGCP0pb6n7twBqYpfgkmwHYVgu+U99szgtL+Jot8L+OXorPcA==",
       "type": "package",
@@ -2300,6 +2532,67 @@
         "xamarin.forms.nuspec"
       ]
     },
+    "XamarinForms.CardView/1.1.1.5": {
+      "sha512": "hINUX1T870jmEnXIAkZhG4kenuzbJZNZ76a3wnvAnTipFWIMtS0e7+xyNjAI2SyhgzH/2I9Xt46/RwU1mq4frw==",
+      "type": "package",
+      "path": "xamarinforms.cardview/1.1.1.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/portable45-net45+win8+wp8+wpa81/CardView.dll",
+        "xamarinforms.cardview.1.1.1.5.nupkg.sha512",
+        "xamarinforms.cardview.nuspec"
+      ]
+    },
+    "ZXing.Net.Mobile/2.2.0": {
+      "sha512": "a388DUaqrch/b1vw85FNX6GALiT5O8Y2AzmH7gX4CZDtVNeIRBySRsfp5bkUWlka2kxo2AMIjtEmPqLVHnd3uA==",
+      "type": "package",
+      "path": "zxing.net.mobile/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid403/ZXing.Net.Mobile.Core.dll",
+        "lib/MonoAndroid403/ZXingNetMobile.dll",
+        "lib/MonoAndroid403/zxing.portable.dll",
+        "lib/UAP10/ZXing.Net.Mobile.Core.dll",
+        "lib/UAP10/ZXingNetMobile.dll",
+        "lib/UAP10/ZXingNetMobile.pri",
+        "lib/UAP10/ZXingNetMobile/ZXingNetMobile.xr.xml",
+        "lib/UAP10/zxing.portable.dll",
+        "lib/Xamarin.iOS10/ZXing.Net.Mobile.Core.dll",
+        "lib/Xamarin.iOS10/ZXingNetMobile.dll",
+        "lib/Xamarin.iOS10/zxing.portable.dll",
+        "lib/portable-net45+netcore45+wpa81+wp8/ZXing.Net.Mobile.Core.dll",
+        "lib/portable-net45+netcore45+wpa81+wp8/ZXingNetMobile.dll",
+        "lib/portable-net45+netcore45+wpa81+wp8/zxing.portable.dll",
+        "lib/wp8/ZXing.Net.Mobile.Core.dll",
+        "lib/wp8/ZXingNetMobile.dll",
+        "lib/wp8/zxing.portable.dll",
+        "zxing.net.mobile.2.2.0.nupkg.sha512",
+        "zxing.net.mobile.nuspec"
+      ]
+    },
+    "ZXing.Net.Mobile.Forms/2.2.0": {
+      "sha512": "OWteZllaq3T2ZkpWQLs0QXENZcnOZP8zjDCkIXzI7ArUWMLkAhXwIM9qXjlzJ7hI3d186mZZCxC2tHzrYQ+5fA==",
+      "type": "package",
+      "path": "zxing.net.mobile.forms/2.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid403/ZXing.Net.Mobile.Forms.Android.dll",
+        "lib/MonoAndroid403/ZXing.Net.Mobile.Forms.dll",
+        "lib/UAP10/ZXing.Net.Mobile.Forms.WindowsUniversal.dll",
+        "lib/UAP10/ZXing.Net.Mobile.Forms.WindowsUniversal.pri",
+        "lib/UAP10/ZXing.Net.Mobile.Forms.dll",
+        "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.dll",
+        "lib/Xamarin.iOS10/ZXing.Net.Mobile.Forms.iOS.dll",
+        "lib/portable-net45+netcore45+wpa81+wp8/ZXing.Net.Mobile.Forms.dll",
+        "lib/wp8/ZXing.Net.Mobile.Forms.WindowsPhone.dll",
+        "lib/wp8/ZXing.Net.Mobile.Forms.dll",
+        "zxing.net.mobile.forms.2.2.0.nupkg.sha512",
+        "zxing.net.mobile.forms.nuspec"
+      ]
+    },
     "TechApp2/1.0.0": {
       "type": "project",
       "path": "../TechApp2/TechApp2.csproj",
@@ -2308,9 +2601,11 @@
   },
   "projectFileDependencyGroups": {
     "MonoAndroid,Version=v9.0": [
+      "FastAndroidCamera >= 2.0.0",
       "TechApp2 >= 1.0.0",
       "Xamarin.Essentials >= 1.3.1",
-      "Xamarin.Forms >= 4.3.0.908675"
+      "Xamarin.Forms >= 4.3.0.908675",
+      "ZXing.Net.Mobile.Forms >= 2.2.0"
     ]
   },
   "packageFolders": {
@@ -2355,6 +2650,10 @@
     "frameworks": {
       "monoandroid90": {
         "dependencies": {
+          "FastAndroidCamera": {
+            "target": "Package",
+            "version": "[2.0.0, )"
+          },
           "Xamarin.Essentials": {
             "target": "Package",
             "version": "[1.3.1, )"
@@ -2362,6 +2661,10 @@
           "Xamarin.Forms": {
             "target": "Package",
             "version": "[4.3.0.908675, )"
+          },
+          "ZXing.Net.Mobile.Forms": {
+            "target": "Package",
+            "version": "[2.2.0, )"
           }
         }
       }

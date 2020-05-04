@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechApp2.Android", "TechApp
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechApp2.iOS", "TechApp2\TechApp2.iOS\TechApp2.iOS.csproj", "{B3553732-FA29-4629-A462-320AAC38F930}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TechApp2", "TechApp2\TechApp2\TechApp2.csproj", "{32CDD41E-19C2-4FAA-94A8-EF7BAB25B822}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TechApp2", "TechApp2\TechApp2\TechApp2.csproj", "{32CDD41E-19C2-4FAA-94A8-EF7BAB25B822}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

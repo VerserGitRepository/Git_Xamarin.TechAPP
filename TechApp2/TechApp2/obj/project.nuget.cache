@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "e+fRBO537Lt/wVGrOCZ4qz7U0Twtszwb8aNlzwkDNhq1laZS5Nxg2b4wADzImwjQwuRYEe8zW2oA4KaZ8qpt9A==",
+  "dgSpecHash": "TFrFr40JoJblO57jyvjaw4rJPxjF0h5QZDRF6u5gU5HbWdMNIy61vKfY6VewvRM9Qa6UXx2WV8honO0FizyIFw==",
   "success": true,
   "projectFilePath": "C:\\Users\\bpatil\\Source\\Repos\\GitXamarin.TechAPP\\Git_Xamarin.TechAPP\\TechApp2\\TechApp2\\TechApp2.csproj",
   "expectedPackageFiles": [
@@ -30,6 +30,7 @@
     "C:\\Users\\bpatil\\.nuget\\packages\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.2\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512",
     "C:\\Users\\bpatil\\.nuget\\packages\\system.collections\\4.3.0\\system.collections.4.3.0.nupkg.sha512",
     "C:\\Users\\bpatil\\.nuget\\packages\\system.collections.concurrent\\4.3.0\\system.collections.concurrent.4.3.0.nupkg.sha512",
+    "C:\\Users\\bpatil\\.nuget\\packages\\system.componentmodel.annotations\\4.7.0\\system.componentmodel.annotations.4.7.0.nupkg.sha512",
     "C:\\Users\\bpatil\\.nuget\\packages\\system.diagnostics.debug\\4.3.0\\system.diagnostics.debug.4.3.0.nupkg.sha512",
     "C:\\Users\\bpatil\\.nuget\\packages\\system.diagnostics.diagnosticsource\\4.3.0\\system.diagnostics.diagnosticsource.4.3.0.nupkg.sha512",
     "C:\\Users\\bpatil\\.nuget\\packages\\system.diagnostics.tracing\\4.3.0\\system.diagnostics.tracing.4.3.0.nupkg.sha512",
@@ -61,8 +62,12 @@
     "C:\\Users\\bpatil\\.nuget\\packages\\system.text.encoding\\4.3.0\\system.text.encoding.4.3.0.nupkg.sha512",
     "C:\\Users\\bpatil\\.nuget\\packages\\system.threading\\4.3.0\\system.threading.4.3.0.nupkg.sha512",
     "C:\\Users\\bpatil\\.nuget\\packages\\system.threading.tasks\\4.3.0\\system.threading.tasks.4.3.0.nupkg.sha512",
+    "C:\\Users\\bpatil\\.nuget\\packages\\xamarin.controls.signaturepad.forms\\3.0.0\\xamarin.controls.signaturepad.forms.3.0.0.nupkg.sha512",
     "C:\\Microsoft\\Xamarin\\NuGet\\xamarin.essentials\\1.3.1\\xamarin.essentials.1.3.1.nupkg.sha512",
-    "C:\\Users\\bpatil\\.nuget\\packages\\xamarin.forms\\4.3.0.908675\\xamarin.forms.4.3.0.908675.nupkg.sha512"
+    "C:\\Users\\bpatil\\.nuget\\packages\\xamarin.forms\\4.3.0.908675\\xamarin.forms.4.3.0.908675.nupkg.sha512",
+    "C:\\Users\\bpatil\\.nuget\\packages\\xamarinforms.cardview\\1.1.1.5\\xamarinforms.cardview.1.1.1.5.nupkg.sha512",
+    "C:\\Users\\bpatil\\.nuget\\packages\\zxing.net.mobile\\2.2.0\\zxing.net.mobile.2.2.0.nupkg.sha512",
+    "C:\\Users\\bpatil\\.nuget\\packages\\zxing.net.mobile.forms\\2.2.0\\zxing.net.mobile.forms.2.2.0.nupkg.sha512"
   ],
   "logs": [
     {
@@ -81,6 +86,36 @@
       "warningLevel": 1,
       "message": "Package 'Microsoft.Net.Http 2.2.29' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.Net.Http",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'XamarinForms.CardView 1.1.1.5' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "XamarinForms.CardView",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'ZXing.Net.Mobile 2.2.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "ZXing.Net.Mobile",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'ZXing.Net.Mobile.Forms 2.2.0' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "ZXing.Net.Mobile.Forms",
       "targetGraphs": [
         ".NETStandard,Version=v2.0"
       ]

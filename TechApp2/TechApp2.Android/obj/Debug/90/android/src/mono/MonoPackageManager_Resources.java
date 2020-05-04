@@ -3,10 +3,13 @@ public class MonoPackageManager_Resources {
 	public static String[] Assemblies = new String[]{
 		/* We need to ensure that "TechApp2.Android.dll" comes first in this list. */
 		"TechApp2.Android.dll",
+		"CardView.dll",
 		"FastAndroidCamera.dll",
 		"FormsViewGroup.dll",
 		"Newtonsoft.Json.Bson.dll",
 		"Newtonsoft.Json.dll",
+		"SignaturePad.dll",
+		"SignaturePad.Forms.dll",
 		"System.Net.Http.Extensions.dll",
 		"System.Net.Http.Formatting.dll",
 		"System.Net.Http.Primitives.dll",
