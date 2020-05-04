@@ -18,8 +18,15 @@ namespace TechApp2.Views
         private async void btnSerialSearch_Clicked(object sender, EventArgs e)
         {
             var responsedata = new AssetViewModel();
+            if (string.IsNullOrEmpty(txtSerialNo.Text.ToString()))
+            {
+                DisplayAlert("Warning", "Please Enter SerialNo !", "OK");
+            }
+            else 
+            { 
             responsedata = await  SSNLookUpService.SerialNoSearchRequest(txtSerialNo.Text.ToString());
             this.BindingContext = responsedata;
+            }
         }
     }
 }

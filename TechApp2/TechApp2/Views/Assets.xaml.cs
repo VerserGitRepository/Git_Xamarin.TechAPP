@@ -35,8 +35,15 @@ namespace TechApp2.Views
             }
         }
         private void btnSearch_Clicked(object sender, EventArgs e)
-        {  
+        {
+            if (string.IsNullOrEmpty(txtSSN.Text.ToString()))
+            {
+                DisplayAlert("Warning", "Please Enter SSN !", "OK");               
+            }
+            else
+            { 
             GetAsset(txtSSN.Text.ToString());
+            }
         }
         private async void btnBarcodeScan_Clicked(object sender, EventArgs e)
         {

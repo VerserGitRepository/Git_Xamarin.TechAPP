@@ -44,6 +44,21 @@ namespace TechApp2.Services
             }
             return responsedata;
         }
-    }
-    
+
+        public static async Task<List<AssetViewModel>> ProjectAssets(int ProjectId,int ItemTypeID,int StatusId)
+        {
+            var responsedata = new List<AssetViewModel>();
+            
+            using (HttpClient client = new HttpClient())
+            {
+                HttpResponseMessage response = await client.GetAsync(string.Format($"https://customers.verser.com.au/AssetManagementServiceDev/inventorycontrol/TechAPP/{ProjectId}/{ItemTypeID}/{StatusId}/ProjectAssets"));
+                if (response.IsSuccessStatusCode)
+                {
+                    string result = await response.Content.ReadAsStringAsync();
+                    responsedata = JsonConvert.DeserializeObject<List<AssetViewModel>>(result);
+                }
+            }
+            return responsedata;
+        }
+    }    
 }
