@@ -26,5 +26,11 @@ namespace TechApp2.Views.JobDetailed
             Console.WriteLine(jobslistObject);
             this.BindingContext = jobslistObject;
         }
+
+        private void btninstructionDetails_Clicked(object sender, EventArgs e)
+        {
+            string workinstructiondata= LblJobWorkInstruction.Text.ToString();
+            Navigation.PushModalAsync(new JobWorkInstructionDetails(workinstructiondata));
+        }
     }
 }
