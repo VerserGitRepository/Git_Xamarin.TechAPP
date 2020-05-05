@@ -8,8 +8,8 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <StackLayout Margin="20">
-        <DatePicker HorizontalOptions="End"  DateSelected="DatePicker_DateSelected" Date="{Binding SelectedDate}" />
-        <Label Text="Assigned Jobs" />
+        <DatePicker HorizontalOptions="End" TextColor="Orange"  DateSelected="DatePicker_DateSelected" Date="{Binding SelectedDate}" />
+        <!--<Label Text="Assigned Jobs" BackgroundColor="Orange" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"  />-->
         <CollectionView x:Name="JobListView"
                         ItemsSource="{Binding jobs}"
                         SelectionMode="Single"
@@ -17,6 +17,11 @@
                         SelectionChanged="JobListView_ItemSelected">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
+                    <Frame BorderColor="LightGray"
+       CornerRadius="10" Margin="5" IsClippedToBounds="True"
+                             HorizontalOptions="Center"
+       VerticalOptions="Center"
+       Padding="1" HasShadow="True">
                     <Grid Padding="10">
                         <Grid.RowDefinitions>
                             <RowDefinition Height="Auto" />
@@ -53,6 +58,7 @@
                                FontAttributes="Italic" 
                                VerticalOptions="End" />
                     </Grid>
+                    </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>
