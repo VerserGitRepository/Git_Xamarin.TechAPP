@@ -25,46 +25,32 @@
                     </Grid.ColumnDefinitions>
                     
                 
-            <Label Text="Browse Assets" HorizontalOptions="Center" Grid.Row="0"  Grid.Column="0" Grid.ColumnSpan="4"  
-                   TextColor="Orange"  FontAttributes="Bold" />
-                    <Picker x:Name="Projects" Title="Project" Grid.Row="1" Grid.Column="0" HeightRequest="35" 
+            <Label Text="BROWSE ASSETS" HorizontalOptions="Center" FontSize="Medium" Grid.Row="0"  Grid.Column="0" Grid.ColumnSpan="4"  
+                   TextColor="Orange"  FontAttributes="Bold"  />
+                    <Picker x:Name="Projects" Title="PROJECTS" Grid.Row="1" Grid.Column="0" HeightRequest="35" 
+                             TitleColor = "white"  FontSize="Small" FontAttributes="Bold" 
+                            VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" >
+                        <Picker.ItemsSource />
+                    </Picker>
+                    <Picker x:Name="ItemTypes" Title="ITEMTYPES" Grid.Row="1" Grid.Column="1" HeightRequest="35" 
+                             TitleColor = "white" 
                             VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" FontSize="Small">
-                <Picker.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>Blue</x:String>
-                        <x:String>Green</x:String>
-
-                    </x:Array>
-                </Picker.ItemsSource>
-            </Picker>
-                    <Picker x:Name="ItemTypes" Title="ItemTypes" Grid.Row="1" Grid.Column="1" HeightRequest="35" 
-                            VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" FontSize="Small">
-                <Picker.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>Blue</x:String>
-                        <x:String>Green</x:String>
-
-                    </x:Array>
-                </Picker.ItemsSource>
-            </Picker>
-                    <Picker x:Name="Status" Title="Status" HeightRequest="35" Grid.Row="1" Grid.Column="2"  
-                            VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" FontSize="Small">
-                <Picker.ItemsSource>
-                    <x:Array Type="{x:Type x:String}">
-                        <x:String>Blue</x:String>
-                        <x:String>Green</x:String>
-                    </x:Array>
-                </Picker.ItemsSource>
-            </Picker>
-                    <Button Text="SEARCH" x:Name="btnSearchAssetList" Clicked="btnSearchAssetList_Clicked" Grid.Row="1" Grid.Column="3"  
-                            HorizontalOptions="CenterAndExpand" FontSize="Small" CornerRadius="25"  HeightRequest="50"
-                            VerticalOptions="CenterAndExpand" BackgroundColor="Orange" TextColor="White" FontAttributes="Bold"/>
+                        <Picker.ItemsSource/>
+                    </Picker>
                     
+                    <Picker x:Name="Status" Title="STATUS" HeightRequest="35" Grid.Row="1" Grid.Column="2"  
+                             TitleColor = "white" 
+                            VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" FontSize="Small">
+                        <Picker.ItemsSource/>
+                    </Picker>
+                    <Button Text="SEARCH" x:Name="btnSearchAssetList" Clicked="btnSearchAssetList_Clicked" Grid.Row="1" Grid.Column="3"  
+                            HorizontalOptions="CenterAndExpand" FontSize="Small" CornerRadius="15"  HeightRequest="50"
+                            VerticalOptions="CenterAndExpand" BackgroundColor="Orange" TextColor="White" FontAttributes="Bold"/>                 
                     
                 </Grid>
             </StackLayout>
             <StackLayout>
-                <ListView SeparatorVisibility="None" x:Name="JObAsetsList" ItemsSource="{Binding jobslistObject}" RowHeight="150" HasUnevenRows="True">
+                <ListView SeparatorVisibility="None" x:Name="BrowseAsetsList" ItemsSource="{Binding AssetList}" RowHeight="150" HasUnevenRows="True">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>

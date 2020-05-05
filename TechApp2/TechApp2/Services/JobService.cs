@@ -49,10 +49,9 @@ namespace TechApp2.Services
 
         public static async Task<List<JobListViewModel>> JobsDetailsByUserDateService(string UserId,DateTime jobdate)
         {
-            string _jobdate = jobdate.ToString("dd-MM-yyyy");
-
+            string _jobdate = jobdate.ToString("MM-dd-yyyy");
             var jobslistObject = new List<JobListViewModel>();
-            string jobDetailsURl = string.Format($"https://customers.verser.com.au/AssetManagementServiceDev/inventorycontrol/TechAPP/sthomas/10-10-2019/JoblistByUserDate");
+            string jobDetailsURl = string.Format($"https://customers.verser.com.au/AssetManagementServiceDev/inventorycontrol/TechAPP/sthomas/{_jobdate}/JoblistByUserDate");
             using (HttpClient client = new HttpClient())
             {
                 HttpResponseMessage response = await client.GetAsync(jobDetailsURl);

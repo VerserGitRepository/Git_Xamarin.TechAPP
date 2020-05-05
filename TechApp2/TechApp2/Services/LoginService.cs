@@ -19,7 +19,6 @@ namespace TechApp2.ServiceHelper
 
             using (HttpClient client = new HttpClient())
             {
-
                 HttpResponseMessage response = await client.PostAsync("https://customers.verser.com.au/JMSLoginManager/Login/AuthenticateUser", content).ConfigureAwait(false);
                 if (response.IsSuccessStatusCode)
                 {

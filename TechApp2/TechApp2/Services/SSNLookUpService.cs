@@ -51,7 +51,7 @@ namespace TechApp2.Services
             
             using (HttpClient client = new HttpClient())
             {
-                HttpResponseMessage response = await client.GetAsync(string.Format($"https://customers.verser.com.au/AssetManagementServiceDev/inventorycontrol/TechAPP/{ProjectId}/{ItemTypeID}/{StatusId}/ProjectAssets")).ConfigureAwait(false); ;
+                HttpResponseMessage response = await client.GetAsync(string.Format($"https://customers.verser.com.au/AssetManagementServiceDev/inventorycontrol/TechAPP/{ProjectId}/{ItemTypeID}/{StatusId}/ProjectAssets")).ConfigureAwait(false); 
                 if (response.IsSuccessStatusCode)
                 {
                     string result = await response.Content.ReadAsStringAsync().ConfigureAwait(false); 

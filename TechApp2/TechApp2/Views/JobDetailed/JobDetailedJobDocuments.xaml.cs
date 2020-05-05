@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TechApp2.Model;
+using TechApp2.Models;
 using TechApp2.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -21,7 +22,13 @@ namespace TechApp2.Views.JobDetailed
         public void PopulateJobDetails(object sender, EventArgs e)
         {
             jobslistObject = JobService.jobDetailsModel;
-            Console.WriteLine(jobslistObject);
+             var documents = new JobDocumentViewModel();
+
+            //documents = jobslistObject.JobDocuments[];
+
+            //byte[] bytes = Convert.FromBase64String(base64BinaryStr);
+
+            //string filepath = await DependencyService.Get<ISaveFile>().SaveFiles("FileName", bytes);            
         }
     }
 }

@@ -44,17 +44,16 @@ namespace TechApp2.Views
 
         private void btnSearchAssetList_Clicked(object sender, EventArgs e)
         {
-            int ProjectID = 36;
-            int ItemTypeID = 2;
+            int ProjectID = 709;
+            int ItemTypeID = 15;
             int StatusID = 22;
 
             var AssetList = new List<AssetViewModel>();
             if (ProjectID >0 && ItemTypeID >0 && StatusID >0)
             {
                 AssetList = SSNLookUpService.ProjectAssets(ProjectID, ItemTypeID, StatusID).Result;
-                this.BindingContext = AssetList;
-            }         
-
+                BrowseAsetsList.ItemsSource = AssetList;
+            }     
         }
     }
 }
