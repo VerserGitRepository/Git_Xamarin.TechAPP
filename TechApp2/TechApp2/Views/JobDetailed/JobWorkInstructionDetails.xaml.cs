@@ -21,7 +21,7 @@ namespace TechApp2.Views.JobDetailed
 
         private async void BtnBackToJobDetails_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushModalAsync(new JobDetailedJobParticulars());
+            Navigation.PopModalAsync(true);
         }
     }
 }
