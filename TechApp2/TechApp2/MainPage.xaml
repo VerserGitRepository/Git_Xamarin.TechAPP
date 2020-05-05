@@ -13,7 +13,7 @@
                 <Frame  BackgroundColor="White" HeightRequest="500" HasShadow="True" Padding="0" Margin="0">
                     <StackLayout>
                         <StackLayout Margin="5" >
-                            <Image Source="logo.png"  BackgroundColor="Transparent" HeightRequest="205"
+                            <Image Source="logo.jpg"  BackgroundColor="Transparent" HeightRequest="205"
                                                WidthRequest="200"  VerticalOptions="Center" />
                         </StackLayout>
                         <StackLayout Margin="10">

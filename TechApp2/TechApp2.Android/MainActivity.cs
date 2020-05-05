@@ -5,6 +5,7 @@ using Android.OS;
 using System.Threading.Tasks;
 using System.IO;
 using System.Diagnostics;
+using Plugin.CurrentActivity;
 
 namespace TechApp2.Droid
 {
@@ -27,7 +28,7 @@ namespace TechApp2.Droid
             //AppDomain.CurrentDomain.UnhandledException += CurrentDomainOnUnhandledException;
             //TaskScheduler.UnobservedTaskException += TaskSchedulerOnUnobservedTaskException;
             //DisplayCrashReport();
-
+            CrossCurrentActivity.Current.Init(this, savedInstanceState);
             LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, Permission[] grantResults)
