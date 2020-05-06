@@ -6,9 +6,16 @@
              mc:Ignorable="d"
              x:Class="TechApp2.Views.JobDetailed.JobDetailedJobRiskAssess">
     <ContentPage.Content>
-        <StackLayout>
-            <StackLayout Margin="5">
-                <Label Text="RiskAssessments" Margin="0,20" HorizontalOptions="Center" TextColor="Blue" FontAttributes="Bold" />
+        <Frame BorderColor="LightGray"
+       CornerRadius="10" Margin="10" IsClippedToBounds="True"
+                             HorizontalOptions="Center" WidthRequest="400"
+       VerticalOptions="Center"
+       Padding="15" HasShadow="True">
+            <StackLayout>
+
+                <Label Text="Risk Assessments" Margin="0" HorizontalOptions="CenterAndExpand" 
+                       WidthRequest="400" VerticalOptions="CenterAndExpand" TextColor="White" 
+                       BackgroundColor="Orange" FontAttributes="Bold" />
                 <Picker x:Name="ManualHandling" Title="Manual Handling">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
@@ -26,7 +33,6 @@
                             <x:String>MEDIUM</x:String>
                             <x:String>LOW</x:String>
                             <x:String>N/A</x:String>
-
                         </x:Array>
                     </Picker.ItemsSource>
                 </Picker>
@@ -71,7 +77,8 @@
                     </Picker.ItemsSource>
                 </Picker>
                 <Button Text="UPDATE" x:Name="btnupdateRiskAssess" Margin="20" CornerRadius="15" BackgroundColor="Orange" TextColor="White" FontAttributes="Bold"/>
-            </StackLayout>
+
         </StackLayout>
+        </Frame>
     </ContentPage.Content>
 </ContentPage>

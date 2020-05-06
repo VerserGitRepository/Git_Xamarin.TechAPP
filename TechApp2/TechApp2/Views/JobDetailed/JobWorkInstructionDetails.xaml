@@ -15,9 +15,15 @@
                         Text="BACK TO JOB DETAILS" TextColor="White" BackgroundColor="Orange"/>
             </StackLayout>
             <StackLayout>
-                <ScrollView BackgroundColor="LightGray" VerticalOptions="FillAndExpand">
-                    <Label x:Name="txtWorkInstruction" Text="{Binding WorkInstructionData}" />
-                </ScrollView>               
+                <Frame BorderColor="LightGray"
+       CornerRadius="10" Margin="15" IsClippedToBounds="True"
+                             HorizontalOptions="Center"
+       VerticalOptions="Center"
+       Padding="15" HasShadow="True">
+                    <ScrollView BackgroundColor="LightGray" VerticalOptions="FillAndExpand">
+                        <Label x:Name="txtWorkInstruction" Text="{Binding WorkInstructionData}" />
+                    </ScrollView>
+                </Frame>
             </StackLayout>
         </StackLayout>
             

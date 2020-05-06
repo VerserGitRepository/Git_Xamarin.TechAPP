@@ -15,19 +15,29 @@
     </ContentPage.BindingContext>-->
       
         
-  <StackLayout>                
-            <StackLayout Padding="0" Margin="10,25,10,0">           
-                
-           <Entry Grid.Row="2" Text="" x:Name="txtSSN"   Placeholder="Search SSN ..." PlaceholderColor="#bababa" HorizontalTextAlignment="Center" VerticalTextAlignment="End" TextColor="Black"/>
-
-            <Button Text="Search" x:Name="btnSearch" BackgroundColor="Blue" CornerRadius="20" FontAttributes="Bold" Clicked="btnSearch_Clicked"   TextColor="White" HeightRequest="40" WidthRequest="50"  VerticalOptions="Center"/>
-          
-            <Button Text="SCAN BARCODE " x:Name="btnBarcodeScan" Margin="80,20,80,0" Clicked="btnBarcodeScan_Clicked"  BackgroundColor="Blue" CornerRadius="20" FontAttributes="Bold"   TextColor="White"  HeightRequest="35" WidthRequest="20"  VerticalOptions="CenterAndExpand"/>
-            </StackLayout>
-
-        <StackLayout  >
-            <Frame BorderColor="LightGray"
+  <StackLayout>
+        <Frame BorderColor="LightGray"
        CornerRadius="10" Margin="15" IsClippedToBounds="True"
+                             HorizontalOptions="Center"
+       VerticalOptions="Center"
+       Padding="5" HasShadow="True">
+            <StackLayout Padding="10" WidthRequest="400" Margin="0">
+            
+                <Entry Grid.Row="2" Text="" x:Name="txtSSN"   Placeholder="Search SSN ..." PlaceholderColor="#bababa" HorizontalTextAlignment="Center" VerticalTextAlignment="End" TextColor="Black"/>
+
+                <Button Text="Search" x:Name="btnSearch" BackgroundColor="Blue" CornerRadius="10" FontAttributes="Bold" 
+                        Clicked="btnSearch_Clicked"   TextColor="White" 
+                        HeightRequest="40" WidthRequest="30"  VerticalOptions="Center"/>
+
+                <Button Text="SCAN BARCODE " x:Name="btnBarcodeScan" Margin="80,10,80,0" Clicked="btnBarcodeScan_Clicked" 
+                        BackgroundColor="Blue" CornerRadius="15" FontAttributes="Bold"   TextColor="White"  HeightRequest="40" WidthRequest="20" 
+                        VerticalOptions="CenterAndExpand"/>
+           
+        </StackLayout>
+        </Frame>
+        <StackLayout>
+            <Frame BorderColor="LightGray"
+       CornerRadius="10" Margin="10" IsClippedToBounds="True"
                              HorizontalOptions="Center"
        VerticalOptions="Center"
        Padding="5" HasShadow="True">

@@ -16,9 +16,9 @@
                             <StackLayout  Orientation="Horizontal"  Margin="1,0,0,0"
                                                    HorizontalOptions="FillAndExpand">
                                 <!--<Frame Padding="0" BackgroundColor="Orange" CornerRadius="90"  IsClippedToBounds="True" HeightRequest="20" WidthRequest="110"   HorizontalOptions="Center">-->
-                                    
-                                
-                                <Image Source="logo.png"  BackgroundColor="Transparent" HeightRequest="80" 
+
+
+                                <Image Source="VerserLogo.png"  BackgroundColor="Transparent" HeightRequest="80" 
                                                WidthRequest="120"  VerticalOptions="Center"  HorizontalOptions="Center" Margin="0" />
                                 <!--</Frame>-->
                                 <StackLayout Orientation="Vertical">
