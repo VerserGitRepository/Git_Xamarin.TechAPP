@@ -8,9 +8,43 @@
              Appearing="PopulateJobDetails">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
+            <Label Text="Upload File"
                 VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+                HorizontalOptions="CenterAndExpand" 
+                   TextColor="Black"
+                   FontSize="36"/>
+
+            <Button Text="Pick Document" 
+                    BackgroundColor="DarkGray"
+                    TextColor="White" 
+                    Clicked="PickDocument_Clicked"   
+                    FontSize="40"/>
+
+            <Button Text="Take Photo" 
+                    BackgroundColor="DarkGray"
+                    TextColor="White" 
+                    Clicked="TakePhoto_Clicked"   
+                    FontSize="40"/>
+
+            <Image x:Name="FileImage"
+                   WidthRequest="400"
+                   HeightRequest="200"/>
+
+            <Label x:Name="LocalPathLabel"
+                   Text="Local Path Label"                
+                   TextColor="Black"
+                   FontSize="15"/>
+
+            <Button Text="Upload File" 
+                    BackgroundColor="DarkGray"
+                    TextColor="White" 
+                    Clicked="UploadFile_Clicked"   
+                    FontSize="40"/>
+            <Label x:Name="RemotePathLabel"                
+                   TextColor="Black"
+                   FontSize="15"/>
+
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
