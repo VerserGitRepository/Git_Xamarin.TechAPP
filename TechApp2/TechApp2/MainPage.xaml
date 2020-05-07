@@ -4,13 +4,13 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             
+             xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
              x:Class="TechApp2.MainPage">
-
+    <ContentPage.Content>
     <StackLayout BackgroundColor="Orange">      
         <Grid>  
-            <StackLayout Padding="0" Margin="30,50,30,100" HorizontalOptions="FillAndExpand"  >                
-                <Frame  BackgroundColor="White" HeightRequest="500" HasShadow="True" Padding="0" Margin="0">
+            <StackLayout Padding="0" Margin="30,50,30,150" HorizontalOptions="FillAndExpand"  >                
+                <Frame  BackgroundColor="White" HeightRequest="600" HasShadow="True" Padding="0" Margin="0">
                     <StackLayout>
                         <StackLayout Margin="5" >
                             <Image Source="VerserLogo.png"  BackgroundColor="Transparent" HeightRequest="205"
@@ -24,9 +24,23 @@
                             <Entry x:Name="Password" Placeholder="Password" IsPassword="True"   TextColor="Black" FontAttributes="None"  HorizontalOptions="FillAndExpand" Margin="0,20,10,0"/>
                             <Button Text="SIGN IN" BackgroundColor="DarkGray" Clicked="BtnLogin_Clicked"   TextColor="White" CornerRadius="30"  Margin="0,20,10,0"/>
                         </StackLayout>
-                    </StackLayout>
+                            <StackLayout HeightRequest="80">
+                                <forms:AnimationView 
+	                    x:Name="animationView" 
+	                    Grid.Row="3"
+	                    Animation="loading.json" 
+	                    Loop="true" 
+	                    AutoPlay="true"		
+	                    VerticalOptions="Fill" 
+	                    HorizontalOptions="FillAndExpand" />
+                            </StackLayout>
+                        </StackLayout>
                 </Frame>
+                
+               
             </StackLayout>
         </Grid>
-    </StackLayout>
+           
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>
