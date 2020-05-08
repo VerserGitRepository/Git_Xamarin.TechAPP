@@ -26,5 +26,21 @@ namespace TechApp2.Views.JobDetailed
             //Console.WriteLine(jobslistObject);
             //this.BindingContext = jobslistObject.AssetsList;
         }
+
+        private void AssetSearchBar_SearchButtonPressed(object sender, EventArgs e)
+        {
+            var searchtext = AssetSearchBar.Text;
+            var SerachResults= jobslistObject.AssetsList.Where(a => a.SSN.Contains(searchtext)).ToList();
+            if (SerachResults.Count > 0)
+            {
+                JObAsetsList.ItemsSource = SerachResults;
+            }
+            else
+            {
+                DisplayAlert("Information", "Asset Not Fount!", "OK");
+                JObAsetsList.ItemsSource= jobslistObject.AssetsList;
+            }            
+
+        }
     }
 }
