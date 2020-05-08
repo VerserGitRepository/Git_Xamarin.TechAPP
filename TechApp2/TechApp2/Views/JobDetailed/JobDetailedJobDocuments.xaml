@@ -8,23 +8,60 @@
              Appearing="PopulateJobDetails">
     <ContentPage.Content>
         <StackLayout>
+
+            <CollectionView x:Name="JobDocuments"
+                        ItemsSource="{Binding jobslistObject}"
+                        SelectionMode="Single"
+                        SelectedItem="{Binding selectedJob}"
+                        SelectionChanged="UploadFile_Clicked">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="LightGray"
+       CornerRadius="10" Margin="5" IsClippedToBounds="True"
+                             HorizontalOptions="Center"
+       VerticalOptions="Center"
+       Padding="1" HasShadow="True">
+                            <Grid Padding="10">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto" />
+
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+
+                                </Grid.ColumnDefinitions>
+
+                                <Label Grid.Row="1"
+                               Grid.Column="1" 
+                               Text="{Binding FileName}"
+                               FontAttributes="Italic" 
+                               VerticalOptions="End" />
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
             <Label Text="Upload File"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" 
                    TextColor="Black"
-                   FontSize="36"/>
+                   FontSize="16"/>
 
             <Button Text="Pick Document" 
                     BackgroundColor="DarkGray"
                     TextColor="White" 
                     Clicked="PickDocument_Clicked"   
-                    FontSize="40"/>
+                    FontSize="10"
+                     CornerRadius="30" 
+                    Margin="0,20,10,0"/>
 
             <Button Text="Take Photo" 
                     BackgroundColor="DarkGray"
                     TextColor="White" 
                     Clicked="TakePhoto_Clicked"   
-                    FontSize="40"/>
+                    FontSize="10"
+                     CornerRadius="30" 
+                    Margin="0,20,10,0"/>
 
             <Image x:Name="FileImage"
                    WidthRequest="400"
@@ -39,7 +76,9 @@
                     BackgroundColor="DarkGray"
                     TextColor="White" 
                     Clicked="UploadFile_Clicked"   
-                    FontSize="40"/>
+                    FontSize="10"
+                     CornerRadius="30"  
+                    Margin="0,20,10,0"/>
             <Label x:Name="RemotePathLabel"                
                    TextColor="Black"
                    FontSize="15"/>
