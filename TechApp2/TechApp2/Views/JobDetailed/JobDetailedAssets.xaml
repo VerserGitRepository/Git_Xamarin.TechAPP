@@ -9,8 +9,18 @@
              Appearing="PopulateJobDetails">
     <ContentPage.Content>
        <StackLayout>
+            <Frame  BackgroundColor="LightGray" 
+                    Padding="5"
+                    HasShadow="True"
+                    CornerRadius="10"
+                    HeightRequest="35"
+                    WidthRequest="10"
+                    >
+                <SearchBar x:Name="AssetSearchBar" SearchButtonPressed="AssetSearchBar_SearchButtonPressed" Placeholder="Search SSN.." FontSize="Small" />
+            </Frame>
+            
             <Frame BorderColor="LightGray"
-       CornerRadius="10" Margin="15" IsClippedToBounds="True"
+       CornerRadius="10" Margin="10" IsClippedToBounds="True"
                              HorizontalOptions="Center"
        VerticalOptions="Center"
        Padding="5" HasShadow="True">
@@ -21,7 +31,6 @@
                                 <cardView:CardView   Margin="5">
                                     <cardView:CardView.CardViewContent>
                                         <Grid BackgroundColor="#EBECF0" Margin="10" RowSpacing="0" >
-
                                             <Grid.RowDefinitions>
                                                 <RowDefinition Height="10"  FlexLayout.AlignSelf="Auto"  ></RowDefinition>
                                                 <RowDefinition Height="20"></RowDefinition>
@@ -36,7 +45,6 @@
                                                 <RowDefinition Height="40"></RowDefinition>
                                                 <RowDefinition Height="6"></RowDefinition>
                                             </Grid.RowDefinitions>
-
                                             <Grid.ColumnDefinitions >
                                                 <ColumnDefinition Width="*" ></ColumnDefinition>
                                                 <ColumnDefinition Width="*"></ColumnDefinition>
