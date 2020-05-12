@@ -94,7 +94,10 @@ namespace TechApp2.Views.JobDetailed
             //string file = Path.Combine(directory.ToString(), "temp.pdf");
             //System.IO.File.WriteAllBytes(file, grnbytedata);
 
+        }
 
+        private void JobDocuments_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
             byte[] grnbytedata = jobslistObject.JobDocuments[0].FileContent;
             var myStr = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
             var filePath = Path.Combine(myStr, "test.pdf");
@@ -116,8 +119,6 @@ namespace TechApp2.Views.JobDetailed
             }
             File.WriteAllBytes(filePath, grnbytedata);
             LocalPathLabel.Text = filePath;
-
-
         }
     }
 }
