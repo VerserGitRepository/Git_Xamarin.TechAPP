@@ -100,8 +100,9 @@ namespace TechApp2.Views.JobDetailed
 
         private void JobDocuments_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            byte[] grnbytedata = jobslistObject.JobDocuments[0].FileContent;
-            string theFileName = jobslistObject.JobDocuments[0].FileName;
+            
+            byte[] grnbytedata = (e.CurrentSelection as JobDocumentViewModel).FileContent;
+            string theFileName = (e.CurrentSelection as JobDocumentViewModel).FileName;
             string filePath = DependencyService.Get<ISave>().Save(grnbytedata,theFileName);
             LocalPathLabel.Text = filePath;
         }
