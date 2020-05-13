@@ -7,9 +7,11 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TechApp2.Interfaces;
 using TechApp2.Model;
 using TechApp2.Services;
 using Xamarin.Forms;
+using Xamarin.Forms.PlatformConfiguration;
 using Xamarin.Forms.Xaml;
 
 namespace TechApp2.Views.JobDetailed
@@ -99,25 +101,8 @@ namespace TechApp2.Views.JobDetailed
         private void JobDocuments_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             byte[] grnbytedata = jobslistObject.JobDocuments[0].FileContent;
-            var myStr = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData);
-            var filePath = Path.Combine(myStr, "test.pdf");
-
-            var assembly = System.Reflection.Assembly.GetExecutingAssembly();
-
-            string targetStr = null;
-            if (Device.RuntimePlatform == Device.iOS)
-            {
-                targetStr = "iOS";
-            }
-            else if (Device.RuntimePlatform == Device.Android)
-            {
-                targetStr = "Droid";
-            }
-            else
-            {
-                targetStr = "UWP";
-            }
-            File.WriteAllBytes(filePath, grnbytedata);
+            string theFileName = jobslistObject.JobDocuments[0].FileName;
+            string filePath = DependencyService.Get<ISave>().Save(grnbytedata,theFileName);
             LocalPathLabel.Text = filePath;
         }
     }
