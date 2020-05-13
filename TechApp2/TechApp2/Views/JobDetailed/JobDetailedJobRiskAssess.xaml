@@ -76,7 +76,7 @@
                         </x:Array>
                     </Picker.ItemsSource>
                 </Picker>
-                <Button Text="UPDATE" x:Name="btnupdateRiskAssess" Margin="20" CornerRadius="15" BackgroundColor="Orange" TextColor="White" FontAttributes="Bold"/>
+                <Button Text="UPDATE" x:Name="btnupdateRiskAssess" Margin="20" CornerRadius="15" BackgroundColor="Orange" TextColor="White" FontAttributes="Bold" Clicked="BtnupdateRiskAssess_Clicked"/>
 
         </StackLayout>
         </Frame>

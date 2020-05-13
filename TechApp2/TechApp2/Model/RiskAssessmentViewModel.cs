@@ -10,7 +10,7 @@ namespace TechApp2.Model
         public string RiskArea { get; set; }
         public string Rating { get; set; }
         public string OtherValue { get; set; }
-        public int RiskAssessment_Job { get; set; }
+        public string RiskAssessment_Job { get; set; }
         public string CreatedBy { get; set; }
         public string ModifiedBy { get; set; }
         public DateTimeOffset? Modified { get; set; }

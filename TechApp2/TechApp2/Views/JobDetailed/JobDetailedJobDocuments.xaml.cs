@@ -17,8 +17,11 @@ using Xamarin.Forms.Xaml;
 namespace TechApp2.Views.JobDetailed
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
+  
     public partial class JobDetailedJobDocuments : ContentPage
     {
+        private List<JobDocumentViewModel> Jobassetphoto = new List<JobDocumentViewModel>();
+        private byte[] imageButeArray;
         public static JobDetailsViewModel jobslistObject = new JobDetailsViewModel();
         private MediaFile _mediaFile;
         public JobDetailedJobDocuments()
@@ -85,6 +88,8 @@ namespace TechApp2.Views.JobDetailed
 
             FileImage.Source = ImageSource.FromStream(() =>
             {
+                imageButeArray = new byte[_mediaFile.GetStream().Length];  //declare arraysize
+                _mediaFile.GetStream().Read(imageButeArray, 0, imageButeArray.Length);
                 return _mediaFile.GetStream();
             });
         }
@@ -95,6 +100,11 @@ namespace TechApp2.Views.JobDetailed
             //directory = Path.Combine(directory, Environment.SystemDirectory);
             //string file = Path.Combine(directory.ToString(), "temp.pdf");
             //System.IO.File.WriteAllBytes(file, grnbytedata);
+           
+            Jobassetphoto.Add(new JobDocumentViewModel { FileContent = imageButeArray, JobDocument_Job = JobService.jobDetailsModel.JobNo, CreatedBy = "TestUser",FileName="NewImage" });
+           
+
+
 
         }
 
