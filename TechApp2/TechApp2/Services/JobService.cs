@@ -10,7 +10,7 @@ namespace TechApp2.Services
 {
    public static class JobService
     {
-        public static string ListOfJobsURl = string.Format("https://customers.verser.com.au/AssetManagementServiceDev/inventorycontrol/order/sthomas/TechAssignedJobs");
+        public static string ListOfJobsURl = string.Format($"{Settings.AMSBaseInventoryURL}order/sthomas/TechAssignedJobs");
         public static JobDetailsViewModel jobDetailsModel = new JobDetailsViewModel();
 
         public static async Task<List<JobListViewModel>> JobsListService()
@@ -33,7 +33,7 @@ namespace TechApp2.Services
         {
             var jobslistObject = new JobDetailsViewModel();
             
-                string jobDetailsURl = string.Format($"https://customers.verser.com.au/AssetManagementServiceDev/inventorycontrol/TechAPP/{jobno}/FindJob");
+                string jobDetailsURl = string.Format($"{Settings.AMSBaseTechAPPURL}{jobno}/FindJob");
             using (HttpClient client = new HttpClient())
             {  
                 HttpResponseMessage response = await client.GetAsync(jobDetailsURl);
@@ -51,7 +51,7 @@ namespace TechApp2.Services
         {
             string _jobdate = jobdate.ToString("MM-dd-yyyy");
             var jobslistObject = new List<JobListViewModel>();
-            string jobDetailsURl = string.Format($"https://customers.verser.com.au/AssetManagementServiceDev/inventorycontrol/TechAPP/sthomas/{_jobdate}/JoblistByUserDate");
+            string jobDetailsURl = string.Format($"{Settings.AMSBaseTechAPPURL}sthomas/{_jobdate}/JoblistByUserDate");
             using (HttpClient client = new HttpClient())
             {
                 HttpResponseMessage response = await client.GetAsync(jobDetailsURl);

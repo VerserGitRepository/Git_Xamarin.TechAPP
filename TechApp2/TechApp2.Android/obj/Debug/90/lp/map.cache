@@ -1,5 +1,12 @@
 FastAndroidCamera
 FormsViewGroup
+Lottie
+Lottie.Forms.Droid
+Plugin.CurrentActivity
+Plugin.FilePicker
+Plugin.Media
+Plugin.Permissions
+Plugin.Settings
 SignaturePad
 SignaturePad.Forms
 Xamarin.Android.Arch.Core.Common
