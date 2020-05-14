@@ -105,15 +105,16 @@ namespace TechApp2.Views.JobDetailed
             var item = new JobAssetPhotesDto { Image = imageButeArray, JobAssetPhoto_JobAsset = JobService.jobDetailsModel.JobNo, CreatedBy = "TestUser",FileName="NewImage" };
             updateModel.JobAssetPhots = item;
 
-
+            var masterPage = this.Parent as TabbedPage;
+            masterPage.CurrentPage = masterPage.Children[3];
 
         }
 
         private void JobDocuments_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             
-            byte[] grnbytedata = (e.CurrentSelection as JobDocumentViewModel).FileContent;
-            string theFileName = (e.CurrentSelection as JobDocumentViewModel).FileName;
+            byte[] grnbytedata = (e.CurrentSelection.First() as JobDocumentViewModel).FileContent;
+            string theFileName = (e.CurrentSelection.First() as JobDocumentViewModel).FileName;
             string filePath = DependencyService.Get<ISave>().Save(grnbytedata,theFileName);
             LocalPathLabel.Text = filePath;
         }
