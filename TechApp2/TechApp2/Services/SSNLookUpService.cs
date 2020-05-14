@@ -19,7 +19,7 @@ namespace TechApp2.Services
             using (HttpClient client = new HttpClient())
             {
               
-                HttpResponseMessage response = await client.GetAsync(string.Format("https://customers.verser.com.au/AssetManagementServicedev/inventorycontrol/assets/TechAPPSSNSearch/{0}", ssn));
+                HttpResponseMessage response = await client.GetAsync(string.Format($"{Settings.AMSBaseInventoryURL}assets/TechAPPSSNSearch/{0}", ssn));
                 if (response.IsSuccessStatusCode)
                 {
                     string result = await response.Content.ReadAsStringAsync();
@@ -35,7 +35,7 @@ namespace TechApp2.Services
           //DV7V32S
             using (HttpClient client = new HttpClient())
             {
-                HttpResponseMessage response = await client.GetAsync(string.Format($"https://customers.verser.com.au/AssetManagementServiceDev/inventorycontrol/TechAPP/{serialno}/FindSerialNo"));
+                HttpResponseMessage response = await client.GetAsync(string.Format($"{Settings.AMSBaseTechAPPURL}{serialno}/FindSerialNo"));
                 if (response.IsSuccessStatusCode)
                 {
                     string result = await response.Content.ReadAsStringAsync();
@@ -51,7 +51,7 @@ namespace TechApp2.Services
             
             using (HttpClient client = new HttpClient())
             {
-                HttpResponseMessage response = await client.GetAsync(string.Format($"https://customers.verser.com.au/AssetManagementServiceDev/inventorycontrol/TechAPP/{ProjectId}/{ItemTypeID}/{StatusId}/ProjectAssets")).ConfigureAwait(false); 
+                HttpResponseMessage response = await client.GetAsync(string.Format($"{Settings.AMSBaseTechAPPURL}{ProjectId}/{ItemTypeID}/{StatusId}/ProjectAssets")).ConfigureAwait(false); 
                 if (response.IsSuccessStatusCode)
                 {
                     string result = await response.Content.ReadAsStringAsync().ConfigureAwait(false); 
