@@ -20,7 +20,8 @@ namespace TechApp2.Views.JobDetailed
   
     public partial class JobDetailedJobDocuments : ContentPage
     {
-        private List<JobDocumentViewModel> Jobassetphoto = new List<JobDocumentViewModel>();
+        private UpdateTechJobDto updateModel = new UpdateTechJobDto();
+        private List<JobAssetPhotesDto> Jobassetphoto = new List<JobAssetPhotesDto>();
         private byte[] imageButeArray;
         public static JobDetailsViewModel jobslistObject = new JobDetailsViewModel();
         private MediaFile _mediaFile;
@@ -101,18 +102,19 @@ namespace TechApp2.Views.JobDetailed
             //string file = Path.Combine(directory.ToString(), "temp.pdf");
             //System.IO.File.WriteAllBytes(file, grnbytedata);
            
-            Jobassetphoto.Add(new JobDocumentViewModel { FileContent = imageButeArray, JobDocument_Job = JobService.jobDetailsModel.JobNo, CreatedBy = "TestUser",FileName="NewImage" });
-           
+            var item = new JobAssetPhotesDto { Image = imageButeArray, JobAssetPhoto_JobAsset = JobService.jobDetailsModel.JobNo, CreatedBy = "TestUser",FileName="NewImage" };
+            updateModel.JobAssetPhots = item;
 
-
+            var masterPage = this.Parent as TabbedPage;
+            masterPage.CurrentPage = masterPage.Children[3];
 
         }
 
         private void JobDocuments_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             
-            byte[] grnbytedata = (e.CurrentSelection as JobDocumentViewModel).FileContent;
-            string theFileName = (e.CurrentSelection as JobDocumentViewModel).FileName;
+            byte[] grnbytedata = (e.CurrentSelection.First() as JobDocumentViewModel).FileContent;
+            string theFileName = (e.CurrentSelection.First() as JobDocumentViewModel).FileName;
             string filePath = DependencyService.Get<ISave>().Save(grnbytedata,theFileName);
             LocalPathLabel.Text = filePath;
         }

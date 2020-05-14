@@ -12,6 +12,7 @@ namespace TechApp2.Views.JobDetailed
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class JobDetailsTabbed : TabbedPage
     {
+        //public updatetechjobdto
         public JobDetailsTabbed(string JobNo)
         {
             InitializeComponent();         
