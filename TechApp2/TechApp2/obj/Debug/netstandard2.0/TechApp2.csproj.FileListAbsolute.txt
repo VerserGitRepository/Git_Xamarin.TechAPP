@@ -15,8 +15,6 @@ C:\Users\bpatil\Source\Repos\TechApp2\TechApp2\TechApp2\obj\Debug\netstandard2.0
 C:\Users\bpatil\Source\Repos\TechApp2\TechApp2\TechApp2\obj\Debug\netstandard2.0\Views\Assets.xaml.g.cs
 C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\bin\Debug\netstandard2.0\TechApp2.deps.json
 C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\bin\Debug\netstandard2.0\TechApp2.dll
-C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\bin\Debug\netstandard2.0\ref\TechApp2.dll
-C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\bin\Debug\netstandard2.0\TechApp2.pdb
 C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Debug\netstandard2.0\App.xaml.g.cs
 C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
 C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Debug\netstandard2.0\Views\Assets.xaml.g.cs
@@ -29,7 +27,12 @@ C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\Tec
 C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Debug\netstandard2.0\Views\JobDetailed\JobDetailedJobPhotos.xaml.g.cs
 C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Debug\netstandard2.0\Views\JobDetailed\JobDetailedJobRiskAssess.xaml.g.cs
 C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Debug\netstandard2.0\Views\JobDetailed\JobDetailsTabbed.xaml.g.cs
+C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Debug\netstandard2.0\Views\JobDetailed\JobWorkInstructionDetails.xaml.g.cs
 C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Debug\netstandard2.0\Views\JobList.xaml.g.cs
+C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Debug\netstandard2.0\Views\JobSearchDetailViews\JobSearchAssetList.xaml.g.cs
+C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Debug\netstandard2.0\Views\JobSearchDetailViews\JobSearchDocs.xaml.g.cs
+C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Debug\netstandard2.0\Views\JobSearchDetailViews\JobSearchInstructionDetails.xaml.g.cs
+C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Debug\netstandard2.0\Views\JobSearchDetailViews\JobSearchRiskAssess.xaml.g.cs
 C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Debug\netstandard2.0\Views\Login.xaml.g.cs
 C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Debug\netstandard2.0\Views\MasterNavigation\MasterNavigation.xaml.g.cs
 C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Debug\netstandard2.0\Views\MasterNavigation\MasterNavigationDetail.xaml.g.cs
@@ -40,9 +43,11 @@ C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\Tec
 C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Debug\netstandard2.0\Views\StatsPages\AssetStats.xaml.g.cs
 C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Debug\netstandard2.0\Views\StatsPages\InvoiceStats.xaml.g.cs
 C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Debug\netstandard2.0\Views\StatsPages\JobStats.xaml.g.cs
-C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Debug\netstandard2.0\TechApp2.csproj.CoreCompileInputs.cache
 C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Debug\netstandard2.0\TechApp2.AssemblyInfoInputs.cache
 C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Debug\netstandard2.0\TechApp2.AssemblyInfo.cs
+C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\bin\Debug\netstandard2.0\ref\TechApp2.dll
+C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\bin\Debug\netstandard2.0\TechApp2.pdb
+C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Debug\netstandard2.0\TechApp2.csproj.CoreCompileInputs.cache
 C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Debug\netstandard2.0\XamlC.stamp
 C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Debug\netstandard2.0\TechApp2.dll
 C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Debug\netstandard2.0\ref\TechApp2.dll

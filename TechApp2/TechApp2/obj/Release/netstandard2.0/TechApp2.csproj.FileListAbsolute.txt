@@ -14,6 +14,7 @@ C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\Tec
 C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Release\netstandard2.0\Views\JobDetailed\JobDetailedJobPhotos.xaml.g.cs
 C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Release\netstandard2.0\Views\JobDetailed\JobDetailedJobRiskAssess.xaml.g.cs
 C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Release\netstandard2.0\Views\JobDetailed\JobDetailsTabbed.xaml.g.cs
+C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Release\netstandard2.0\Views\JobDetailed\JobWorkInstructionDetails.xaml.g.cs
 C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Release\netstandard2.0\Views\JobList.xaml.g.cs
 C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Release\netstandard2.0\Views\Login.xaml.g.cs
 C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Release\netstandard2.0\Views\MasterNavigation\MasterNavigation.xaml.g.cs
@@ -32,4 +33,3 @@ C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\Tec
 C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Release\netstandard2.0\TechApp2.dll
 C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Release\netstandard2.0\ref\TechApp2.dll
 C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Release\netstandard2.0\TechApp2.pdb
-C:\Users\bpatil\Source\Repos\GitXamarin.TechAPP\Git_Xamarin.TechAPP\TechApp2\TechApp2\obj\Release\netstandard2.0\TechApp2.csprojAssemblyReference.cache

@@ -2,6 +2,18 @@
   "version": 3,
   "targets": {
     ".NETStandard,Version=v2.0": {
+      "Com.Airbnb.Xamarin.Forms.Lottie/1.5.1": {
+        "type": "package",
+        "dependencies": {
+          "Xamarin.Forms": "2.3.3.193"
+        },
+        "compile": {
+          "lib/portable-net45+wp8+win+wpa81+dnxcore50/Lottie.Forms.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+wp8+win+wpa81+dnxcore50/Lottie.Forms.dll": {}
+        }
+      },
       "Microsoft.AspNet.WebApi.Client/5.2.7": {
         "type": "package",
         "dependencies": {
@@ -98,6 +110,15 @@
         },
         "runtime": {
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
+        }
+      },
+      "Plugin.Permissions/3.0.0.12": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Plugin.Permissions.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Plugin.Permissions.dll": {}
         }
       },
       "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {
@@ -856,6 +877,27 @@
           "ref/netstandard1.3/System.Threading.Tasks.dll": {}
         }
       },
+      "Xam.Plugin.Media/4.0.1.5": {
+        "type": "package",
+        "dependencies": {
+          "Plugin.Permissions": "3.0.0.12"
+        },
+        "compile": {
+          "lib/netstandard2.0/Plugin.Media.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Plugin.Media.dll": {}
+        }
+      },
+      "Xam.Plugins.Settings/4.1.0-beta": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/Plugin.Settings.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Plugin.Settings.dll": {}
+        }
+      },
       "Xamarin.Controls.SignaturePad.Forms/3.0.0": {
         "type": "package",
         "dependencies": {
@@ -895,6 +937,17 @@
         "build": {
           "build/Xamarin.Forms.props": {},
           "build/Xamarin.Forms.targets": {}
+        }
+      },
+      "Xamarin.Plugin.FilePicker/1.2.1": {
+        "type": "package",
+        "compile": {
+          "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.FilePicker.Abstractions.dll": {},
+          "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.FilePicker.dll": {}
+        },
+        "runtime": {
+          "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.FilePicker.Abstractions.dll": {},
+          "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.FilePicker.dll": {}
         }
       },
       "XamarinForms.CardView/1.1.1.5": {
@@ -938,6 +991,24 @@
     }
   },
   "libraries": {
+    "Com.Airbnb.Xamarin.Forms.Lottie/1.5.1": {
+      "sha512": "wcb9f/OQwXmDGwu9jgL3zRK67//SLb83Yuvdvulhw0G672LmaJ7opyvRB+ssbFiRjGSs8pIvEaJvOIsz9w3NDg==",
+      "type": "package",
+      "path": "com.airbnb.xamarin.forms.lottie/1.5.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "com.airbnb.xamarin.forms.lottie.1.5.1.nupkg.sha512",
+        "com.airbnb.xamarin.forms.lottie.nuspec",
+        "lib/MonoAndroid70/Lottie.Forms.Droid.dll",
+        "lib/MonoAndroid70/Lottie.Forms.Droid.dll.mdb",
+        "lib/MonoAndroid70/Lottie.Forms.dll",
+        "lib/portable-net45+wp8+win+wpa81+dnxcore50/Lottie.Forms.dll",
+        "lib/xamarinios/Lottie.Forms.dll",
+        "lib/xamarinios/Lottie.Forms.iOS.dll",
+        "lib/xamarinios/Lottie.Forms.iOS.dll.mdb"
+      ]
+    },
     "Microsoft.AspNet.WebApi.Client/5.2.7": {
       "sha512": "/76fAHknzvFqbznS6Uj2sOyE9rJB3PltY+f53TH8dX9RiGhk02EhuFCWljSj5nnqKaTsmma8DFR50OGyQ4yJ1g==",
       "type": "package",
@@ -1339,6 +1410,29 @@
         "lib/netstandard1.3/Newtonsoft.Json.Bson.xml",
         "newtonsoft.json.bson.1.0.1.nupkg.sha512",
         "newtonsoft.json.bson.nuspec"
+      ]
+    },
+    "Plugin.Permissions/3.0.0.12": {
+      "sha512": "VrYqI/ufk3bH6gTP1JJlLByjhS0CHu3riKmdozhX9/qXA9hlvLolmcqKJdyAqpzmrVC74m3ZtirUBIrBxvT1Lw==",
+      "type": "package",
+      "path": "plugin.permissions/3.0.0.12",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid71/Plugin.Permissions.dll",
+        "lib/monoandroid71/Plugin.Permissions.xml",
+        "lib/netstandard1.0/Plugin.Permissions.dll",
+        "lib/netstandard1.0/Plugin.Permissions.xml",
+        "lib/netstandard2.0/Plugin.Permissions.dll",
+        "lib/netstandard2.0/Plugin.Permissions.xml",
+        "lib/uap10.0.10240/Plugin.Permissions.dll",
+        "lib/uap10.0.10240/Plugin.Permissions.pri",
+        "lib/uap10.0.10240/Plugin.Permissions.xml",
+        "lib/xamarinios10/Plugin.Permissions.dll",
+        "lib/xamarinios10/Plugin.Permissions.xml",
+        "plugin.permissions.3.0.0.12.nupkg.sha512",
+        "plugin.permissions.nuspec",
+        "readme.txt"
       ]
     },
     "runtime.debian.8-x64.runtime.native.System.Security.Cryptography.OpenSsl/4.3.2": {
@@ -3471,6 +3565,77 @@
         "system.threading.tasks.nuspec"
       ]
     },
+    "Xam.Plugin.Media/4.0.1.5": {
+      "sha512": "a5l/M2Tl06BqBX/uhM/pr+q1jDkh2tRQr5Ne9rjAuD9VYn5STE+7kVFTzIUNPMnMr9PZLJkWP5WAr/tBN5oepw==",
+      "type": "package",
+      "path": "xam.plugin.media/4.0.1.5",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid71/Plugin.Media.dll",
+        "lib/monoandroid71/Plugin.Media.xml",
+        "lib/netstandard1.0/Plugin.Media.dll",
+        "lib/netstandard1.0/Plugin.Media.xml",
+        "lib/netstandard2.0/Plugin.Media.dll",
+        "lib/netstandard2.0/Plugin.Media.xml",
+        "lib/tizen40/Plugin.Media.dll",
+        "lib/tizen40/Plugin.Media.xml",
+        "lib/uap10.0.10240/Plugin.Media.dll",
+        "lib/uap10.0.10240/Plugin.Media.pri",
+        "lib/uap10.0.10240/Plugin.Media.xml",
+        "lib/xamarinios10/Plugin.Media.dll",
+        "lib/xamarinios10/Plugin.Media.xml",
+        "readme.txt",
+        "xam.plugin.media.4.0.1.5.nupkg.sha512",
+        "xam.plugin.media.nuspec"
+      ]
+    },
+    "Xam.Plugins.Settings/4.1.0-beta": {
+      "sha512": "BpKTyb2kGs8bu0MXThk7GL74df5qToztrDL2jdm6YnkblxVESZEJMbxDqOdVRvfJycujg2cuyqnqjT9DPknU2Q==",
+      "type": "package",
+      "path": "xam.plugins.settings/4.1.0-beta",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/monoandroid44/Plugin.Settings.dll",
+        "lib/monoandroid44/Plugin.Settings.pdb",
+        "lib/monoandroid44/Plugin.Settings.xml",
+        "lib/net45/Plugin.Settings.dll",
+        "lib/net45/Plugin.Settings.pdb",
+        "lib/net45/Plugin.Settings.xml",
+        "lib/netcoreapp2.0/Plugin.Settings.dll",
+        "lib/netcoreapp2.0/Plugin.Settings.pdb",
+        "lib/netcoreapp2.0/Plugin.Settings.xml",
+        "lib/netstandard1.0/Plugin.Settings.dll",
+        "lib/netstandard1.0/Plugin.Settings.pdb",
+        "lib/netstandard1.0/Plugin.Settings.xml",
+        "lib/netstandard2.0/Plugin.Settings.dll",
+        "lib/netstandard2.0/Plugin.Settings.pdb",
+        "lib/netstandard2.0/Plugin.Settings.xml",
+        "lib/tizen40/Plugin.Settings.dll",
+        "lib/tizen40/Plugin.Settings.pdb",
+        "lib/tizen40/Plugin.Settings.xml",
+        "lib/uap10.0.15063/Plugin.Settings.dll",
+        "lib/uap10.0.15063/Plugin.Settings.pdb",
+        "lib/uap10.0.15063/Plugin.Settings.pri",
+        "lib/uap10.0.15063/Plugin.Settings.xml",
+        "lib/xamarinios10/Plugin.Settings.dll",
+        "lib/xamarinios10/Plugin.Settings.pdb",
+        "lib/xamarinios10/Plugin.Settings.xml",
+        "lib/xamarinmac20/Plugin.Settings.dll",
+        "lib/xamarinmac20/Plugin.Settings.pdb",
+        "lib/xamarinmac20/Plugin.Settings.xml",
+        "lib/xamarintvos10/Plugin.Settings.dll",
+        "lib/xamarintvos10/Plugin.Settings.pdb",
+        "lib/xamarintvos10/Plugin.Settings.xml",
+        "lib/xamarinwatchos10/Plugin.Settings.dll",
+        "lib/xamarinwatchos10/Plugin.Settings.pdb",
+        "lib/xamarinwatchos10/Plugin.Settings.xml",
+        "readme.txt",
+        "xam.plugins.settings.4.1.0-beta.nupkg.sha512",
+        "xam.plugins.settings.nuspec"
+      ]
+    },
     "Xamarin.Controls.SignaturePad.Forms/3.0.0": {
       "sha512": "LGw5vKuHsx/pQLD4GNEO/zrQVTFXsXnh6gzKCIMk/bMQTtfwfk6fGKgMeVwcR6/5DpOyVDzZg2B39MVYblAvdA==",
       "type": "package",
@@ -3791,6 +3956,57 @@
         "xamarin.forms.nuspec"
       ]
     },
+    "Xamarin.Plugin.FilePicker/1.2.1": {
+      "sha512": "maW8yud0sPB2FDbl0L6lz4fHHQekLKFDKUn/hO9kkA4OLJU8F1m3y2fZccsJksFfjmknhQR3ro/ocD1cohLR4Q==",
+      "type": "package",
+      "path": "xamarin.plugin.filepicker/1.2.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/MonoAndroid10/Plugin.FilePicker.Abstractions.dll",
+        "lib/MonoAndroid10/Plugin.FilePicker.Abstractions.pdb",
+        "lib/MonoAndroid10/Plugin.FilePicker.Abstractions.xml",
+        "lib/MonoAndroid10/Plugin.FilePicker.dll",
+        "lib/MonoAndroid10/Plugin.FilePicker.pdb",
+        "lib/MonoAndroid10/Plugin.FilePicker.xml",
+        "lib/MonoTouch10/Plugin.FilePicker.Abstractions.dll",
+        "lib/MonoTouch10/Plugin.FilePicker.Abstractions.xml",
+        "lib/MonoTouch10/Plugin.FilePicker.dll",
+        "lib/MonoTouch10/Plugin.FilePicker.xml",
+        "lib/UAP10/Plugin.FilePicker.Abstractions.dll",
+        "lib/UAP10/Plugin.FilePicker.Abstractions.pdb",
+        "lib/UAP10/Plugin.FilePicker.Abstractions.xml",
+        "lib/UAP10/Plugin.FilePicker.dll",
+        "lib/UAP10/Plugin.FilePicker.pdb",
+        "lib/UAP10/Plugin.FilePicker.xml",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.FilePicker.Abstractions.dll",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.FilePicker.Abstractions.pdb",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.FilePicker.Abstractions.xml",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.FilePicker.dll",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.FilePicker.pdb",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.FilePicker.xml",
+        "lib/win8/Plugin.FilePicker.Abstractions.dll",
+        "lib/win8/Plugin.FilePicker.Abstractions.pdb",
+        "lib/win8/Plugin.FilePicker.Abstractions.xml",
+        "lib/win8/Plugin.FilePicker.dll",
+        "lib/win8/Plugin.FilePicker.pdb",
+        "lib/win8/Plugin.FilePicker.xml",
+        "lib/wp8/Plugin.FilePicker.Abstractions.dll",
+        "lib/wp8/Plugin.FilePicker.Abstractions.pdb",
+        "lib/wp8/Plugin.FilePicker.Abstractions.xml",
+        "lib/wp8/Plugin.FilePicker.dll",
+        "lib/wp8/Plugin.FilePicker.pdb",
+        "lib/wp8/Plugin.FilePicker.xml",
+        "lib/wpa81/Plugin.FilePicker.Abstractions.dll",
+        "lib/wpa81/Plugin.FilePicker.Abstractions.pdb",
+        "lib/wpa81/Plugin.FilePicker.Abstractions.xml",
+        "lib/wpa81/Plugin.FilePicker.dll",
+        "lib/wpa81/Plugin.FilePicker.pdb",
+        "lib/wpa81/Plugin.FilePicker.xml",
+        "xamarin.plugin.filepicker.1.2.1.nupkg.sha512",
+        "xamarin.plugin.filepicker.nuspec"
+      ]
+    },
     "XamarinForms.CardView/1.1.1.5": {
       "sha512": "hINUX1T870jmEnXIAkZhG4kenuzbJZNZ76a3wnvAnTipFWIMtS0e7+xyNjAI2SyhgzH/2I9Xt46/RwU1mq4frw==",
       "type": "package",
@@ -3855,15 +4071,19 @@
   },
   "projectFileDependencyGroups": {
     ".NETStandard,Version=v2.0": [
+      "Com.Airbnb.Xamarin.Forms.Lottie >= 1.5.1",
       "Microsoft.AspNet.WebApi.Client >= 5.2.7",
       "Microsoft.Net.Http >= 2.2.29",
       "NETStandard.Library >= 2.0.3",
       "Newtonsoft.Json >= 12.0.3",
       "System.ComponentModel.Annotations >= 4.7.0",
       "System.Net.Http >= 4.3.4",
+      "Xam.Plugin.Media >= 4.0.1.5",
+      "Xam.Plugins.Settings >= 4.1.0-beta",
       "Xamarin.Controls.SignaturePad.Forms >= 3.0.0",
       "Xamarin.Essentials >= 1.3.1",
       "Xamarin.Forms >= 4.3.0.908675",
+      "Xamarin.Plugin.FilePicker >= 1.2.1",
       "XamarinForms.CardView >= 1.1.1.5",
       "ZXing.Net.Mobile.Forms >= 2.2.0"
     ]
@@ -3912,6 +4132,10 @@
     "frameworks": {
       "netstandard2.0": {
         "dependencies": {
+          "Com.Airbnb.Xamarin.Forms.Lottie": {
+            "target": "Package",
+            "version": "[1.5.1, )"
+          },
           "Microsoft.AspNet.WebApi.Client": {
             "target": "Package",
             "version": "[5.2.7, )"
@@ -3938,6 +4162,14 @@
             "target": "Package",
             "version": "[4.3.4, )"
           },
+          "Xam.Plugin.Media": {
+            "target": "Package",
+            "version": "[4.0.1.5, )"
+          },
+          "Xam.Plugins.Settings": {
+            "target": "Package",
+            "version": "[4.1.0-beta, )"
+          },
           "Xamarin.Controls.SignaturePad.Forms": {
             "target": "Package",
             "version": "[3.0.0, )"
@@ -3949,6 +4181,10 @@
           "Xamarin.Forms": {
             "target": "Package",
             "version": "[4.3.0.908675, )"
+          },
+          "Xamarin.Plugin.FilePicker": {
+            "target": "Package",
+            "version": "[1.2.1, )"
           },
           "XamarinForms.CardView": {
             "target": "Package",
@@ -3978,6 +4214,16 @@
       "code": "NU1701",
       "level": "Warning",
       "warningLevel": 1,
+      "message": "Package 'Com.Airbnb.Xamarin.Forms.Lottie 1.5.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Com.Airbnb.Xamarin.Forms.Lottie",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
       "message": "Package 'Microsoft.Bcl 1.1.10' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.Bcl",
       "targetGraphs": [
@@ -3990,6 +4236,16 @@
       "warningLevel": 1,
       "message": "Package 'Microsoft.Net.Http 2.2.29' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
       "libraryId": "Microsoft.Net.Http",
+      "targetGraphs": [
+        ".NETStandard,Version=v2.0"
+      ]
+    },
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Xamarin.Plugin.FilePicker 1.2.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
+      "libraryId": "Xamarin.Plugin.FilePicker",
       "targetGraphs": [
         ".NETStandard,Version=v2.0"
       ]
