@@ -3,6 +3,7 @@ using TechApp2.Model;
 using TechApp2.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using ZXing.Net.Mobile.Forms;
 
 namespace TechApp2.Views
 {
@@ -11,21 +12,41 @@ namespace TechApp2.Views
     {
         public SerialNoSearchView()
         {
-            InitializeComponent();
-           // BindingContext = this;
+            InitializeComponent();           
         }
+        private async void btnSerialBarcodeScan_Clicked(object sender, EventArgs e)
+        {
+            var responseSerialNoScandata = new AssetViewModel();
+            string bacodeData = string.Empty;
+            var scanPage = new ZXingScannerPage();
+            await Navigation.PushAsync(scanPage);
+            scanPage.OnScanResult += (result) =>
+            {
+                scanPage.IsScanning = false;
+                Device.BeginInvokeOnMainThread(async () =>
+                {
+                    await Navigation.PopAsync();
+                    bacodeData = result.Text.ToString();
+                    if (!string.IsNullOrEmpty(bacodeData))
+                    {
+                        responseSerialNoScandata=await SSNLookUpService.SerialNoSearchRequest(bacodeData);
+                        this.BindingContext = responseSerialNoScandata;
+                    }
+                });
+            };
 
-        private async void btnSerialSearch_Clicked(object sender, EventArgs e)
+        }
+        private async void txtSerialNo_SearchButtonPressed(object sender, EventArgs e)
         {
             var responsedata = new AssetViewModel();
             if (string.IsNullOrEmpty(txtSerialNo.Text.ToString()))
             {
                 DisplayAlert("Warning", "Please Enter SerialNo !", "OK");
             }
-            else 
-            { 
-            responsedata = await  SSNLookUpService.SerialNoSearchRequest(txtSerialNo.Text.ToString());
-            this.BindingContext = responsedata;
+            else
+            {
+                responsedata = await SSNLookUpService.SerialNoSearchRequest(txtSerialNo.Text.ToString());
+                this.BindingContext = responsedata;
             }
         }
     }

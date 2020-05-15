@@ -33,12 +33,13 @@ namespace TechApp2
         private static readonly string Base = "https://customers.verser.com.au/";
 
         //production API Endpoint
-        private static readonly string ProdService = "AssetManagementService";
-        
-        private static readonly string DevService = "AssetManagementServiceDev";
+        //private static readonly string Service = "AssetManagementService";
 
-        public static string AMSBaseTechAPPURL = $"{Base}{DevService}/inventorycontrol/TechAPP/";
-        public static string AMSBaseInventoryURL = $"{Base}{DevService}/inventorycontrol/";
+        //Dev API Endpoint
+        private static readonly string Service = "AssetManagementServiceDev";
+
+        public static string AMSBaseTechAPPURL = $"{Base}{Service}/inventorycontrol/TechAPP/";
+        public static string AMSBaseInventoryURL = $"{Base}{Service}/inventorycontrol/";
         #endregion
 
         public static string LastUsedUserId

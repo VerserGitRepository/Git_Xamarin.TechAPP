@@ -10,45 +10,47 @@
         <StackLayout Margin="5">
 
             <StackLayout>
+                <Frame BorderColor="LightGray"
+       CornerRadius="10" Margin="0"
+       HasShadow="True">
+                    <Grid >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="20"/>
+                            <RowDefinition Height="40"/>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
 
-                <Grid BackgroundColor="#05B0E2"  >
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="*"/>
-                        <RowDefinition Height="*"/>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                        <ColumnDefinition Width="*"/>
-                     
-                    </Grid.ColumnDefinitions>
-                    
-                
-            <Label Text="BROWSE ASSETS" HorizontalOptions="Center" FontSize="Medium" Grid.Row="0"  Grid.Column="0" Grid.ColumnSpan="4"  
+                        <Label Text="BROWSE ASSETS" HorizontalOptions="Center" FontSize="Small" Grid.Row="0"  Grid.Column="0" Grid.ColumnSpan="4"  
                    TextColor="Orange"  FontAttributes="Bold"  />
-                    <Picker x:Name="Projects" Title="PROJECTS" Grid.Row="1" Grid.Column="0" HeightRequest="35" 
-                             TitleColor = "white"  FontSize="Small" FontAttributes="Bold" 
+                        <Picker x:Name="Projects" Title="PROJECTS" Grid.Row="1" Grid.Column="0" HeightRequest="35" 
+                             TitleColor = "Black"  FontSize="Small" FontAttributes="Bold" 
                             VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" >
-                        <Picker.ItemsSource />
-                    </Picker>
-                    <Picker x:Name="ItemTypes" Title="ITEMTYPES" Grid.Row="1" Grid.Column="1" HeightRequest="35" 
-                             TitleColor = "white" 
+                            <Picker.ItemsSource />
+                        </Picker>
+                        <Picker x:Name="ItemTypes" Title="ITEMTYPES"  Grid.Row="1" Grid.Column="1" HeightRequest="35" 
+                             TitleColor = "Black" 
                             VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" FontSize="Small">
-                        <Picker.ItemsSource/>
-                    </Picker>
-                    
-                    <Picker x:Name="Status" Title="STATUS" HeightRequest="35" Grid.Row="1" Grid.Column="2"  
-                             TitleColor = "white" 
+                            <Picker.ItemsSource/>
+                        </Picker>
+
+                        <Picker x:Name="Status" Title="STATUS" HeightRequest="35" Grid.Row="1" Grid.Column="2"  
+                             TitleColor = "Black" 
                             VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" FontSize="Small">
-                        <Picker.ItemsSource/>
-                    </Picker>
-                    <Button Text="SEARCH" x:Name="btnSearchAssetList" Clicked="btnSearchAssetList_Clicked" Grid.Row="1" Grid.Column="3"  
-                            HorizontalOptions="CenterAndExpand" FontSize="Small" CornerRadius="15"  HeightRequest="50"
-                            VerticalOptions="CenterAndExpand" BackgroundColor="Orange" TextColor="White" FontAttributes="Bold"/>                 
-                    
-                </Grid>
+                            <Picker.ItemsSource/>
+                        </Picker>
+                        <Button Text="SEARCH" x:Name="btnSearchAssetList" Clicked="btnSearchAssetList_Clicked" Grid.Row="1" Grid.Column="3"  
+                            HorizontalOptions="EndAndExpand" FontSize="Small" CornerRadius="15" 
+                            VerticalOptions="Start" BackgroundColor="Orange" TextColor="White" FontAttributes="Bold"/>
+
+                    </Grid>
+                </Frame>
             </StackLayout>
+         
             <StackLayout>
                 <ListView SeparatorVisibility="None" x:Name="BrowseAsetsList" ItemsSource="{Binding AssetList}" RowHeight="150" HasUnevenRows="True">
                     <ListView.ItemTemplate>
