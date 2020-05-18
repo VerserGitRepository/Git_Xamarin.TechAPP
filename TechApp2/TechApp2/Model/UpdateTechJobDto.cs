@@ -9,12 +9,12 @@ namespace TechApp2.Model
         
         public RatingDto Rating { get; set; }
         public List<RiskAssessmentDto> RiskAssessment { get; set; }
-        public List<JobAssetPhotesDto> JobAssetPhots { get; set; }
+        public List<JobDocumentsDto> JobAssetPhots { get; set; }
         public UpdateTechJobDto()
         {
 
             Rating = new RatingDto();
-            JobAssetPhots = new List<JobAssetPhotesDto>();
+            JobAssetPhots = new List<JobDocumentsDto>();
             RiskAssessment = new List<RiskAssessmentDto>();
         }
         public DateTime DateRaised { get; set; }
