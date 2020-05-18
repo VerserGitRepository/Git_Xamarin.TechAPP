@@ -32,7 +32,7 @@ namespace TechApp2.Views.JobDetailed
 
             foreach (var item in risksampleData)
             {
-                JobDetailsTabbed.updateModel.RiskAssessment.Add(item);
+                JobDetailsTabbed.updateModel.RiskAssess.Add(item);
             }
 
             var masterPage = this.Parent as TabbedPage;

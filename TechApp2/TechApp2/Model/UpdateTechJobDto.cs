@@ -8,14 +8,14 @@ namespace TechApp2.Model
     {
         
         public RatingDto Rating { get; set; }
-        public List<RiskAssessmentDto> RiskAssessment { get; set; }
-        public List<JobDocumentsDto> JobAssetPhots { get; set; }
+        public List<RiskAssessmentDto> RiskAssess { get; set; }
+        public List<JobDocumentsDto> Jobphots { get; set; }
         public UpdateTechJobDto()
         {
 
             Rating = new RatingDto();
-            JobAssetPhots = new List<JobDocumentsDto>();
-            RiskAssessment = new List<RiskAssessmentDto>();
+            Jobphots = new List<JobDocumentsDto>();
+            RiskAssess = new List<RiskAssessmentDto>();
         }
         public DateTime DateRaised { get; set; }
         public string JobNo { get; set; }

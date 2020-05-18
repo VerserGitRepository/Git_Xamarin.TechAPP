@@ -102,7 +102,7 @@ namespace TechApp2.Views.JobDetailed
             //updateModel.JobAssetPhots = item;
 
             
-            JobDetailsTabbed.updateModel.JobAssetPhots = item;
+            JobDetailsTabbed.updateModel.Jobphots = item;
             var masterPage = this.Parent as TabbedPage;
             masterPage.CurrentPage = masterPage.Children[3];
 
