@@ -43,6 +43,7 @@ namespace TechApp2.Views.JobDetailed
             JobDetailsTabbed.updateModel.Rating.WorkQuality = WorkQuality.SelectedItem == null ? 0 : Convert.ToInt32(WorkQuality.SelectedItem);
             JobDetailsTabbed.updateModel.JobNo = JobService.jobDetailsModel.JobNo;
             JobDetailsTabbed.updateModel.Rating.Punctuality = Punctuality.SelectedItem == null ? 0 : Convert.ToInt32(Punctuality.SelectedItem);
+            JobDetailsTabbed.updateModel.UserName = Settings.LastUsedUserId;
             UpdateTechJobDto s = await JobService.UpdateTechJob(JobDetailsTabbed.updateModel);
 
         }

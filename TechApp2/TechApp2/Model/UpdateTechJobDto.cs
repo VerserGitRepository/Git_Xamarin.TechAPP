@@ -24,6 +24,7 @@ namespace TechApp2.Model
         public byte[] CustomerSignatureVector { get; set; }
         public string TechnicianSignatureImage { get; set; }
         public byte[] TechnicianSignatureVector { get; set; }
+        public string UserName { get; set; }
         
     }
 }
