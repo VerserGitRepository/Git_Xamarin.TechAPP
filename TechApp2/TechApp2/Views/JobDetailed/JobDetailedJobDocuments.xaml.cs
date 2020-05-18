@@ -114,6 +114,8 @@ namespace TechApp2.Views.JobDetailed
             byte[] grnbytedata = (e.CurrentSelection.First() as JobDocumentViewModel).FileContent;
             string theFileName = (e.CurrentSelection.First() as JobDocumentViewModel).FileName;
             string filePath = DependencyService.Get<ISave>().Save(grnbytedata,theFileName);
+            string message = "The PDF has been saved to " + filePath;
+            DependencyService.Get<IAlertView>().Show(message);
             LocalPathLabel.Text = filePath;
         }
     }

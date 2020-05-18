@@ -26,6 +26,8 @@ namespace TechApp2.Droid.Helpers
             {
                 root = Android.OS.Environment.ExternalStorageDirectory.AbsolutePath;
             }
+            else
+                root = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
             root = Path.Combine(root, Android.OS.Environment.DirectoryDownloads);
             Java.IO.File file = new Java.IO.File(root, fileName);
             string filePath = file.Path;
