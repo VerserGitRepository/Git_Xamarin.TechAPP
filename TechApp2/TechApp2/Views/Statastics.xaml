@@ -1,13 +1,174 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
             xmlns:local="clr-namespace:TechApp2.Views.StatsPages"
              mc:Ignorable="d"
              x:Class="TechApp2.Views.Statastics">
-    <local:JobStats Title="Jobs"  />
+    <!--<local:JobStats Title="Jobs"  />
     <local:AssetStats Title="Assets" />
-    <local:InvoiceStats Title="Invoices" />    
-   
-</TabbedPage>
+    <local:InvoiceStats Title="Invoices" />-->
+
+
+    <ContentPage.Content>
+        <StackLayout>
+        <StackLayout>
+            <Frame BorderColor="LightGray"
+       CornerRadius="10" Margin="5" IsClippedToBounds="True"
+                             HorizontalOptions="Center"
+       VerticalOptions="Center"
+       Padding="0" HasShadow="True">
+
+                    <Grid BackgroundColor="#EBECF0" Margin="20" RowSpacing="0" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30"  FlexLayout.AlignSelf="Auto"  ></RowDefinition>
+                        <RowDefinition Height="20"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions >
+                        <ColumnDefinition Width="*" ></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+                        <ColumnDefinition Width="*"></ColumnDefinition>
+
+                    </Grid.ColumnDefinitions>
+                    <BoxView Color="#336BFF" Grid.ColumnSpan="4" Margin="0"  />
+                    <Label Text="ASSETS STATS" Grid.ColumnSpan="3" FontSize="Small"                          
+                       Margin="5" TextColor="White"/>
+                    <BoxView Color="#FFB533" Margin="0" Opacity="1" Grid.Row="1" Grid.RowSpan="1" Grid.ColumnSpan="4"/>
+
+                    <Label Text="Received" Grid.Row="1" Grid.Column="0"  TextColor="White" FontAttributes="Bold"
+                       VerticalOptions="CenterAndExpand" />
+                    <Label Text="{Binding AssetsReceivedCount}" Grid.Row="2" Grid.Column="0"  />
+                    <Label Text="Tested" Grid.Row="1" Grid.Column="1"  TextColor="White" 
+                       FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                    <Label Text="{Binding AssetsTestedCount}" Grid.Row="2" Grid.Column="1" />
+
+                    <Label Text="Dispatched" Grid.Row="1" Grid.Column="2"
+                        TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                    <Label Text="{Binding AssetsDispatchedCount}" Grid.Row="2" Grid.Column="2" />
+
+                </Grid>
+            </Frame>
+        </StackLayout>
+        <StackLayout>
+                <Frame BorderColor="LightGray"
+       CornerRadius="10" Margin="5" IsClippedToBounds="True"
+                             HorizontalOptions="Center"
+       VerticalOptions="Center"
+       Padding="0" HasShadow="True">
+
+                    <Grid BackgroundColor="#EBECF0" Margin="20" RowSpacing="0" >
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"  FlexLayout.AlignSelf="Auto"  ></RowDefinition>
+                            <RowDefinition Height="20"></RowDefinition>
+                            <RowDefinition Height="40"></RowDefinition>
+
+
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition Width="*" ></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+
+                        </Grid.ColumnDefinitions>
+                        <BoxView Color="#336BFF" Grid.ColumnSpan="4" Margin="0,0,0,0"  />
+                        <Label Text="JOBS STATS" Grid.ColumnSpan="3" FontSize="Medium" VerticalOptions="CenterAndExpand"
+                       Margin="5" TextColor="White"/>
+                        <BoxView Color="#FFB533" Margin="0,0,0,0" Opacity="1" Grid.Row="1" Grid.RowSpan="1" Grid.ColumnSpan="4"/>
+                        <Label Text="Raised" Grid.Row="1" Grid.Column="0"  TextColor="White" FontAttributes="Bold"
+                       VerticalOptions="StartAndExpand" />
+                        <Label Text="{Binding JobsRaisedCount}" Grid.Row="2" Grid.Column="0"  />
+                        <Label Text="Completed" Grid.Row="1" Grid.Column="1"  TextColor="White" 
+                       FontAttributes="Bold" VerticalOptions="StartAndExpand"/>
+                        <Label Text="{Binding JobsCompletedCount}" Grid.Row="2" Grid.Column="1" />
+
+                        <Label Text="ROI" Grid.Row="1" Grid.Column="2"
+                       TextColor="White" FontAttributes="Bold" VerticalOptions="StartAndExpand"/>
+                        <Label Text="{Binding JObsReadyTOInvoiceCount}" Grid.Row="2" Grid.Column="2" />
+
+                      
+                    </Grid>
+                </Frame>
+            </StackLayout>
+        <StackLayout>
+                <Frame BorderColor="LightGray"
+       CornerRadius="10" Margin="5" IsClippedToBounds="True"
+                             HorizontalOptions="Center"
+       VerticalOptions="Center"
+       Padding="0" HasShadow="True">
+
+                    <Grid BackgroundColor="#EBECF0" Margin="20" RowSpacing="0" >
+
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"  FlexLayout.AlignSelf="Auto"  ></RowDefinition>
+                            <RowDefinition Height="20"></RowDefinition>
+                            <RowDefinition Height="40"></RowDefinition>
+
+
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition Width="*" ></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+
+                        </Grid.ColumnDefinitions>
+                        <BoxView Color="#336BFF" Grid.ColumnSpan="4" Margin="0,0,0,0"  />
+                        <Label Text="INVOICE STATS" Grid.ColumnSpan="3" FontSize="Medium" VerticalOptions="CenterAndExpand"
+                       Margin="5" TextColor="White"/>
+                        <BoxView Color="#FFB533" Margin="0,0,0,0" Opacity="1" Grid.Row="1" Grid.RowSpan="1" Grid.ColumnSpan="4"/>
+                        <Label Text="Invoiced Jobs Count" Grid.Row="1" Grid.Column="0"  TextColor="White" FontAttributes="Bold"
+                       VerticalOptions="StartAndExpand" Grid.ColumnSpan="4" />
+                        <Label Text="{Binding JObsInvoicedCount}" Grid.Row="2" Grid.Column="0"  />
+
+                    
+                    </Grid>
+                </Frame>
+            </StackLayout>
+        <StackLayout>
+                <Frame BorderColor="LightGray"
+       CornerRadius="10" Margin="5" IsClippedToBounds="True"
+                             HorizontalOptions="Center"
+       VerticalOptions="Center"
+       Padding="0" HasShadow="True">
+
+                    <Grid BackgroundColor="#EBECF0" Margin="20" RowSpacing="0" >
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="30"  FlexLayout.AlignSelf="Auto"  ></RowDefinition>
+                            <RowDefinition Height="20"></RowDefinition>
+                            <RowDefinition Height="40"></RowDefinition>
+                        </Grid.RowDefinitions>
+
+                        <Grid.ColumnDefinitions >
+                            <ColumnDefinition Width="*" ></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+                            <ColumnDefinition Width="*"></ColumnDefinition>
+
+                        </Grid.ColumnDefinitions>
+                        <BoxView Color="#336BFF" Grid.ColumnSpan="4" Margin="0"  />
+                        <Label Text="NU Orders" Grid.ColumnSpan="3" FontSize="Small"                          
+                       Margin="5" TextColor="White"/>
+                        <BoxView Color="#FFB533" Margin="0" Opacity="1" Grid.Row="1" Grid.RowSpan="1" Grid.ColumnSpan="4"/>
+
+                        <Label Text="On Orders" Grid.Row="1" Grid.Column="0"  TextColor="White" FontAttributes="Bold"
+                       VerticalOptions="CenterAndExpand" />
+                        <Label Text="{Binding NuOrderOnOrderCount}" Grid.Row="2" Grid.Column="0"  />
+                        <Label Text="FulFilled" Grid.Row="1" Grid.Column="1"  TextColor="White" 
+                       FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                        <Label Text="{Binding NuOrderProcessedCount}" Grid.Row="2" Grid.Column="1" />
+
+                        <Label Text="Pending" Grid.Row="1" Grid.Column="2"
+                        TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                        <Label Text="{Binding NuOrderPendingCount}" Grid.Row="2" Grid.Column="2" />
+
+                    </Grid>
+                </Frame>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+
+</ContentPage>

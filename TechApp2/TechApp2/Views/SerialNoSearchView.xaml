@@ -7,10 +7,25 @@
              x:Class="TechApp2.Views.SerialNoSearchView">
     <ContentPage.Content>
         <StackLayout>
-        <StackLayout Padding="0" Margin="10,10">
-            <Entry Grid.Row="2" Text="" x:Name="txtSerialNo"  Margin="20,10,20,0"  Placeholder="Search Serial No..." PlaceholderColor="#bababa" HorizontalTextAlignment="Center" VerticalTextAlignment="End" TextColor="Black"/>
-            <Button Text="Search" x:Name="btnSerialSearch" Clicked="btnSerialSearch_Clicked" BackgroundColor="Blue" CornerRadius="20" Margin="50,10"  TextColor="White" HeightRequest="40" WidthRequest="50"  VerticalOptions="Center"></Button>
-        </StackLayout>
+            <Frame BorderColor="LightGray"
+       CornerRadius="10" Margin="10" IsClippedToBounds="True"
+                             HorizontalOptions="Center"
+       VerticalOptions="Center"
+       Padding="10" HasShadow="True">
+
+                <StackLayout Padding="0" Margin="0">
+               
+                    <SearchBar x:Name="txtSerialNo" Placeholder="Search Serial No..."
+                           HorizontalTextAlignment="Center" SearchButtonPressed="txtSerialNo_SearchButtonPressed"/>
+
+
+                    <Button Text="SCAN SERIAL BARCODE" x:Name="btnSerialBarcodeScan"  Clicked="btnSerialBarcodeScan_Clicked"
+                            BackgroundColor="Blue" CornerRadius="10" Margin="60,10"  
+                            TextColor="White" HeightRequest="40" WidthRequest="50" 
+                            VerticalOptions="Center"/>
+
+                </StackLayout>
+            </Frame>
             <StackLayout>
                 <Frame BorderColor="LightGray"
        CornerRadius="10" Margin="15" IsClippedToBounds="True"
