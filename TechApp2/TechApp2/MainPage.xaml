@@ -9,8 +9,8 @@
     <ContentPage.Content>
     <StackLayout BackgroundColor="Orange">      
         <Grid>  
-            <StackLayout Padding="0" Margin="30,50,30,150" HorizontalOptions="FillAndExpand"  >                
-                <Frame  BackgroundColor="White" HeightRequest="600" HasShadow="True" Padding="0" Margin="0">
+            <StackLayout Padding="0" Margin="30,70,30,70" HorizontalOptions="FillAndExpand"  >                
+                <Frame  BackgroundColor="White" HeightRequest="480" HasShadow="True" Padding="0" Margin="0" CornerRadius="10" >
                     <StackLayout>
                         <StackLayout Margin="5" >
                             <Image Source="VerserLogo.png"  BackgroundColor="Transparent" HeightRequest="205"

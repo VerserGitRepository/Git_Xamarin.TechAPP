@@ -13,5 +13,8 @@ namespace TechApp2.Model
         public int JobsCompletedCount { get; set; }
         public int JObsReadyTOInvoiceCount { get; set; }
         public int JObsInvoicedCount { get; set; }
+        public int NuOrderOnOrderCount { get; set; }
+        public int NuOrderProcessedCount { get; set; }
+        public int NuOrderPendingCount { get; set; }
     }
 }
