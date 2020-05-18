@@ -6,10 +6,14 @@ namespace TechApp2.Model
 {
    public class JobAssetPhotesDto
     {
-        public DateTime Created { get; set; }
+        public int Id { get; set; }
         public byte[] Image { get; set; }
-        public string FileName { get; set; }
+        public int JobAssetPhoto_JobAsset { get; set; }
+        public string Notes { get; set; }
         public string CreatedBy { get; set; }
-        public string JobAssetPhoto_JobAsset { get; set; }
+        public string ModifiedBy { get; set; }
+        public DateTime? Created { get; set; }
+        public DateTime? Modified { get; set; }
+
     }
 }

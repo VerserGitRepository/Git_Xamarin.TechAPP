@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using TechApp2.Model;
 using TechApp2.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -12,7 +13,7 @@ namespace TechApp2.Views.JobDetailed
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class JobDetailsTabbed : TabbedPage
     {
-        //public updatetechjobdto
+        public static UpdateTechJobDto updateModel = new UpdateTechJobDto();
         public JobDetailsTabbed(string JobNo)
         {
             InitializeComponent();         
@@ -27,5 +28,6 @@ namespace TechApp2.Views.JobDetailed
         {
            // JobDetailedJobParticulars.jobslistObject = results;
         }
+       
     }
 }

@@ -76,7 +76,7 @@
                 HorizontalOptions="CenterAndExpand" />-->
 
                 <Button Text="Pick Document"  Grid.Row="0" Grid.Column="0"
-                    BackgroundColor="DarkGray" WidthRequest="30" HeightRequest="50"
+                    BackgroundColor="Orange" WidthRequest="30" HeightRequest="50"
                     TextColor="White" 
                     Clicked="PickDocument_Clicked"   
                     FontSize="10"
@@ -84,7 +84,7 @@
                     Margin="0,20,10,0"/>
 
                 <Button Text="Take Photo" Grid.Row="0" Grid.Column="2"
-                    BackgroundColor="DarkGray"
+                    BackgroundColor="Orange"
                     TextColor="White" 
                     Clicked="TakePhoto_Clicked"   
                     FontSize="10"
@@ -107,14 +107,13 @@
              
                 <Label x:Name="RemotePathLabel"  Grid.Row="2" Grid.Column="2"        
                    TextColor="Black"   FontSize="Micro"/>
-                        <Button Text="Upload File"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"
+                        <Button Text="Next"  Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3"
                                 VerticalOptions="Center"
                                 HorizontalOptions="Center"
                                 WidthRequest="250"
-                    BackgroundColor="DarkGray"
+                    BackgroundColor="Orange"
                     TextColor="White" 
                     Clicked="UploadFile_Clicked"   
-                    FontSize="10"
                      CornerRadius="10"  
                     Margin="0"/>
                     </Grid>

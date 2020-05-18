@@ -16,6 +16,10 @@ namespace TechApp2.Model
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? JobDate { get; set; }
-        public Byte[] Logo { get; set; }
+        public Byte[] Logo
+        {
+            get;
+            set;
+        }
     }
 }

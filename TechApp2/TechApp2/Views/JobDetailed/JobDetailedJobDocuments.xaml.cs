@@ -16,7 +16,7 @@ namespace TechApp2.Views.JobDetailed
   
     public partial class JobDetailedJobDocuments : ContentPage
     {
-        private UpdateTechJobDto updateModel = new UpdateTechJobDto();
+        //private UpdateTechJobDto updateModel = new UpdateTechJobDto();
         private List<JobAssetPhotesDto> Jobassetphoto = new List<JobAssetPhotesDto>();
         private byte[] imageButeArray;
         public static JobDetailsViewModel jobslistObject = new JobDetailsViewModel();
@@ -97,10 +97,12 @@ namespace TechApp2.Views.JobDetailed
             //directory = Path.Combine(directory, Environment.SystemDirectory);
             //string file = Path.Combine(directory.ToString(), "temp.pdf");
             //System.IO.File.WriteAllBytes(file, grnbytedata);
-           
-            var item = new JobAssetPhotesDto { Image = imageButeArray, JobAssetPhoto_JobAsset = JobService.jobDetailsModel.JobNo, CreatedBy = "TestUser",FileName="NewImage" };
-            updateModel.JobAssetPhots = item;
+            List<JobAssetPhotesDto> item = new List<JobAssetPhotesDto>();
+            item.Add(new JobAssetPhotesDto { Image = imageButeArray, JobAssetPhoto_JobAsset = int.Parse(JobService.jobDetailsModel.JobNo), CreatedBy = "TestUser" });
+            //updateModel.JobAssetPhots = item;
 
+            
+            JobDetailsTabbed.updateModel.JobAssetPhots = item;
             var masterPage = this.Parent as TabbedPage;
             masterPage.CurrentPage = masterPage.Children[3];
 

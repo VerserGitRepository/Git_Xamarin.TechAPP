@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TechApp2.Model;
+using TechApp2.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,7 +14,9 @@ namespace TechApp2.Views.JobDetailed
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class JobDetailedCustomerSign : ContentPage
     {
-        private UpdateTechJobDto updateModel = new UpdateTechJobDto();
+       
+        private RatingDto theRating = new RatingDto();
+        
         public JobDetailedCustomerSign()
         {
             InitializeComponent();
@@ -30,8 +33,17 @@ namespace TechApp2.Views.JobDetailed
             byte[] Techimage = new byte[TechSignJOb.Length];//declare arraysize
             CustomerJObSign.Read(image, 0, image.Length);
             TechSignJOb.Read(Techimage, 0, Techimage.Length);
-            updateModel.CustomerSignatureVector = image;
-            updateModel.TechnicianSignatureVector = Techimage;
+            JobDetailsTabbed.updateModel.CustomerSignatureVector = image;
+            JobDetailsTabbed.updateModel.CustomerSignatureImage = JobService.jobDetailsModel.JobNo+"_Customer_"+DateTime.Now.Ticks+".pdf";
+            JobDetailsTabbed.updateModel.TechnicianSignatureVector = Techimage;
+            JobDetailsTabbed.updateModel.TechnicianSignatureImage = JobService.jobDetailsModel.JobNo + "_Technician_" + DateTime.Now.Ticks + ".pdf";
+            JobDetailsTabbed.updateModel.Rating = theRating;
+            JobDetailsTabbed.updateModel.Rating.PoliteAndCourteous = PoliteAndCourteous.SelectedItem == null ? 0 : Convert.ToInt32(PoliteAndCourteous.SelectedItem);
+            JobDetailsTabbed.updateModel.Rating.ProfessionalService = ProfessionalService.SelectedItem == null ? 0 : Convert.ToInt32(ProfessionalService.SelectedItem);
+            JobDetailsTabbed.updateModel.Rating.WorkQuality = WorkQuality.SelectedItem == null ? 0 : Convert.ToInt32(WorkQuality.SelectedItem);
+            JobDetailsTabbed.updateModel.JobNo = JobService.jobDetailsModel.JobNo;
+            JobDetailsTabbed.updateModel.Rating.Punctuality = Punctuality.SelectedItem == null ? 0 : Convert.ToInt32(Punctuality.SelectedItem);
+            string s = await JobService.UpdateTechJob(JobDetailsTabbed.updateModel);
 
         }
     }
