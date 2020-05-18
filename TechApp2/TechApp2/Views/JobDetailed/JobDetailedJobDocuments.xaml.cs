@@ -17,7 +17,7 @@ namespace TechApp2.Views.JobDetailed
     public partial class JobDetailedJobDocuments : ContentPage
     {
         //private UpdateTechJobDto updateModel = new UpdateTechJobDto();
-        private List<JobAssetPhotesDto> Jobassetphoto = new List<JobAssetPhotesDto>();
+        private List<JobDocumentsDto> Jobassetphoto = new List<JobDocumentsDto>();
         private byte[] imageButeArray;
         public static JobDetailsViewModel jobslistObject = new JobDetailsViewModel();
         private MediaFile _mediaFile;
@@ -97,8 +97,8 @@ namespace TechApp2.Views.JobDetailed
             //directory = Path.Combine(directory, Environment.SystemDirectory);
             //string file = Path.Combine(directory.ToString(), "temp.pdf");
             //System.IO.File.WriteAllBytes(file, grnbytedata);
-            List<JobAssetPhotesDto> item = new List<JobAssetPhotesDto>();
-            item.Add(new JobAssetPhotesDto { Image = imageButeArray, JobAssetPhoto_JobAsset = int.Parse(JobService.jobDetailsModel.JobNo), CreatedBy = "TestUser" });
+            List<JobDocumentsDto> item = new List<JobDocumentsDto>();
+            item.Add(new JobDocumentsDto { FileContent = imageButeArray, JobDocument_Job = int.Parse(JobService.jobDetailsModel.JobNo), CreatedBy = "TestUser",FileName = JobService.jobDetailsModel.JobNo+"_Image_"+DateTime.Now.Ticks+".jpg" });
             //updateModel.JobAssetPhots = item;
 
             
