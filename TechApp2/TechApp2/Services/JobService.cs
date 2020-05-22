@@ -64,11 +64,11 @@ namespace TechApp2.Services
             return jobslistObject;
         }
 
-        public static async Task<UpdateTechJobDto> UpdateTechJob(UpdateTechJobDto theModel)
+        public static async Task<bool> UpdateTechJob(UpdateTechJobDto theModel)
         {
 
             var postdata = JsonConvert.SerializeObject(theModel);
-            UpdateTechJobDto returnmessage = new UpdateTechJobDto();
+            bool returnmessage = new bool();
             HttpContent content = new StringContent(postdata, System.Text.Encoding.UTF8, "application/json");
             string jobDetailsURl = string.Format($"{Settings.AMSBaseTechAPPURL}UpdateTechJobWorkCompleted");
             using (HttpClient client = new HttpClient())
@@ -76,7 +76,7 @@ namespace TechApp2.Services
                 HttpResponseMessage response = await client.PostAsJsonAsync(jobDetailsURl,content);
                 if (response.IsSuccessStatusCode)
                 {
-                    var result = await response.Content.ReadAsAsync<UpdateTechJobDto>().ConfigureAwait(false);
+                    var result = await response.Content.ReadAsAsync<bool>().ConfigureAwait(false);
                     returnmessage = result;
                 }
             }

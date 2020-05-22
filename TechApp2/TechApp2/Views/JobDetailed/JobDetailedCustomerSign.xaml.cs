@@ -26,8 +26,8 @@ namespace TechApp2.Views.JobDetailed
 
         private async void SaveBtn_Clicked(object sender, EventArgs e)
         {
-            Stream CustomerJObSign = await MainSignaturePad.GetImageStreamAsync(SignaturePad.Forms.SignatureImageFormat.Jpeg);
-            Stream TechSignJOb = await TechSign.GetImageStreamAsync(SignaturePad.Forms.SignatureImageFormat.Jpeg);
+            Stream CustomerJObSign = await MainSignaturePad.GetImageStreamAsync(SignaturePad.Forms.SignatureImageFormat.Jpeg, strokeColor: Color.Black, fillColor: Color.White);
+            Stream TechSignJOb = await TechSign.GetImageStreamAsync(SignaturePad.Forms.SignatureImageFormat.Jpeg, strokeColor: Color.Black, fillColor: Color.White);
 
             byte[] image = new byte[CustomerJObSign.Length];
             byte[] Techimage = new byte[TechSignJOb.Length];//declare arraysize
@@ -44,7 +44,24 @@ namespace TechApp2.Views.JobDetailed
             JobDetailsTabbed.updateModel.JobNo = JobService.jobDetailsModel.JobNo;
             JobDetailsTabbed.updateModel.Rating.Punctuality = Punctuality.SelectedItem == null ? 0 : Convert.ToInt32(Punctuality.SelectedItem);
             JobDetailsTabbed.updateModel.UserName = Settings.LastUsedUserId;
-            UpdateTechJobDto s = await JobService.UpdateTechJob(JobDetailsTabbed.updateModel);
+            JobDetailsTabbed.updateModel.ProjectLogo = JobService.jobDetailsModel.ProjectLogo;
+            JobDetailsTabbed.updateModel.WorkInstructions = JobService.jobDetailsModel.WorkInstructions;
+            JobDetailsTabbed.updateModel.AssetsList = JobService.jobDetailsModel.AssetsList;
+
+            JobDetailsTabbed.updateModel.Department = JobService.jobDetailsModel.Department;
+            JobDetailsTabbed.updateModel.Building = JobService.jobDetailsModel.Building;
+            JobDetailsTabbed.updateModel.Floor = JobService.jobDetailsModel.Floor;
+            JobDetailsTabbed.updateModel.ContactPerson = JobService.jobDetailsModel.ContactPerson;
+            JobDetailsTabbed.updateModel.Phone1 = JobService.jobDetailsModel.Phone1;
+            JobDetailsTabbed.updateModel.Phone2 = JobService.jobDetailsModel.Phone2;
+            JobDetailsTabbed.updateModel.Fax = JobService.jobDetailsModel.Fax;
+            JobDetailsTabbed.updateModel.Email = JobService.jobDetailsModel.Email;
+            JobDetailsTabbed.updateModel.SiteName = JobService.jobDetailsModel.SiteName;
+            JobDetailsTabbed.updateModel.SiteAddress = "350 Paramatta Road, Home Bush, Paramatta, NSW";
+
+
+
+            bool s = await JobService.UpdateTechJob(JobDetailsTabbed.updateModel);
 
         }
     }
