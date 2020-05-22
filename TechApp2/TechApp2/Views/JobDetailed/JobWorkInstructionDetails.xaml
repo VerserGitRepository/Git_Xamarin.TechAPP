@@ -10,16 +10,18 @@
 
         <StackLayout>
 
-            <StackLayout>
+            <StackLayout Margin="40">
                 <Button x:Name="BtnBackToJobDetails" Clicked="BtnBackToJobDetails_Clicked"
-                        Text="BACK TO JOB DETAILS" TextColor="White" BackgroundColor="Orange"/>
+                        Text="BACK TO JOB DETAILS" TextColor="White"
+                        BackgroundColor="Orange"  CornerRadius="10" FontAttributes="Bold"
+                        />
             </StackLayout>
             <StackLayout>
                 <Frame BorderColor="LightGray"
-       CornerRadius="10" Margin="15" IsClippedToBounds="True"
+       CornerRadius="10" Margin="10" IsClippedToBounds="True"
                              HorizontalOptions="Center"
        VerticalOptions="Center"
-       Padding="15" HasShadow="True">
+       Padding="10" HasShadow="True">
                     <ScrollView BackgroundColor="LightGray" VerticalOptions="FillAndExpand">
                         <Label x:Name="txtWorkInstruction" Text="{Binding WorkInstructionData}" />
                     </ScrollView>
