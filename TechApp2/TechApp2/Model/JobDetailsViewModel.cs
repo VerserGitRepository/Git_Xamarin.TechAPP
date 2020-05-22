@@ -8,6 +8,7 @@ namespace TechApp2.Model
     {
         public int Id { get; set; }
         public string JobNo { get; set; }
+        public byte[] ProjectLogo { get; set; }
         public List<AssetViewModel> AssetsList { get; set; }
         public List<JobDocumentViewModel> JobDocuments { get; set; }
         public RiskAssessmentViewModel RiskAssessment { get; set; }
@@ -50,6 +51,7 @@ namespace TechApp2.Model
         public string JobStatus { get; set; }
         public string SiteName { get; set; }
         public int? SiteId { get; set; }
+        public string SiteAddress { get; set; }
         public string OpportunityNumber { get; set; }
     }
 }

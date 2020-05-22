@@ -8,8 +8,10 @@ namespace TechApp2.Model
     {
         
         public RatingDto Rating { get; set; }
+        public byte[] ProjectLogo { get; set; }
         public List<RiskAssessmentDto> RiskAssess { get; set; }
         public List<JobDocumentsDto> Jobphots { get; set; }
+        public List<AssetViewModel> AssetsList { get; set; }
         public UpdateTechJobDto()
         {
 
@@ -25,6 +27,19 @@ namespace TechApp2.Model
         public string TechnicianSignatureImage { get; set; }
         public byte[] TechnicianSignatureVector { get; set; }
         public string UserName { get; set; }
-        
+        public string WorkInstructions { get; set; }
+        public string TechnicianName { get; set; }
+        public string CustomerName { get; set; }
+        public string Department { get; set; }
+        public string Building { get; set; }
+        public string Floor { get; set; }
+        public string ContactPerson { get; set; }
+        public string Phone1 { get; set; }
+        public string Phone2 { get; set; }
+        public string Fax { get; set; }
+        public string Email { get; set; }        
+        public string SiteName { get; set; }
+        public string SiteAddress { get; set; }
+
     }
 }

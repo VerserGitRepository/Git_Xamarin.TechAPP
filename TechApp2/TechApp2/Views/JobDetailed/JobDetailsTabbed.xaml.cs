@@ -14,15 +14,16 @@ namespace TechApp2.Views.JobDetailed
     public partial class JobDetailsTabbed : TabbedPage
     {
         public static UpdateTechJobDto updateModel = new UpdateTechJobDto();
-        public JobDetailsTabbed(string JobNo)
+        public JobDetailsTabbed(string JobNo,byte[] logo)
         {
             InitializeComponent();         
-            JobDetailAPICall(JobNo);
+            JobDetailAPICall(JobNo,logo);
         }
-        private async void  JobDetailAPICall(string JobNo)
+        private async void  JobDetailAPICall(string JobNo,byte[] logo)
         {
             var Results = await JobService.JobsDetailsService(JobNo);
-          //  JobDetailedJobParticulars.jobslistObject = Results ;
+            JobService.jobDetailsModel.ProjectLogo = logo;
+            //  JobDetailedJobParticulars.jobslistObject = Results ;
         }
         private void PopulateDetails()
         {

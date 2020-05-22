@@ -42,7 +42,7 @@ namespace TechApp2.Views
             var evnt = e;
             var selectedjob = e.CurrentSelection[0] as JobListViewModel;
             //Application.Current.MainPage = new NavigationPage(new JobDetailsTabbed(selectedjob.JobNo.ToString()));
-            this.Navigation.PushAsync(new JobDetailsTabbed(selectedjob.JobNo.ToString()));
+            this.Navigation.PushAsync(new JobDetailsTabbed(selectedjob.JobNo.ToString(), selectedjob.Logo));
         }
 
     }
