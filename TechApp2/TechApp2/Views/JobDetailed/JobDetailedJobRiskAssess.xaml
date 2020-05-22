@@ -6,8 +6,12 @@
              mc:Ignorable="d"
              x:Class="TechApp2.Views.JobDetailed.JobDetailedJobRiskAssess">
     <ContentPage.Content>
+      
+            
+        <StackLayout>
+        <StackLayout>        
         <Frame BorderColor="LightGray"
-       CornerRadius="10" Margin="10" IsClippedToBounds="True"
+       CornerRadius="10" Margin="5" IsClippedToBounds="True"
                              HorizontalOptions="Center" WidthRequest="400"
        VerticalOptions="Center"
        Padding="15" HasShadow="True">
@@ -76,9 +80,28 @@
                         </x:Array>
                     </Picker.ItemsSource>
                 </Picker>
-                <Button Text="Next" x:Name="btnupdateRiskAssess" Margin="40,5,40,0" CornerRadius="10" BackgroundColor="Orange" TextColor="White" FontAttributes="Bold" Clicked="BtnupdateRiskAssess_Clicked"/>
-
+                <Entry Text="" x:Name="RiskOtherComments" Placeholder="Other Comments" FontSize="Micro"/>
+                
         </StackLayout>
         </Frame>
+            </StackLayout>
+        <StackLayout>
+                <Frame BorderColor="LightGray"
+       CornerRadius="10" Margin="0" IsClippedToBounds="True"
+                             HorizontalOptions="CenterAndExpand" 
+       VerticalOptions="Center"
+       Padding="5" HasShadow="True">
+                    <Editor  Text="" Placeholder="Technician Job Comments Here.." 
+                             x:Name="TechnicianComments" FontSize="Micro"
+                    VerticalOptions="FillAndExpand" Keyboard="Chat" WidthRequest="390" HeightRequest="60" />
+                    
+          </Frame>
+            </StackLayout>
+            <Button Text="Next" x:Name="btnupdateRiskAssess" Margin="30,1,30,0" CornerRadius="15" 
+                    BackgroundColor="Orange" TextColor="White" FontAttributes="Bold"
+                    Clicked="BtnupdateRiskAssess_Clicked" />
+
+        </StackLayout>
+    
     </ContentPage.Content>
 </ContentPage>

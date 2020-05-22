@@ -28,24 +28,24 @@
                         <Label Text="BROWSE ASSETS" HorizontalOptions="Center" FontSize="Small" Grid.Row="0"  Grid.Column="0" Grid.ColumnSpan="4"  
                    TextColor="Orange"  FontAttributes="Bold"  />
                         <Picker x:Name="Projects" Title="PROJECTS" Grid.Row="1" Grid.Column="0" HeightRequest="35" 
-                             TitleColor = "Black"  FontSize="Small" FontAttributes="Bold" 
-                            VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" >
+                             TitleColor ="DarkGray"  FontSize="Small" FontAttributes="Bold" 
+                            VerticalOptions="EndAndExpand" HorizontalOptions="StartAndExpand" >
                             <Picker.ItemsSource />
                         </Picker>
-                        <Picker x:Name="ItemTypes" Title="ITEMTYPES"  Grid.Row="1" Grid.Column="1" HeightRequest="35" 
-                             TitleColor = "Black" 
-                            VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" FontSize="Small">
+                        <Picker x:Name="ItemTypes" Title="STATUS"  Grid.Row="1" Grid.Column="1" HeightRequest="35" 
+                             TitleColor = "DarkGray"   FontAttributes="Bold" 
+                              VerticalOptions="EndAndExpand" HorizontalOptions="StartAndExpand" FontSize="Small">
                             <Picker.ItemsSource/>
                         </Picker>
 
-                        <Picker x:Name="Status" Title="STATUS" HeightRequest="35" Grid.Row="1" Grid.Column="2"  
-                             TitleColor = "Black" 
-                            VerticalOptions="StartAndExpand" HorizontalOptions="StartAndExpand" FontSize="Small">
+                        <Picker x:Name="Status" Title="ITEMTYPES" HeightRequest="35" Grid.Row="1" Grid.Column="2"  
+                             TitleColor = "DarkGray"   FontAttributes="Bold" 
+                             VerticalOptions="EndAndExpand" HorizontalOptions="StartAndExpand" FontSize="Small">
                             <Picker.ItemsSource/>
                         </Picker>
                         <Button Text="SEARCH" x:Name="btnSearchAssetList" Clicked="btnSearchAssetList_Clicked" Grid.Row="1" Grid.Column="3"  
-                            HorizontalOptions="EndAndExpand" FontSize="Small" CornerRadius="15" 
-                            VerticalOptions="Start" BackgroundColor="Orange" TextColor="White" FontAttributes="Bold"/>
+                            HorizontalOptions="StartAndExpand" FontSize="Small" CornerRadius="10"  
+                            VerticalOptions="EndAndExpand" BackgroundColor="Orange" TextColor="White" FontAttributes="Bold"/>
 
                     </Grid>
                 </Frame>

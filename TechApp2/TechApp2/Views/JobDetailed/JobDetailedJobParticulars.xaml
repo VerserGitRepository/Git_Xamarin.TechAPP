@@ -9,22 +9,24 @@
     <ContentPage.Content>
         <StackLayout>
             <Frame BorderColor="DarkGray"
-       CornerRadius="10" Margin="10"
-       HasShadow="True">
-                <Grid BackgroundColor="#EBECF0" Margin="0" RowSpacing="0" >
+       CornerRadius="10" Margin="5"
+       HasShadow="True">           
+                <ScrollView>
+                    <Grid BackgroundColor="#EBECF0" Margin="0" RowSpacing="0" >
 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="30"  FlexLayout.AlignSelf="Auto"  ></RowDefinition>
-                        <RowDefinition Height="20"></RowDefinition>
+                        <RowDefinition Height="15"></RowDefinition>
                         <RowDefinition Height="40"></RowDefinition>
-                        <RowDefinition Height="20"></RowDefinition>
+                        <RowDefinition Height="15"></RowDefinition>
                         <RowDefinition Height="40"></RowDefinition>
-                        <RowDefinition Height="20"></RowDefinition>
-                        <RowDefinition Height="30"></RowDefinition>
-                        <RowDefinition Height="20"></RowDefinition>
-                        <RowDefinition Height="30"></RowDefinition>
-                        <RowDefinition Height="30"></RowDefinition>
-                        <RowDefinition Height="30"></RowDefinition>
+                        <RowDefinition Height="15"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="15"></RowDefinition>
+                        <RowDefinition Height="40"></RowDefinition>
+                        <RowDefinition Height="35"></RowDefinition>
+                            <RowDefinition Height="40"></RowDefinition>
+                            <RowDefinition Height="35"></RowDefinition>
                         <RowDefinition Height="150"></RowDefinition>
                         <RowDefinition Height="5"></RowDefinition>
                     </Grid.RowDefinitions>
@@ -37,53 +39,68 @@
                     <BoxView Color="#336BFF" Grid.ColumnSpan="4" Margin="0,0,0,0"  />
                     <Label Grid.ColumnSpan="4" Margin="0,0,0,0" Text="JOB DETAILS" TextColor="White" FontAttributes="Bold" FontSize="Small" VerticalOptions="Center" HorizontalOptions="CenterAndExpand"/>
                     <BoxView Color="#FFB533" Margin="0,0,0,0" Opacity="1" Grid.Row="1" Grid.RowSpan="1" Grid.ColumnSpan="4"/>
-                    <Label Text="JobNo" Grid.Row="1" Grid.Column="0" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand" />
+                    <Label Text="JobNo" Grid.Row="1" Grid.Column="0" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand" 
+                          FontSize="Micro" />
 
-                    <Label Text="{Binding JobNo}" Grid.Row="2" Grid.Column="0"  />
-                    <Label Text="Date" Grid.Row="1" Grid.Column="1" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
-                    <Label Text="{Binding DateRaised}" Grid.Row="2" Grid.Column="1" />
-                    <Label Text="ClientRef" Grid.Row="1" Grid.Column="2" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
-                    <Label Text="{Binding ClientRef}" Grid.Row="2" Grid.Column="2" />
+                    <Label Text="{Binding JobNo}" Grid.Row="2" Grid.Column="0" Grid.RowSpan="3"  />
+                        <Label Text="Date" Grid.Row="1" Grid.Column="1" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand" FontSize="Micro" />
+                        <Label Text="{Binding DateRaised}" Grid.Row="2" Grid.Column="1"  Grid.RowSpan="2" Grid.ColumnSpan="2"/>
+                   
+                        <!--<Label Text="ClientRef" Grid.Row="1" Grid.Column="2" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                        <Label Text="{Binding ClientRef}" Grid.Row="2" Grid.Column="2" Grid.RowSpan="3" />-->
 
                     <BoxView Color="#FFB533" Margin="0,0,0,0" Opacity="1" Grid.Row="3" Grid.RowSpan="1" Grid.ColumnSpan="4"/>
-                    <Label Text="ClientPO" Grid.Row="3" Grid.Column="0" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
-                    <Label Text="{Binding ClientPO}" Grid.Row="4" Grid.Column="0" />
+                        <Label Text="ClientPO" Grid.Row="3" Grid.Column="0" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand" FontSize="Micro"/>
+                        <Label Text="{Binding ClientPO}" Grid.Row="4" Grid.Column="0" />
 
 
-                    <Label Text="Email" Grid.Row="3" Grid.Column="1" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                        <Label Text="Email" Grid.Row="3" Grid.Column="1" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand" FontSize="Micro"/>
                     <Label Text="{Binding Email}" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" />
 
-                    <!--<Label Text="Comments" Grid.Row="3" Grid.Column="2" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
-                    <Label Text="{Binding OrderComments}" Grid.Row="4" Grid.Column="2" />-->
 
                     <BoxView Color="#FFB533" Margin="0,0,0,0" Opacity="1" Grid.Row="5" Grid.RowSpan="1" Grid.ColumnSpan="4"/>
-                    <Label Text="Status" Grid.Row="5" Grid.Column="0" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
+                        <Label Text="Status" Grid.Row="5" Grid.Column="0" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand" FontSize="Micro"/>
                     <Label Text="{Binding JobStatus}" Grid.Row="6" Grid.Column="0" />
 
-                    <Label Text="Project" Grid.Row="5" Grid.Column="1" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
-                    <Label Text="{Binding Project.ProjectName}" Grid.Row="6" Grid.Column="1" />
+                        <Label Text="Project" Grid.Row="5" Grid.Column="1" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand" FontSize="Micro"/>
+                    <Label Text="{Binding Project.ProjectName}" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="2" />
 
-                    <Label Text="Opportunity" Grid.Row="5" Grid.Column="2" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
-                    <Label Text="{Binding OpportunityNumber}" Grid.Row="6" Grid.Column="2" />
 
                     <BoxView Color="#FFB533" Margin="0,0,0,0" Opacity="1" Grid.Row="7" Grid.RowSpan="1" Grid.ColumnSpan="4"/>
-                    <Label Text="Person" Grid.Row="7" Grid.Column="0" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
-                    <Label Text="{Binding ContactPerson}" Grid.Row="8" Grid.Column="0" />
+                        <Label Text="Phone" Grid.Row="7" Grid.Column="0" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand" FontSize="Micro"/>
+                        <Label Text="{Binding Phone1}" Grid.Row="8" Grid.Column="0" />
 
-                    <Label Text="Phone" Grid.Row="7" Grid.Column="1" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
-                    <Label Text="{Binding Phone1}" Grid.Row="8" Grid.Column="1" />
+                        <Label Text="Person" Grid.Row="7" Grid.Column="1" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand" FontSize="Micro"/>
+                        <Label Text="{Binding ContactPerson}" Grid.Row="8" Grid.Column="1"  Grid.ColumnSpan="2" />
 
-                    <Label Text="Site" Grid.Row="7" Grid.Column="2" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
-                    <Label Text="{Binding SiteName}" Grid.Row="8" Grid.Column="2"  />
 
-                    <BoxView Color="#FFB533" Margin="0,0,0,0" Opacity="1" Grid.Row="9" Grid.RowSpan="1" Grid.ColumnSpan="4" HeightRequest="40"/>
-                    <Label Text="Work Instructions" Grid.Row="9" Grid.Column="0" Grid.ColumnSpan="2" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand"/>
-                    <Label x:Name="LblJobWorkInstruction" Text="{Binding WorkInstructions}" Grid.Row="10" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="3" />
-                    <BoxView Color="#336BFF" Margin="0,0,0,5" Opacity="1" Grid.Row="15" Grid.RowSpan="1" Grid.ColumnSpan="4"/>
-                    <Button x:Name="btninstructionDetails" Text="More..." Grid.Row="9" Grid.Column="3" VerticalOptions="Start"
-                        HorizontalOptions="Start" FontSize="Micro" HeightRequest="40"
+                        <BoxView Color="#FFB533" Margin="0,0,0,0" Opacity="1" Grid.Row="9" Grid.RowSpan="1" Grid.ColumnSpan="4"/>
+                        <Label Text="Opportunity" Grid.Row="9" Grid.Column="0" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand" FontSize="Micro"/>
+                        <Label Text="{Binding OpportunityNumber}" Grid.Row="10" Grid.Column="0"  />
+
+                        <!--<Label Text="Site" Grid.Row="9" Grid.Column="1" TextColor="White" FontAttributes="Bold" 
+                               VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>-->
+
+                        <Button Text="SiteMap" x:Name="SiteMap" Grid.Row="9" Grid.Column="1" TextColor="White" FontAttributes="Bold" 
+                               VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Pressed="SiteMap_Pressed" CornerRadius="30" HeightRequest="30" 
+                                FontSize="Micro" BackgroundColor="Orange"  BorderColor="Silver" BorderWidth="1" />
+                        
+                        <Label Text="{Binding SiteName}" Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="3">
+                                 <!--<Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1" />
+                                </Label.GestureRecognizers>-->
+                        </Label>
+                        
+                        <BoxView Color="#FFB533" Margin="0,0,0,0" Opacity="1" Grid.Row="11" Grid.RowSpan="1" Grid.ColumnSpan="4" HeightRequest="40"/>
+                        <Label Text="Work Instructions" Grid.Row="11" Grid.Column="0" Grid.ColumnSpan="2" TextColor="White" FontAttributes="Bold" VerticalOptions="CenterAndExpand" FontSize="Micro"/>
+                       
+                        <Label x:Name="LblJobWorkInstruction" Text="{Binding WorkInstructions}" Grid.Row="12" Grid.Column="0" Grid.ColumnSpan="4" Grid.RowSpan="3" />
+                        <Button x:Name="btninstructionDetails" Text="More..."  FontSize="Micro" BackgroundColor="Orange"  BorderColor="Silver" BorderWidth="1"
+                                Grid.Row="11" Grid.Column="3" VerticalOptions="CenterAndExpand" TextColor="White"
+                        HorizontalOptions="CenterAndExpand" CornerRadius="30"  HeightRequest="30"
                        Clicked="btninstructionDetails_Clicked" />
                 </Grid>
+                    </ScrollView>
             </Frame>
         </StackLayout>
     </ContentPage.Content>
