@@ -74,7 +74,7 @@ namespace TechApp2.Services
             string jobDetailsURl = string.Format($"{Settings.AMSBaseTechAPPURL}UpdateTechJobWorkCompleted");
             using (HttpClient client = new HttpClient())
             {
-                HttpResponseMessage response = await client.PostAsJsonAsync(jobDetailsURl,content);
+                HttpResponseMessage response = await client.PostAsync(jobDetailsURl,content);
                 if (response.IsSuccessStatusCode)
                 {
                     var result = await response.Content.ReadAsAsync<bool>().ConfigureAwait(false);
