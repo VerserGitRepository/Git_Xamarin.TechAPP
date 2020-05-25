@@ -22,7 +22,6 @@ namespace TechApp2.Views.JobDetailed
         {
             Stream CustomerJObSign = await MainSignaturePad.GetImageStreamAsync(SignaturePad.Forms.SignatureImageFormat.Jpeg, strokeColor: Color.Black, fillColor: Color.White);
             Stream TechSignJOb = await TechSign.GetImageStreamAsync(SignaturePad.Forms.SignatureImageFormat.Jpeg, strokeColor: Color.Black, fillColor: Color.White);
-
             byte[] image = new byte[CustomerJObSign.Length];
             byte[] Techimage = new byte[TechSignJOb.Length];//declare arraysize
             CustomerJObSign.Read(image, 0, image.Length);
@@ -50,10 +49,8 @@ namespace TechApp2.Views.JobDetailed
             JobDetailsTabbed.updateModel.Fax = JobService.jobDetailsModel.Fax;
             JobDetailsTabbed.updateModel.Email = JobService.jobDetailsModel.Email;
             JobDetailsTabbed.updateModel.SiteName = JobService.jobDetailsModel.SiteName;
-            JobDetailsTabbed.updateModel.SiteAddress = "350 Paramatta Rd, HomeBush NSW 2140";
-          
+            JobDetailsTabbed.updateModel.SiteAddress = JobService.jobDetailsModel.SiteAddress;          
             bool s = await JobService.UpdateTechJob(JobDetailsTabbed.updateModel);
-
         }
     }
 }

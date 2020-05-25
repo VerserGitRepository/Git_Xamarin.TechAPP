@@ -84,8 +84,8 @@
                         <Button Text="SiteMap" x:Name="SiteMap" Grid.Row="9" Grid.Column="1" TextColor="White" FontAttributes="Bold" 
                                VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Pressed="SiteMap_Pressed" CornerRadius="30" HeightRequest="30" 
                                 FontSize="Micro" BackgroundColor="Orange"  BorderColor="Silver" BorderWidth="1" />
-                        
-                        <Label Text="{Binding SiteName}" Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="3">
+
+                        <Label Text="{Binding SiteAddress}" Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="3">
                                  <!--<Label.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped" NumberOfTapsRequired="1" />
                                 </Label.GestureRecognizers>-->

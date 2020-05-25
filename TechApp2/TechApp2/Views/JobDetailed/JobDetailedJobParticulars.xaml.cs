@@ -23,9 +23,9 @@ namespace TechApp2.Views.JobDetailed
         public void PopulateJobDetails(object sender,EventArgs e)
         {
             jobslistObject = JobService.jobDetailsModel;
-            if (jobslistObject.SiteName == null)
+            if (jobslistObject.SiteAddress == null)
             {
-                jobslistObject.SiteName = "350 Paramatta Rd Homebush NSW 2140";
+                jobslistObject.SiteAddress = "350 Paramatta Rd Homebush NSW 2140";
             }
             //Console.WriteLine(jobslistObject);
             this.BindingContext = jobslistObject;
