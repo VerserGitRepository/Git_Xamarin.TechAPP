@@ -1,0 +1,166 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
+using PdfSharp.Drawing;
+using PdfSharp.Drawing.Layout;
+using PdfSharp.Pdf;
+using System.IO;
+using System.Reflection;
+using AssetManagement.Services.InventoryControl.DTOs;
+using System.Configuration;
+using System.Web;
+
+namespace AssetManagement.Services.InventoryControl.Helpers
+{
+    public class CAFPDFBuildHelper
+    {
+        public static JobUpdateReturnDto BuildCAF(UpdateTechJobDto CAFJObModel)
+        {
+            var returnmodel = new JobUpdateReturnDto();
+            try
+            {               
+                string CAFDocuments = ConfigurationManager.AppSettings["CAFDocuments"];
+                var document = new PdfDocument();
+                var page = document.AddPage();
+                var gfx = XGraphics.FromPdfPage(page);
+                const XFontStyle BoldItalicUnderline = XFontStyle.Bold | XFontStyle.Underline;
+                var font = new XFont("sans-serif", 10);
+                var fontBold = new XFont("sans-serif", 10, XFontStyle.Bold);
+                var fontBold11 = new XFont("sans-serif", 11, XFontStyle.Bold);
+                var font11 = new XFont("sans-serif", 11);
+                var fontBoldHeading = new XFont("sans-serif", 12, BoldItalicUnderline);
+                var fontBoldHeading13 = new XFont("sans-serif", 13, XFontStyle.Bold);
+                var fontBoldHeadingUL17 = new XFont("sans-serif", 17, BoldItalicUnderline);
+                var fontItalic = new XFont("sans-serif", 10, XFontStyle.Italic);
+                var fontItalicX = new XFont("sans-serif", 13, XFontStyle.Italic);
+                XPen lineRed = new XPen(XColors.Black, 1);
+                var assembly = typeof(CAFPDFBuildHelper).GetType().Assembly;
+                var imageName = Directory.GetCurrentDirectory() + "\\frogs.jpg";
+                XImage image;
+                XImage image1, LogoImage, ProjectImage;
+                var Logofile = Path.Combine(HttpContext.Current.Server.MapPath("~/Images/logo.jpg"));
+                Stream Logo = File.OpenRead(Logofile);
+                LogoImage = XImage.FromStream(Logo);
+                ProjectImage = XImage.FromStream(new MemoryStream(CAFJObModel.ProjectLogo));
+                Stream stream = new MemoryStream(CAFJObModel.CustomerSignatureImage);
+                image = XImage.FromStream(stream);
+                Stream stream1 = new MemoryStream(CAFJObModel.TechnicianSignatureImage);
+                image1 = XImage.FromStream(stream1);
+                gfx.DrawRectangle(new XPen(XColor.FromArgb(0, 0, 0)), 10, 50, 400, 100);
+                gfx.DrawImage(LogoImage, 310, 55, 90, 50);
+                gfx.DrawImage(ProjectImage, 11, 55, 120, 90);
+                gfx.DrawString("WORK ORDER", fontBoldHeadingUL17, new XSolidBrush(XColor.FromArgb(0, 0, 0)), 140, 30);
+                gfx.DrawString("Job No : " + CAFJObModel.JobNo, fontBold, new XSolidBrush(XColor.FromArgb(0, 0, 0)), 140, 60);
+                gfx.DrawString("Project : " + CAFJObModel.Project, fontBold, new XSolidBrush(XColor.FromArgb(0, 0, 0)), 140, 80);
+
+                gfx.DrawString("Job Date : " + DateTime.Now.ToShortDateString(), fontBold, new XSolidBrush(XColor.FromArgb(0, 0, 0)), 140, 100);
+                gfx.DrawString("Run : " + "Test Run Id", fontBold, new XSolidBrush(XColor.FromArgb(0, 0, 0)), 140, 120);
+                gfx.DrawString("Date Booked in For Collection : " + DateTime.Now.ToShortDateString(), fontBold, new XSolidBrush(XColor.FromArgb(0, 0, 0)), 140, 140);
+
+                //  gfx.DrawLine(lineRed, 10, 160, 400, 160);
+
+                XRect Addrrect = new XRect(13, 240, 180, 50);
+                gfx.DrawRectangle(XBrushes.SeaShell, Addrrect);
+                XTextFormatter tfAddr = new XTextFormatter(gfx);
+                gfx.DrawString("SITE DETAILS", fontBoldHeading, new XSolidBrush(XColor.FromArgb(0, 0, 0)), 11, 180);
+                gfx.DrawRectangle(new XPen(XColor.FromArgb(0, 0, 0)), 10, 200, 400, 170);
+                gfx.DrawString("Site Name:  " + CAFJObModel.SiteName, fontBold, new XSolidBrush(XColor.FromArgb(0, 0, 0)), 15, 220);
+                tfAddr.DrawString("Address:    " + CAFJObModel.SiteAddress, fontBold, XBrushes.Black, Addrrect, XStringFormats.TopLeft);
+                gfx.DrawString("Building:   " + CAFJObModel.Building, fontBold, new XSolidBrush(XColor.FromArgb(0, 0, 0)), 15, 300);
+                gfx.DrawString("Floor:  " + CAFJObModel.Floor, fontBold, new XSolidBrush(XColor.FromArgb(0, 0, 0)), 15, 320);
+
+                gfx.DrawString("Department: " + CAFJObModel.Department, fontBold, new XSolidBrush(XColor.FromArgb(0, 0, 0)), 230, 220);
+                gfx.DrawString("Contact: " + CAFJObModel.ContactPerson, fontBold, new XSolidBrush(XColor.FromArgb(0, 0, 0)), 230, 240);
+                gfx.DrawString("Phone1: " + CAFJObModel.Phone1, fontBold, new XSolidBrush(XColor.FromArgb(0, 0, 0)), 230, 260);
+                gfx.DrawString("Phone2: " + CAFJObModel.Phone2, fontBold, new XSolidBrush(XColor.FromArgb(0, 0, 0)), 230, 280);
+                gfx.DrawString("Fax: " + CAFJObModel.Fax, fontBold, new XSolidBrush(XColor.FromArgb(0, 0, 0)), 230, 300);
+                gfx.DrawString("Email: " + CAFJObModel.Email, fontBold, new XSolidBrush(XColor.FromArgb(0, 0, 0)), 230, 320);
+                gfx.DrawString("RISK ASSESSMENT", fontBoldHeading, new XSolidBrush(XColor.FromArgb(0, 0, 0)), 11, 400);
+                gfx.DrawRectangle(new XPen(XColor.FromArgb(0, 0, 0)), 10, 415, 400, 220);
+                int i = 10;
+                foreach (RiskAssessmentDto item in CAFJObModel.RiskAssess)
+                {
+                    gfx.DrawString(item.RiskArea + " - " + item.Rating, font11, new XSolidBrush(XColor.FromArgb(0, 0, 0)), 20, 420 + i);
+                    i = i + 20;
+                }
+                gfx.DrawString("If a risk is considered H or M, ensure that either:", fontBold, new XSolidBrush(XColor.FromArgb(0, 0, 0)), 20, 580);
+                gfx.DrawString("-   The customer controls the risk; and/or", fontItalic, new XSolidBrush(XColor.FromArgb(0, 0, 0)), 40, 595);
+                gfx.DrawString("-   The Company has considered the risk and applied safety controls", fontItalic, new XSolidBrush(XColor.FromArgb(0, 0, 0)), 40, 610);
+                var page1 = document.AddPage();
+                var gfx1 = XGraphics.FromPdfPage(page1);
+
+                gfx1.DrawString("DECLARATION", fontBold11, new XSolidBrush(XColor.FromArgb(0, 0, 0)), 40, 100);
+                gfx1.DrawString("I acknowledge the receipt", font, new XSolidBrush(XColor.FromArgb(0, 0, 0)), 40, 130);
+                gfx1.DrawString("and good condition of the equipment listed below", font, new XSolidBrush(XColor.FromArgb(0, 0, 0)), 40, 140);
+                gfx1.DrawString("Technician " + CAFJObModel.TechnicianName, fontBold, new XSolidBrush(XColor.FromArgb(0, 0, 0)), 40, 160);
+
+
+                gfx1.DrawString("I acknowledge the collection", font, new XSolidBrush(XColor.FromArgb(0, 0, 0)), 300, 130);
+                gfx1.DrawString("of the equipment listed below", font, new XSolidBrush(XColor.FromArgb(0, 0, 0)), 300, 140);
+                gfx1.DrawString("Customer " + CAFJObModel.CustomerName, fontBold, new XSolidBrush(XColor.FromArgb(0, 0, 0)), 300, 160);
+
+
+                gfx1.DrawImage(image, 50, 180, 100, 70);
+                gfx1.DrawImage(image1, 310, 180, 100, 70);
+                var page2 = document.AddPage();
+                var gfx2 = XGraphics.FromPdfPage(page2);
+                gfx2.DrawString("Work Instructions", fontBoldHeading, new XSolidBrush(XColor.FromArgb(0, 0, 0)), 60, 60);
+
+                gfx2.DrawLine(lineRed, 10, 30, 550, 30);
+                var formatter = new XTextFormatter(gfx2);
+                var layoutRectangle = new XRect(10, 80, page.Width, page.Height);
+                formatter.DrawString(CAFJObModel.WorkInstructions, font, XBrushes.Black, layoutRectangle);
+                var page3 = document.AddPage();
+                var gfx3 = XGraphics.FromPdfPage(page3);
+                gfx3.DrawString("Manifest", fontBoldHeadingUL17, new XSolidBrush(XColor.FromArgb(0, 0, 0)), 60, 50);
+                gfx3.DrawImage(LogoImage, 250, 30, 160, 30);
+                int j = 10;
+                gfx3.DrawString("Item Type Name", fontBold, XBrushes.Black, new XRect(40, j, 20, 150), XStringFormats.CenterLeft);
+                gfx3.DrawString("SSN", fontBold, XBrushes.Black, new XRect(150, j, 40, 150), XStringFormats.CenterLeft);
+
+                gfx3.DrawString("SerialNo", fontBold, XBrushes.Black, new XRect(250, j, 60, 150), XStringFormats.CenterLeft);
+
+                //  gfx3.DrawString("Comments", fontBold, XBrushes.Black, new XRect(370, j, 80, 150), XStringFormats.CenterLeft);
+                foreach (var item in CAFJObModel.AssetsList)
+                {
+                    gfx3.DrawString(item.ItemType.ItemTypeName, font, XBrushes.Black, new XRect(40, j, 20, 200), XStringFormats.CenterLeft);
+                    gfx3.DrawString(item.SSN, font, XBrushes.Black, new XRect(150, j, 40, 200), XStringFormats.CenterLeft);
+                    gfx3.DrawString(item.SerialNo, font, XBrushes.Black, new XRect(250, j, 60, 200), XStringFormats.CenterLeft);
+                    //  gfx3.DrawString(item.Load.Comments, font, XBrushes.Black, new XRect(370, j, 80, 200), XStringFormats.CenterLeft);
+                    j = j + 30;
+                }
+                string _filePatth = CAFDocuments + CAFJObModel.Project + "\\CAFs\\";
+                if (!Directory.Exists(_filePatth))
+                {                    
+                     Directory.CreateDirectory(_filePatth);
+                }
+                var fileName = Path.Combine(_filePatth + $"CAF{CAFJObModel.JobNo}.pdf");
+
+                document.Save(fileName);
+
+                System.IO.FileStream fs = new System.IO.FileStream(fileName, System.IO.FileMode.Open, System.IO.FileAccess.Read);
+                System.IO.BinaryReader binaryReader = new System.IO.BinaryReader(fs);
+
+                long byteLength = new System.IO.FileInfo(fileName).Length;
+                returnmodel.RetutnPDFFileContent = binaryReader.ReadBytes((Int32)byteLength);
+                returnmodel.RetutnPDFFileName = $"CAF{CAFJObModel.JobNo}.pdf";
+                fs.Close();
+                fs.Dispose();
+                binaryReader.Close();
+                returnmodel.IsOperationSuccess = true;
+                returnmodel.ReturnMessage = "";
+                return returnmodel;
+            }
+            catch (Exception)
+            {
+                returnmodel.IsOperationSuccess = false;
+                returnmodel.ReturnMessage = "CAF PDF Generate process Failed !";
+                return returnmodel;
+            }
+         
+        }
+    }
+}
