@@ -22,10 +22,10 @@ namespace TechApp2.Model
         public DateTime DateRaised { get; set; }
         public string JobNo { get; set; }
         public int Id { get; set; }
-        public string CustomerSignatureImage { get; set; }
-        public byte[] CustomerSignatureVector { get; set; }
-        public string TechnicianSignatureImage { get; set; }
-        public byte[] TechnicianSignatureVector { get; set; }
+        public string CustomerSignatureVector  { get; set; }
+        public byte[] CustomerSignatureImage { get; set; }
+        public string TechnicianSignatureVector { get; set; }
+        public byte[] TechnicianSignatureImage{ get; set; }
         public string UserName { get; set; }
         public string WorkInstructions { get; set; }
         public string TechnicianName { get; set; }
@@ -40,6 +40,6 @@ namespace TechApp2.Model
         public string Email { get; set; }        
         public string SiteName { get; set; }
         public string SiteAddress { get; set; }
-
+        public string TechnicianComments { get; set; }
     }
 }

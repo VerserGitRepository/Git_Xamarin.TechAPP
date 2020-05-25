@@ -13,17 +13,11 @@ namespace TechApp2.Views.JobDetailed
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class JobDetailedCustomerSign : ContentPage
-    {
-       
-        private RatingDto theRating = new RatingDto();
-        
+    {   private RatingDto theRating = new RatingDto();        
         public JobDetailedCustomerSign()
         {
             InitializeComponent();
         }
-
-       
-
         private async void SaveBtn_Clicked(object sender, EventArgs e)
         {
             Stream CustomerJObSign = await MainSignaturePad.GetImageStreamAsync(SignaturePad.Forms.SignatureImageFormat.Jpeg, strokeColor: Color.Black, fillColor: Color.White);
@@ -33,10 +27,10 @@ namespace TechApp2.Views.JobDetailed
             byte[] Techimage = new byte[TechSignJOb.Length];//declare arraysize
             CustomerJObSign.Read(image, 0, image.Length);
             TechSignJOb.Read(Techimage, 0, Techimage.Length);
-            JobDetailsTabbed.updateModel.CustomerSignatureVector = image;
-            JobDetailsTabbed.updateModel.CustomerSignatureImage = JobService.jobDetailsModel.JobNo+"_Customer_"+DateTime.Now.Ticks+".pdf";
-            JobDetailsTabbed.updateModel.TechnicianSignatureVector = Techimage;
-            JobDetailsTabbed.updateModel.TechnicianSignatureImage = JobService.jobDetailsModel.JobNo + "_Technician_" + DateTime.Now.Ticks + ".pdf";
+            JobDetailsTabbed.updateModel.CustomerSignatureVector = JobService.jobDetailsModel.JobNo + "_Customer_" + DateTime.Now.Ticks + ".pdf";
+            JobDetailsTabbed.updateModel.CustomerSignatureImage = image;
+            JobDetailsTabbed.updateModel.TechnicianSignatureVector = JobService.jobDetailsModel.JobNo + "_Technician_" + DateTime.Now.Ticks + ".pdf";
+            JobDetailsTabbed.updateModel.TechnicianSignatureImage = Techimage;
             JobDetailsTabbed.updateModel.Rating = theRating;
             JobDetailsTabbed.updateModel.Rating.PoliteAndCourteous = PoliteAndCourteous.SelectedItem == null ? 0 : Convert.ToInt32(PoliteAndCourteous.SelectedItem);
             JobDetailsTabbed.updateModel.Rating.ProfessionalService = ProfessionalService.SelectedItem == null ? 0 : Convert.ToInt32(ProfessionalService.SelectedItem);
@@ -47,7 +41,6 @@ namespace TechApp2.Views.JobDetailed
             JobDetailsTabbed.updateModel.ProjectLogo = JobService.jobDetailsModel.ProjectLogo;
             JobDetailsTabbed.updateModel.WorkInstructions = JobService.jobDetailsModel.WorkInstructions;
             JobDetailsTabbed.updateModel.AssetsList = JobService.jobDetailsModel.AssetsList;
-
             JobDetailsTabbed.updateModel.Department = JobService.jobDetailsModel.Department;
             JobDetailsTabbed.updateModel.Building = JobService.jobDetailsModel.Building;
             JobDetailsTabbed.updateModel.Floor = JobService.jobDetailsModel.Floor;
@@ -57,10 +50,8 @@ namespace TechApp2.Views.JobDetailed
             JobDetailsTabbed.updateModel.Fax = JobService.jobDetailsModel.Fax;
             JobDetailsTabbed.updateModel.Email = JobService.jobDetailsModel.Email;
             JobDetailsTabbed.updateModel.SiteName = JobService.jobDetailsModel.SiteName;
-            JobDetailsTabbed.updateModel.SiteAddress = "350 Paramatta Road, Home Bush, Paramatta, NSW";
-
-
-
+            JobDetailsTabbed.updateModel.SiteAddress = "350 Paramatta Rd, HomeBush NSW 2140";
+          
             bool s = await JobService.UpdateTechJob(JobDetailsTabbed.updateModel);
 
         }
