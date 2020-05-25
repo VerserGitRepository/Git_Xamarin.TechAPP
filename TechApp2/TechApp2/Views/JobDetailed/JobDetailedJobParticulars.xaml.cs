@@ -16,9 +16,12 @@ namespace TechApp2.Views.JobDetailed
     {
         public static JobDetailsViewModel jobslistObject = new JobDetailsViewModel();
         //public event EventHandler Appearing;
+
+           
         public JobDetailedJobParticulars()
         {
-            InitializeComponent();            
+            InitializeComponent();
+            jobslistObject.JobMapLogo = "MapLogo.png";
         }
         public void PopulateJobDetails(object sender,EventArgs e)
         {
@@ -27,6 +30,7 @@ namespace TechApp2.Views.JobDetailed
             {
                 jobslistObject.SiteAddress = "350 Paramatta Rd Homebush NSW 2140";
             }
+
             //Console.WriteLine(jobslistObject);
             this.BindingContext = jobslistObject;
         }

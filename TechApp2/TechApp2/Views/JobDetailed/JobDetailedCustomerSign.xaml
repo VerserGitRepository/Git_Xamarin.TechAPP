@@ -9,8 +9,9 @@
     <ContentPage.Content>
         <StackLayout>
             <Frame BorderColor="LightGray"
-       CornerRadius="10" Margin="5" IsClippedToBounds="True"
-                             HorizontalOptions="Center" WidthRequest="400" HeightRequest="500"
+       CornerRadius="10" Margin="3" IsClippedToBounds="True"
+                             HorizontalOptions="Center" WidthRequest="400"
+                   HeightRequest="400"
        VerticalOptions="Center"
        Padding="15" HasShadow="True">
                 <StackLayout>

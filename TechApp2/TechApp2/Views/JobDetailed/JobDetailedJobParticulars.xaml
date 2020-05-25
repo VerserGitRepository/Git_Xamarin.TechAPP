@@ -82,7 +82,9 @@
                                VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"/>-->
 
                         <Button Text="SiteMap" x:Name="SiteMap" Grid.Row="9" Grid.Column="1" TextColor="White" FontAttributes="Bold" 
-                               VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Pressed="SiteMap_Pressed" CornerRadius="30" HeightRequest="30" 
+                               VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" Pressed="SiteMap_Pressed" 
+                                CornerRadius="30" HeightRequest="30" 
+                                ImageSource="{Binding JobMapLogo}"
                                 FontSize="Micro" BackgroundColor="Orange"  BorderColor="Silver" BorderWidth="1" />
 
                         <Label Text="{Binding SiteAddress}" Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="3">

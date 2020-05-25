@@ -75,7 +75,7 @@
                                VerticalOptions="CenterAndExpand"                
                 HorizontalOptions="CenterAndExpand" />-->
 
-                <Button Text="Pick Document"  Grid.Row="0" Grid.Column="0"
+                        <Button Text="Pick Photo"  Grid.Row="0" Grid.Column="0"
                     BackgroundColor="Orange" WidthRequest="30" HeightRequest="50"
                     TextColor="White" 
                     Clicked="PickDocument_Clicked"   
