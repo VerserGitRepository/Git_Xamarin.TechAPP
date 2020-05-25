@@ -2,14 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
 using TechApp2.Model;
 using TechApp2.Models;
 
 namespace TechApp2.Services
 {
-   public static class JobService
+    public static class JobService
     {
         public static string ListOfJobsURl = string.Format($"{Settings.AMSBaseInventoryURL}order/{LoginDetails.UserID}/TechAssignedJobs");
         public static JobDetailsViewModel jobDetailsModel = new JobDetailsViewModel();
@@ -65,11 +64,11 @@ namespace TechApp2.Services
             return jobslistObject;
         }
 
-        public static async Task<bool> UpdateTechJob(UpdateTechJobDto theModel)
+        public static async Task<JobUpdateReturnDto> UpdateTechJob(UpdateTechJobDto theModel)
         {
 
             var postdata = JsonConvert.SerializeObject(theModel);
-            bool returnmessage = new bool();
+            JobUpdateReturnDto returnmessage = new JobUpdateReturnDto();
             HttpContent content = new StringContent(postdata, System.Text.Encoding.UTF8, "application/json");
             string jobDetailsURl = string.Format($"{Settings.AMSBaseTechAPPURL}UpdateTechJobWorkCompleted");
             using (HttpClient client = new HttpClient())
@@ -77,7 +76,7 @@ namespace TechApp2.Services
                 HttpResponseMessage response = await client.PostAsync(jobDetailsURl,content);
                 if (response.IsSuccessStatusCode)
                 {
-                    var result = await response.Content.ReadAsAsync<bool>().ConfigureAwait(false);
+                    var result = await response.Content.ReadAsAsync<JobUpdateReturnDto>().ConfigureAwait(false);
                     returnmessage = result;
                 }
             }

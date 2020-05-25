@@ -41,6 +41,7 @@ namespace TechApp2.Views.JobDetailed
             JobDetailsTabbed.updateModel.WorkInstructions = JobService.jobDetailsModel.WorkInstructions;
             JobDetailsTabbed.updateModel.AssetsList = JobService.jobDetailsModel.AssetsList;
             JobDetailsTabbed.updateModel.Department = JobService.jobDetailsModel.Department;
+            JobDetailsTabbed.updateModel.CustomerName = JobService.jobDetailsModel.ContactPerson;
             JobDetailsTabbed.updateModel.Building = JobService.jobDetailsModel.Building;
             JobDetailsTabbed.updateModel.Floor = JobService.jobDetailsModel.Floor;
             JobDetailsTabbed.updateModel.ContactPerson = JobService.jobDetailsModel.ContactPerson;
@@ -49,8 +50,18 @@ namespace TechApp2.Views.JobDetailed
             JobDetailsTabbed.updateModel.Fax = JobService.jobDetailsModel.Fax;
             JobDetailsTabbed.updateModel.Email = JobService.jobDetailsModel.Email;
             JobDetailsTabbed.updateModel.SiteName = JobService.jobDetailsModel.SiteName;
-            JobDetailsTabbed.updateModel.SiteAddress = JobService.jobDetailsModel.SiteAddress;          
-            bool s = await JobService.UpdateTechJob(JobDetailsTabbed.updateModel);
+            JobDetailsTabbed.updateModel.SiteAddress = JobService.jobDetailsModel.SiteAddress;       
+            
+            var ResturnResults = await JobService.UpdateTechJob(JobDetailsTabbed.updateModel);
+
+            if (ResturnResults != null)
+            {
+                if (ResturnResults.IsOperationSuccess)
+                {
+                    DisplayAlert("Info", "Job Update Operation Completed Successfull", "OK");
+                    Application.Current.MainPage = new NavigationPage(new MasterNavigation());
+                }               
+            }
         }
     }
 }
