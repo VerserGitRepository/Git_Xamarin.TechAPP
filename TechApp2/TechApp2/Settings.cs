@@ -27,16 +27,21 @@ namespace TechApp2
 
         private const string LastUserIdKey = "LastUserId_key";
         private const string LastUserPasswordKey = "LastUserPassword_key";
-        private static readonly string SettingsDefault = string.Empty;      
-        
+        private static readonly string SettingsDefault = string.Empty;
+
+        //Local Copy
+        //private static readonly string Base = " http://localhost:52922";
+        //private static readonly string Service = "/";
+
         //API EndPoint Configurations
         private static readonly string Base = "https://customers.verser.com.au/";
-
+      
         //production API Endpoint
         //private static readonly string Service = "AssetManagementService";
+        private static readonly string Service = "AssetManagementServiceTechAPPBeta";
 
         //Dev API Endpoint
-        private static readonly string Service = "AssetManagementServiceDev";
+       // private static readonly string Service = "AssetManagementServiceDev";
 
         public static string AMSBaseTechAPPURL = $"{Base}{Service}/inventorycontrol/TechAPP/";
         public static string AMSBaseInventoryURL = $"{Base}{Service}/inventorycontrol/";

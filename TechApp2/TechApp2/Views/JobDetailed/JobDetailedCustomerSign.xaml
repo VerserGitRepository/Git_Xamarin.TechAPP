@@ -15,8 +15,8 @@
        VerticalOptions="Center"
        Padding="15" HasShadow="True">
                 <StackLayout>
-                <Label Text="TECHNICIAN JOB RATING" Margin="0" HorizontalOptions="Center" TextColor="Orange" FontAttributes="Bold" />
-                    <Picker x:Name="Punctuality" FontSize="Small" Title="PANCTUALITY" Margin="30,0,30,0" VerticalOptions="CenterAndExpand">
+                <Label Text="TECHNICIAN JOB RATING" Margin="0" HorizontalOptions="Center" TextColor="Orange" FontAttributes="Bold" FontSize="Micro" />
+                    <Picker x:Name="Punctuality" FontSize="Micro" Title="PANCTUALITY" Margin="30,0,30,0" VerticalOptions="CenterAndExpand">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>1</x:String>
@@ -27,7 +27,7 @@
                         </x:Array>
                     </Picker.ItemsSource>
                 </Picker>
-                <Picker x:Name="ProfessionalService" FontSize="Small" Title="PROFESSIONAL SERVICE" Margin="30,0,30,0" VerticalOptions="CenterAndExpand">
+                    <Picker x:Name="ProfessionalService" FontSize="Micro" Title="PROFESSIONAL SERVICE" Margin="30,0,30,0" VerticalOptions="CenterAndExpand">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>1</x:String>
@@ -38,7 +38,7 @@
                         </x:Array>
                     </Picker.ItemsSource>
                 </Picker>
-                    <Picker x:Name="PoliteAndCourteous" FontSize="Small" Title="POLITE AND COURTEOUS" Margin="30,0,30,0" VerticalOptions="CenterAndExpand">
+                    <Picker x:Name="PoliteAndCourteous" FontSize="Micro" Title="POLITE AND COURTEOUS" Margin="30,0,30,0" VerticalOptions="CenterAndExpand">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>1</x:String>
@@ -49,7 +49,7 @@
                         </x:Array>
                     </Picker.ItemsSource>
                 </Picker>
-                    <Picker x:Name="WorkQuality" Title="WORK QUALITY" FontSize="Small" Margin="30,0,30,0" VerticalOptions="CenterAndExpand">
+                    <Picker x:Name="WorkQuality" Title="WORK QUALITY" FontSize="Micro" Margin="30,0,30,0" VerticalOptions="CenterAndExpand">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>1</x:String>

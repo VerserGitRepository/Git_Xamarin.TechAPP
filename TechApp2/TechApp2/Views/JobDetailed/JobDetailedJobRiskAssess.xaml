@@ -12,15 +12,14 @@
         <StackLayout>        
         <Frame BorderColor="LightGray"
        CornerRadius="10" Margin="5" IsClippedToBounds="True"
-                             HorizontalOptions="Center" WidthRequest="400"
+                             HorizontalOptions="Center" WidthRequest="350"
        VerticalOptions="Center"
        Padding="15" HasShadow="True">
             <StackLayout>
-
                 <Label Text="Risk Assessments" Margin="0" HorizontalOptions="CenterAndExpand" 
                        WidthRequest="400" VerticalOptions="CenterAndExpand" TextColor="White" 
                        BackgroundColor="Orange" FontAttributes="Bold" />
-                <Picker x:Name="ManualHandling" Title="Manual Handling">
+                <Picker x:Name="ManualHandling" Title="Manual Handling" FontSize="Micro">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>HIGH</x:String>
@@ -30,7 +29,7 @@
                         </x:Array>
                     </Picker.ItemsSource>
                 </Picker>
-                <Picker x:Name="AkwardItems" Title="Awkward/Irregular Items">
+                        <Picker x:Name="AkwardItems" Title="Awkward/Irregular Items" FontSize="Micro">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>HIGH</x:String>
@@ -40,7 +39,7 @@
                         </x:Array>
                     </Picker.ItemsSource>
                 </Picker>
-                <Picker x:Name="TrafficLoading" Title="Traffic/Parking/Loading">
+                        <Picker x:Name="TrafficLoading" Title="Traffic/Parking/Loading" FontSize="Micro">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>HIGH</x:String>
@@ -50,7 +49,7 @@
                         </x:Array>
                     </Picker.ItemsSource>
                 </Picker>
-                <Picker x:Name="PowerLineDocks" Title="Powerlines/Eaves/Trees/Docks">
+                        <Picker x:Name="PowerLineDocks" Title="Powerlines/Eaves/Trees/Docks" FontSize="Micro">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>HIGH</x:String>
@@ -60,7 +59,7 @@
                         </x:Array>
                     </Picker.ItemsSource>
                 </Picker>
-                <Picker x:Name="SlipTripsFalls" Title="Slips/Trips/Falls" HorizontalOptions="FillAndExpand"  VerticalOptions="CenterAndExpand" >
+                        <Picker x:Name="SlipTripsFalls" Title="Slips/Trips/Falls" HorizontalOptions="FillAndExpand"  VerticalOptions="CenterAndExpand" FontSize="Micro">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>HIGH</x:String>
@@ -70,7 +69,7 @@
                         </x:Array>
                     </Picker.ItemsSource>
                 </Picker>
-                <Picker x:Name="OtherRisk" Title="Other">
+                        <Picker x:Name="OtherRisk" Title="Other" FontSize="Micro">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>HIGH</x:String>
@@ -93,11 +92,11 @@
        Padding="5" HasShadow="True">
                     <Editor  Text="" Placeholder="Technician Job Comments Here.." 
                              x:Name="TechnicianComments" FontSize="Micro"
-                    VerticalOptions="FillAndExpand" Keyboard="Chat" WidthRequest="360" HeightRequest="100" />
+                    VerticalOptions="FillAndExpand" Keyboard="Chat" WidthRequest="370" HeightRequest="100" />
                     
           </Frame>
             </StackLayout>
-            <Button Text="Next" x:Name="btnupdateRiskAssess" Margin="30,15,30,0" CornerRadius="15" 
+            <Button Text="Next" x:Name="btnupdateRiskAssess" Margin="30,10,30,0" CornerRadius="15" 
                     BackgroundColor="Orange" TextColor="White" FontAttributes="Bold"
                     Clicked="BtnupdateRiskAssess_Clicked" />
 

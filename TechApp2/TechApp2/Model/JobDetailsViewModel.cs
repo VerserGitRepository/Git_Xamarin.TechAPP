@@ -53,5 +53,6 @@ namespace TechApp2.Model
         public int? SiteId { get; set; }
         public string SiteAddress { get; set; }
         public string OpportunityNumber { get; set; }
+        public string JobMapLogo { get; set; }
     }
 }
