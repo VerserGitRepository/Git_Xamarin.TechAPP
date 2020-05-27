@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -54,14 +55,49 @@ namespace TechApp2.Views.JobDetailed
             
             var ResturnResults = await JobService.UpdateTechJob(JobDetailsTabbed.updateModel);
 
+            var customWebView = new CustomWebView() { VerticalOptions = LayoutOptions.FillAndExpand };
+
+            var button = new Button { Text = "Open PDF" };
+            var closeButton = new Button { Text = "Close" };
+
+            button.Clicked += (s, es) =>
+            {
+                System.IO.File.WriteAllBytes(System.IO.Path.GetTempPath() + "//" + ResturnResults.RetutnPDFFileName, ResturnResults.RetutnPDFFileContent);
+                string str = System.IO.Path.GetTempPath() + "//" + ResturnResults.RetutnPDFFileName;
+
+                var exists = File.Exists(str);
+                //var document = new PdfDocument();
+                string filename =
+                //document.Save(str);
+                customWebView.Path = str;
+            };
+
+            closeButton.Clicked += (s, es) =>
+            {
+                Application.Current.MainPage = new NavigationPage(new MasterNavigation());
+            };
+
             if (ResturnResults != null)
             {
                 if (ResturnResults.IsOperationSuccess)
                 {
-                    DisplayAlert("Info", "Job Update Operation Completed Successfull", "OK");
-                    Application.Current.MainPage = new NavigationPage(new MasterNavigation());
+                    await DisplayAlert("Info", "Job Update Operation Completed Successfull", "OK");
+                    
                 }               
             }
+            this.Navigation.PushAsync(new ContentPage
+            {
+                Title = "Open PDF",
+                Content = new StackLayout
+                {
+                    VerticalOptions = LayoutOptions.FillAndExpand,
+                    Children = {
+                        button,
+                        closeButton,
+                        customWebView
+                    }
+                }
+            });
         }
     }
 }
