@@ -82,22 +82,23 @@ namespace TechApp2.Views.JobDetailed
                 if (ResturnResults.IsOperationSuccess)
                 {
                     await DisplayAlert("Info", "Job Update Operation Completed Successfull", "OK");
-                    
-                }               
-            }
-            this.Navigation.PushAsync(new ContentPage
-            {
-                Title = "Open PDF",
-                Content = new StackLayout
-                {
-                    VerticalOptions = LayoutOptions.FillAndExpand,
-                    Children = {
+                    this.Navigation.PushAsync(new ContentPage
+                    {
+                        Title = "Open PDF",
+                        Content = new StackLayout
+                        {
+                            VerticalOptions = LayoutOptions.FillAndExpand,
+                            Children = {
                         button,
                         closeButton,
                         customWebView
                     }
-                }
-            });
+                        }
+                    });
+
+                }               
+            }
+            
         }
     }
 }
