@@ -10,7 +10,7 @@ namespace TechApp2.Services
 {
     public static class JobService
     {
-        public static string ListOfJobsURl = string.Format($"{Settings.AMSBaseInventoryURL}order/{LoginDetails.UserID}/TechAssignedJobs");
+        public static string ListOfJobsURl = string.Format($"{Settings.AMSBaseInventoryURL}order/{Settings.LastUsedUserId}/TechAssignedJobs");
         public static JobDetailsViewModel jobDetailsModel = new JobDetailsViewModel();
 
         public static async Task<List<JobListViewModel>> JobsListService()
