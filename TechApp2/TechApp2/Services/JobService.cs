@@ -10,7 +10,7 @@ namespace TechApp2.Services
 {
     public static class JobService
     {
-        public static string ListOfJobsURl = string.Format($"{Settings.AMSBaseInventoryURL}order/{LoginDetails.UserID}/TechAssignedJobs");
+       // public static string ListOfJobsURl = string.Format();
         public static JobDetailsViewModel jobDetailsModel = new JobDetailsViewModel();
 
         public static async Task<List<JobListViewModel>> JobsListService()
@@ -19,7 +19,7 @@ namespace TechApp2.Services
             using ( HttpClient client = new HttpClient() )
             {
                //var response= await client.GetStringAsync(ListOfJobsURl);
-                HttpResponseMessage response = await client.GetAsync(ListOfJobsURl);
+                HttpResponseMessage response = await client.GetAsync($"{Settings.AMSBaseInventoryURL}order/{Settings.LastUsedUserId}/TechAssignedJobs");
                 if (response.IsSuccessStatusCode)
                 {
                     string result = await response.Content.ReadAsStringAsync();
