@@ -1,8 +1,10 @@
-﻿using Plugin.FilePicker;
+﻿using Android.Graphics;
+using Plugin.FilePicker;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using TechApp2.Interfaces;
 using TechApp2.Model;
@@ -89,6 +91,17 @@ namespace TechApp2.Views.JobDetailed
                 _mediaFile.GetStream().Read(imageButeArray, 0, imageButeArray.Length);
                 return _mediaFile.GetStream();
             });
+           // byte[]
+
+            Bitmap originalImage = BitmapFactory.DecodeByteArray(imageButeArray, 0, imageButeArray.Length);
+            Bitmap resizedImage = Bitmap.CreateScaledBitmap(originalImage, 50, 50, false);
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                resizedImage.Compress(Bitmap.CompressFormat.Jpeg, 100, ms);
+                imageButeArray =  ms.ToArray();
+            }
+
         }
 
         private async void UploadFile_Clicked(object sender, EventArgs e)
