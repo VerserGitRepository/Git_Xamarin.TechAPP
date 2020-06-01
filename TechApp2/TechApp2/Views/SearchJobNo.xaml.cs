@@ -47,6 +47,13 @@ namespace TechApp2.Views
         {
             Navigation.PushModalAsync(new JobSearchRiskAssess(jobslistObject));
         }
+        private void btnJobSearchJobDocs_Clicked(object sender, EventArgs e)
+        {
+            if (jobslistObject != null)
+            {
+                Navigation.PushModalAsync(new JobSearchDocs(jobslistObject));
+            }
+        }
 
     }
 }

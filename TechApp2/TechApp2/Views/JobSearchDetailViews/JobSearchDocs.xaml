@@ -7,9 +7,48 @@
              x:Class="TechApp2.Views.JobSearchDetailViews.JobSearchDocs">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Button x:Name="BtnBackToJobDetails" Clicked="BtnBackToJobDetails_Clicked" HeightRequest="35" Margin="0,5,0,0" 
+                        Text="BACK TO JOB DETAILS" TextColor="White" BackgroundColor="Orange"/>
+            <StackLayout>
+                <Frame BorderColor="LightGray"
+       CornerRadius="10" Margin="5" IsClippedToBounds="True"
+         HorizontalOptions="Center"    
+                       VerticalOptions="Center"
+       Padding="10" HasShadow="True">
+                    <CollectionView x:Name="JobDocuments"
+                        ItemsSource="{Binding jobslistObject}"
+                        SelectionMode="Single"
+                        SelectedItem="{Binding selectedJob}"
+                        SelectionChanged="JobDocuments_SelectionChanged"   >
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate>
+                                <Frame BorderColor="LightGray"
+       CornerRadius="10" Margin="5" IsClippedToBounds="True"
+                             HorizontalOptions="Center"
+       VerticalOptions="Center"
+       Padding="1" HasShadow="True">
+                                    <Grid Padding="10">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="Auto" />
+
+                                        </Grid.RowDefinitions>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="Auto" />
+
+                                        </Grid.ColumnDefinitions>
+
+                                        <Label Grid.Row="1"
+                               Grid.Column="1" 
+                               Text="{Binding FileName}"
+                               FontAttributes="Italic" 
+                               VerticalOptions="End" />
+                                    </Grid>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                    </CollectionView>
+                </Frame>
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

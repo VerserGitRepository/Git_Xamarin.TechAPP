@@ -80,7 +80,7 @@
                         HorizontalOptions="Start" FontSize="Micro" HeightRequest="40" Clicked="btnJobAssets_Clicked"  />
                             
                             <Button x:Name="btndocs" Text="DOCS" Grid.Row="9" Grid.Column="1" VerticalOptions="Start"
-                        HorizontalOptions="Start" FontSize="Micro" HeightRequest="40" />
+                        HorizontalOptions="Start" FontSize="Micro" HeightRequest="40" Clicked="btnJobSearchJobDocs_Clicked"/>
                             
                             <Button x:Name="btnJobSearchRiskAssess" Text="RISK" Grid.Row="9" Grid.Column="2" VerticalOptions="Start"
                         HorizontalOptions="Start" FontSize="Micro" HeightRequest="40" Clicked="btnJobSearchRiskAssess_Clicked" />
