@@ -18,9 +18,12 @@ namespace TechApp2.Views.JobDetailed
         public JobDetailedCustomerSign()
         {
             InitializeComponent();
+            this.animationView.IsVisible = false;
         }
         private async void SaveBtn_Clicked(object sender, EventArgs e)
         {
+            this.animationView.IsVisible = true;
+            this.SaveBtn.IsEnabled = false;
             Stream CustomerJObSign = await MainSignaturePad.GetImageStreamAsync(SignaturePad.Forms.SignatureImageFormat.Jpeg, strokeColor: Color.Black, fillColor: Color.White);
             Stream TechSignJOb = await TechSign.GetImageStreamAsync(SignaturePad.Forms.SignatureImageFormat.Jpeg, strokeColor: Color.Black, fillColor: Color.White);
             byte[] image = new byte[CustomerJObSign.Length];

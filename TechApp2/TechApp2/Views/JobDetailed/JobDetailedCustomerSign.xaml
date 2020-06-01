@@ -4,6 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:forms="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms" 
+              xmlns:animationforms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
              mc:Ignorable="d"
              x:Class="TechApp2.Views.JobDetailed.JobDetailedCustomerSign">
     <ContentPage.Content>
@@ -90,8 +91,21 @@
       Text="Save" TextColor="White" FontAttributes="Bold" Margin="40,5,40,0" 
       BackgroundColor="Orange"  HeightRequest="35"
       Clicked="SaveBtn_Clicked"/>
+                    <StackLayout HeightRequest="70">
+                        <animationforms:AnimationView 
+	                    x:Name="animationView" 
+	                    Grid.Row="3"
+	                    Animation="loading.json" 
+	                    Loop="true" 
+	                    AutoPlay="true"		
+	                    VerticalOptions="Fill" 
+	                    HorizontalOptions="FillAndExpand" />
                     </StackLayout>
-                </Frame>
+                </StackLayout>
+               
+                   
+               
+            </Frame>
 </StackLayout>
     </ContentPage.Content>
 </ContentPage>
