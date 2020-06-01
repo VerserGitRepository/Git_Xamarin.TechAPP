@@ -41,29 +41,40 @@ namespace TechApp2.Views.JobDetailed
         private async void PickDocument_Clicked(object sender, EventArgs e)
         {
             //await CrossMedia.Current.Initialize();
-            //if (!CrossMedia.Current.IsPickPhotoSupported)
-            //{
-            //    await DisplayAlert("Warning", "NonSerializedAttribute Pic", "OK");
-            //    return;
+            if (!CrossMedia.Current.IsPickPhotoSupported)
+            {
+                await DisplayAlert("Warning", "NonSerializedAttribute Pic", "OK");
+                return;
 
-            //}
-            //_mediaFile = await CrossMedia.Current.PickPhotoAsync();
+            }
+            _mediaFile = await CrossMedia.Current.PickPhotoAsync();
             //if (_mediaFile == null)
             //    return;
 
-            //LocalPathLabel.Text = _mediaFile.Path;
+            LocalPathLabel.Text = _mediaFile.Path;
 
-            //FileImage.Source = ImageSource.FromStream(() =>
-            //{
-            //    return _mediaFile.GetStream();
-            //});
-
-            var file = await CrossFilePicker.Current.PickFile();
-
-            if (file != null)
+            FileImage.Source = ImageSource.FromStream(() =>
             {
-                LocalPathLabel.Text = file.FileName;
-            }
+                imageButeArray = new byte[_mediaFile.GetStream().Length];
+                _mediaFile.GetStream().Read(imageButeArray, 0, imageButeArray.Length);
+                Bitmap originalImage = BitmapFactory.DecodeByteArray(imageButeArray, 0, imageButeArray.Length);
+                Bitmap resizedImage = Bitmap.CreateScaledBitmap(originalImage, 50, 50, false);
+
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    resizedImage.Compress(Bitmap.CompressFormat.Jpeg, 100, ms);
+                    imageButeArray = ms.ToArray();
+                }
+                return _mediaFile.GetStream();
+            });
+            
+
+            // var file = await CrossFilePicker.Current.PickFile();
+
+            //if (file != null)
+            //{
+            //    imageButeArray = file.DataArray;
+            //}
 
         }
         private async void TakePhoto_Clicked(object sender, EventArgs e)
