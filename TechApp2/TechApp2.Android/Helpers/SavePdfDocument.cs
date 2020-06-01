@@ -22,12 +22,12 @@ namespace TechApp2.Droid.Helpers
         {
             string root = null;
             string fileName = thefileName;
-            if (Android.OS.Environment.IsExternalStorageEmulated)
-            {
-                root = Android.OS.Environment.ExternalStorageDirectory.AbsolutePath;
-            }
-            else
-                root = System.Environment.GetFolderPath(System.Environment.SpecialFolder.MyDocuments);
+            //if (Android.OS.Environment.IsExternalStorageEmulated)
+            //{
+            //    root = Android.OS.Environment.ExternalStorageDirectory.AbsolutePath;
+            //}
+            //else
+                root = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
             root = Path.Combine(root, Android.OS.Environment.DirectoryDownloads);
             Java.IO.File file = new Java.IO.File(root, fileName);
             string filePath = file.Path;
