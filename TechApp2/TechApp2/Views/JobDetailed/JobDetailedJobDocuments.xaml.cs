@@ -100,18 +100,19 @@ namespace TechApp2.Views.JobDetailed
             {
                 imageButeArray = new byte[_mediaFile.GetStream().Length];  //declare arraysize
                 _mediaFile.GetStream().Read(imageButeArray, 0, imageButeArray.Length);
+                Bitmap originalImage = BitmapFactory.DecodeByteArray(imageButeArray, 0, imageButeArray.Length);
+                Bitmap resizedImage = Bitmap.CreateScaledBitmap(originalImage, 50, 50, false);
+
+                using (MemoryStream ms = new MemoryStream())
+                {
+                    resizedImage.Compress(Bitmap.CompressFormat.Jpeg, 100, ms);
+                    imageButeArray = ms.ToArray();
+                }
                 return _mediaFile.GetStream();
             });
            // byte[]
 
-            Bitmap originalImage = BitmapFactory.DecodeByteArray(imageButeArray, 0, imageButeArray.Length);
-            Bitmap resizedImage = Bitmap.CreateScaledBitmap(originalImage, 50, 50, false);
-
-            using (MemoryStream ms = new MemoryStream())
-            {
-                resizedImage.Compress(Bitmap.CompressFormat.Jpeg, 100, ms);
-                imageButeArray =  ms.ToArray();
-            }
+           
 
         }
 
