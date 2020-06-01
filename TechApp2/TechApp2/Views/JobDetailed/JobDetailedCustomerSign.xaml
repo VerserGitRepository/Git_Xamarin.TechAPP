@@ -76,14 +76,14 @@
      <forms:SignaturePadView x:Name="MainSignaturePad" Margin="0"  CaptionText="CUSTOMER SIGNATURE" 
       BackgroundColor="White"  
       StrokeColor="Black"  
-      StrokeWidth="2"  
+      StrokeWidth="1"  
       WidthRequest="100"  
       HeightRequest="100"/>
 
       <forms:SignaturePadView x:Name="TechSign" Margin="0" CaptionText="TECHNICIAN SIGNATURE"
       BackgroundColor="White"  
       StrokeColor="Black"  
-      StrokeWidth="2"  
+      StrokeWidth="1"  
       WidthRequest="120"  
       HeightRequest="90"/>
            
@@ -91,16 +91,16 @@
       Text="Save" TextColor="White" FontAttributes="Bold" Margin="40,5,40,0" 
       BackgroundColor="Orange"  HeightRequest="35"
       Clicked="SaveBtn_Clicked"/>
-                    <StackLayout HeightRequest="70">
-                        <animationforms:AnimationView 
+
+                    <animationforms:AnimationView 
 	                    x:Name="animationView" 
 	                    Grid.Row="3"
 	                    Animation="loading.json" 
 	                    Loop="true" 
 	                    AutoPlay="true"		
 	                    VerticalOptions="Fill" 
-	                    HorizontalOptions="FillAndExpand" />
-                    </StackLayout>
+	                    HorizontalOptions="FillAndExpand" 
+                        HeightRequest="30"/>
                 </StackLayout>
                
                    
