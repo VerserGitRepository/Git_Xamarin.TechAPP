@@ -12,12 +12,14 @@ namespace TechApp2.Model
         public List<RiskAssessmentDto> RiskAssess { get; set; }
         public List<JobDocumentsDto> Jobphots { get; set; }
         public List<AssetViewModel> AssetsList { get; set; }
+        public InsightDeliverablesDto InsightDataChecks { get; set; }
         public UpdateTechJobDto()
         {
 
             Rating = new RatingDto();
             Jobphots = new List<JobDocumentsDto>();
             RiskAssess = new List<RiskAssessmentDto>();
+            InsightDataChecks = new InsightDeliverablesDto();
         }
         public DateTime DateRaised { get; set; }
         public string JobNo { get; set; }

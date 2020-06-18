@@ -18,6 +18,7 @@ namespace TechApp2.Views.JobDetailed
   
     public partial class JobDetailedJobDocuments : ContentPage
     {
+        bool isPageVisited = false;
         //private UpdateTechJobDto updateModel = new UpdateTechJobDto();
         private List<JobDocumentsDto> Jobassetphoto = new List<JobDocumentsDto>();
         private byte[] imageButeArray;
@@ -125,11 +126,18 @@ namespace TechApp2.Views.JobDetailed
             List<JobDocumentsDto> item = new List<JobDocumentsDto>();
             item.Add(new JobDocumentsDto { FileContent = imageButeArray, JobDocument_Job = int.Parse(JobService.jobDetailsModel.JobNo), CreatedBy = "TestUser",FileName = JobService.jobDetailsModel.JobNo+"_Image_"+DateTime.Now.Ticks+".jpg" });
             //updateModel.JobAssetPhots = item;
-
-            
             JobDetailsTabbed.updateModel.Jobphots = item;
-            var masterPage = this.Parent as TabbedPage;
-            masterPage.CurrentPage = masterPage.Children[3];
+            if (JobService.jobDetailsModel.Project.ProjectName.Contains("Insight") && !isPageVisited)
+            {
+                isPageVisited = true;
+                await Navigation.PushModalAsync(new PetBarnINsights());
+
+            }
+            else
+            {
+                var masterPage = this.Parent as TabbedPage;
+                masterPage.CurrentPage = masterPage.Children[3];
+            }
 
         }
 

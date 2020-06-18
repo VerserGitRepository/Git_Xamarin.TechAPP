@@ -1,0 +1,109 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="TechApp2.Views.JobDetailed.PetBarnINsights">
+    <ContentPage.Content>
+      
+            
+        <StackLayout>
+        <StackLayout>        
+        <Frame BorderColor="LightGray"
+       CornerRadius="10" Margin="5" IsClippedToBounds="True"
+                             HorizontalOptions="Center" WidthRequest="350"
+       VerticalOptions="Center"
+       Padding="15" HasShadow="True">
+            <StackLayout>
+                        <Label Text="Deliverables" Margin="0" HorizontalOptions="CenterAndExpand" 
+                       WidthRequest="400" VerticalOptions="CenterAndExpand" TextColor="White" 
+                       BackgroundColor="Orange" FontAttributes="Bold" />
+                        <Picker x:Name="DataMigration" Title="Data Migration for POS1, BOM and/or Server PC" FontSize="Micro">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Yes</x:String>
+                            <x:String>No</x:String>
+                           
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                        <Picker x:Name="UpgradeOS" Title="Upgrade of Operating System for all POS, BOM and/or Server PC from Windows 7 to Windows 10" FontSize="Micro">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Yes</x:String>
+                            <x:String>No</x:String>
+                            
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                        <Picker x:Name="DeliverablesConfig" Title="Deliverables Configuration of EFTPOS, Bloyal, MySQL Database and Windows 10 Operating system." FontSize="Micro">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Yes</x:String>
+                            <x:String>No</x:String>
+                            
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                        <Picker x:Name="Installation" Title="Installation of software for POS, BOM and/or Server PC" FontSize="Micro">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Yes</x:String>
+                            <x:String>No</x:String>
+                            
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                        <Picker x:Name="Testing" Title="Testing of operating system, database and software." HorizontalOptions="FillAndExpand"  VerticalOptions="CenterAndExpand" FontSize="Micro">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Yes</x:String>
+                            <x:String>No</x:String>
+                            
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                        <Picker x:Name="Validation" Title="Validating of files included in Data Migration" FontSize="Micro">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Yes</x:String>
+                            <x:String>No</x:String>
+                           
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                        <Label Text="Store Status" Margin="0" HorizontalOptions="CenterAndExpand" 
+                       WidthRequest="400" VerticalOptions="CenterAndExpand" TextColor="White" 
+                       BackgroundColor="Orange" FontAttributes="Bold" />
+                        <Picker x:Name="StoreComplete" Title="STORE COMPLETE" FontSize="Micro">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Yes</x:String>
+                                    <x:String>No</x:String>
+
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                        <Picker x:Name="RevisitRequired" Title="REVISIT REQUIRED" FontSize="Micro">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Yes</x:String>
+                                    <x:String>No</x:String>
+
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                    </StackLayout>
+        </Frame>
+            </StackLayout>
+       
+            <Button Text="Close" x:Name="btnupdateRiskAssess" Margin="30,10,30,0" CornerRadius="15" 
+                    BackgroundColor="Orange" TextColor="White" FontAttributes="Bold"
+                    Clicked="BtnupdateRiskAssess_Clicked" />
+
+        </StackLayout>
+    
+    </ContentPage.Content>
+</ContentPage>
