@@ -41,34 +41,40 @@ namespace TechApp2.Views.JobDetailed
         }
         private async void PickDocument_Clicked(object sender, EventArgs e)
         {
-            //await CrossMedia.Current.Initialize();
-            if (!CrossMedia.Current.IsPickPhotoSupported)
-            {
-                await DisplayAlert("Warning", "NonSerializedAttribute Pic", "OK");
-                return;
-
-            }
-            _mediaFile = await CrossMedia.Current.PickPhotoAsync();
-            //if (_mediaFile == null)
-            //    return;
-
-            LocalPathLabel.Text = _mediaFile.Path;
-
-            FileImage.Source = ImageSource.FromStream(() =>
-            {
-                imageButeArray = new byte[_mediaFile.GetStream().Length];
-                _mediaFile.GetStream().Read(imageButeArray, 0, imageButeArray.Length);
-                Bitmap originalImage = BitmapFactory.DecodeByteArray(imageButeArray, 0, imageButeArray.Length);
-                Bitmap resizedImage = Bitmap.CreateScaledBitmap(originalImage, 350, 350, false);
-
-                using (MemoryStream ms = new MemoryStream())
+            try
+            {             //await CrossMedia.Current.Initialize();
+                if (!CrossMedia.Current.IsPickPhotoSupported)
                 {
-                    resizedImage.Compress(Bitmap.CompressFormat.Jpeg, 100, ms);
-                    imageButeArray = ms.ToArray();
+                    await DisplayAlert("Warning", "NonSerializedAttribute Pic", "OK");
+                    return;
+
                 }
-                return _mediaFile.GetStream();
-            });
-            
+                _mediaFile = await CrossMedia.Current.PickPhotoAsync();
+                //if (_mediaFile == null)
+                //    return;
+
+                LocalPathLabel.Text = _mediaFile.Path;
+
+                FileImage.Source = ImageSource.FromStream(() =>
+                {
+                    imageButeArray = new byte[_mediaFile.GetStream().Length];
+                    _mediaFile.GetStream().Read(imageButeArray, 0, imageButeArray.Length);
+                    Bitmap originalImage = BitmapFactory.DecodeByteArray(imageButeArray, 0, imageButeArray.Length);
+                    Bitmap resizedImage = Bitmap.CreateScaledBitmap(originalImage, 350, 350, false);
+
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        resizedImage.Compress(Bitmap.CompressFormat.Jpeg, 100, ms);
+                        imageButeArray = ms.ToArray();
+                    }
+                    return _mediaFile.GetStream();
+                });
+            }
+            catch (Exception ex)
+            {
+                DependencyService.Get<IAlertView>().Show(ex.Message);
+                return;
+            }
 
             // var file = await CrossFilePicker.Current.PickFile();
 
@@ -143,13 +149,21 @@ namespace TechApp2.Views.JobDetailed
 
         private async void JobDocuments_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            
-            byte[] grnbytedata = (e.CurrentSelection.First() as JobDocumentViewModel).FileContent;
-            string theFileName = (e.CurrentSelection.First() as JobDocumentViewModel).FileName;
-            string filePath = await DependencyService.Get<ISave>().Save(grnbytedata,theFileName);
-            string message = "The PDF has been saved to " + filePath;
-            DependencyService.Get<IAlertView>().Show(message);
-            LocalPathLabel.Text = filePath;
+            try
+            {
+
+                byte[] grnbytedata = (e.CurrentSelection.First() as JobDocumentViewModel).FileContent;
+                string theFileName = (e.CurrentSelection.First() as JobDocumentViewModel).FileName;
+                string filePath = await DependencyService.Get<ISave>().Save(grnbytedata, theFileName);
+                string message = "The PDF has been saved to " + filePath;
+                DependencyService.Get<IAlertView>().Show(message);
+                LocalPathLabel.Text = filePath;
+            }
+            catch(Exception ex)
+            {
+                DependencyService.Get<IAlertView>().Show(ex.Message);
+                return;
+            }
         }
     }
 }
