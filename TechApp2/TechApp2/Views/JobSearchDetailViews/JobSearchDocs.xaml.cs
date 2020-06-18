@@ -30,13 +30,19 @@ namespace TechApp2.Views.JobSearchDetailViews
         }
         private async void JobDocuments_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-
-            byte[] grnbytedata = (e.CurrentSelection.First() as JobDocumentViewModel).FileContent;
-            string theFileName = (e.CurrentSelection.First() as JobDocumentViewModel).FileName;
-            string filePath = await DependencyService.Get<ISave>().Save(grnbytedata, theFileName);
-            string message = "The PDF has been saved to " + filePath;
-            DependencyService.Get<IAlertView>().Show(message);
-           // LocalPathLabel.Text = filePath;
+            try
+            {
+                byte[] grnbytedata = (e.CurrentSelection.First() as JobDocumentViewModel).FileContent;
+                string theFileName = (e.CurrentSelection.First() as JobDocumentViewModel).FileName;
+                string filePath = await DependencyService.Get<ISave>().Save(grnbytedata, theFileName);
+                string message = "The PDF has been saved to " + filePath;
+                DependencyService.Get<IAlertView>().Show(message);
+            }
+            catch (Exception ex)
+            {
+                DependencyService.Get<IAlertView>().Show(ex.Message);
+                return;
+            }
         }
     }
 }

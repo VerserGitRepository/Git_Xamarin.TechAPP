@@ -10,8 +10,8 @@
     <local:JobDetailedJobParticulars Title="Detail" FlexLayout.AlignSelf="Auto" />
     <local:JobDetailedAssets Title="Asset" />
     <!--<local:JobDetailedJobPhotos Title="Photo"/>-->
-    <local:JobDetailedJobDocuments Title="Docs"/>
     <local:JobDetailedJobRiskAssess Title="Risk"/>
+    <local:JobDetailedJobDocuments Title="Docs"/>
     <local:JobDetailedCustomerSign Title="Sign"/>
 
         

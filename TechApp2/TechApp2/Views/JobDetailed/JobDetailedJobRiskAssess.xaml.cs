@@ -38,7 +38,7 @@ namespace TechApp2.Views.JobDetailed
             JobDetailsTabbed.updateModel.TechnicianComments = TechnicianComments.Text;
             JobDetailsTabbed.updateModel.RiskOtherComments = RiskOtherComments.Text;
             var masterPage = this.Parent as TabbedPage;
-            masterPage.CurrentPage = masterPage.Children[4];            
+            masterPage.CurrentPage = masterPage.Children[3];            
         }
     }
 }

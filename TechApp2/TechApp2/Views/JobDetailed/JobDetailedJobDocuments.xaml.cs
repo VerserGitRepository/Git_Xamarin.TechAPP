@@ -142,7 +142,7 @@ namespace TechApp2.Views.JobDetailed
             else
             {
                 var masterPage = this.Parent as TabbedPage;
-                masterPage.CurrentPage = masterPage.Children[3];
+                masterPage.CurrentPage = masterPage.Children[4];
             }
 
         }
