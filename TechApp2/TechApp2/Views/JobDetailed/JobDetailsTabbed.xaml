@@ -5,7 +5,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
             xmlns:local="clr-namespace:TechApp2.Views.JobDetailed"
              mc:Ignorable="d"
-             x:Class="TechApp2.Views.JobDetailed.JobDetailsTabbed">
+             x:Class="TechApp2.Views.JobDetailed.JobDetailsTabbed"
+            xmlns:animationforms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms">
 
     <local:JobDetailedJobParticulars Title="Detail" FlexLayout.AlignSelf="Auto" />
     <local:JobDetailedAssets Title="Asset" />
@@ -14,8 +15,17 @@
     <local:JobDetailedJobDocuments Title="Docs"/>
     <local:JobDetailedCustomerSign Title="Sign"/>
 
-        
-
+    <StackLayout>
+        <animationforms:AnimationView 
+	                    x:Name="animationView" 
+	                    Grid.Row="3"
+	                    Animation="loading.json" 
+	                    Loop="true" 
+	                    AutoPlay="true"		
+	                    VerticalOptions="Fill" 
+	                    HorizontalOptions="FillAndExpand" 
+                        HeightRequest="30"/>
+    </StackLayout>
 </TabbedPage>
 
 <!--<Button Text="BACK TO Menu" x:Name="btnBackToMenu" BackgroundColor="Blue" Clicked="btnBackToMenu_Clicked"   TextColor="White" HeightRequest="50" VerticalOptions="Center"/>-->

@@ -16,6 +16,7 @@ namespace TechApp2.Views.JobDetailed
         public static UpdateTechJobDto updateModel = new UpdateTechJobDto();
         public JobDetailsTabbed(string JobNo,byte[] logo)
         {
+            Navigation.PushModalAsync(new PopupPage());
             InitializeComponent();         
             JobDetailAPICall(JobNo,logo);
         }
@@ -23,6 +24,7 @@ namespace TechApp2.Views.JobDetailed
         {
             var Results = await JobService.JobsDetailsService(JobNo);
             JobService.jobDetailsModel.ProjectLogo = logo;
+           await Navigation.PopModalAsync();
             //  JobDetailedJobParticulars.jobslistObject = Results ;
         }
         private void PopulateDetails()
