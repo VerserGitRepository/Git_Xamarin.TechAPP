@@ -70,7 +70,7 @@ namespace TechApp2.Views.JobDetailed
 
             var assembly = IntrospectionExtensions.GetTypeInfo(typeof(JobDetailedCustomerSign)).Assembly;
             //var name = System.IO.Path.GetFileName(path);
-            //Stream stream = assembly.GetManifestResourceStream("TechApp2.insght.json");
+            Stream stream = assembly.GetManifestResourceStream("TechApp2.insght.json");
             Stream Logostream = assembly.GetManifestResourceStream("TechApp2.images.VerserLogo.png");
             string text = "";
             //using (var reader = new System.IO.StreamReader(stream))
@@ -160,8 +160,8 @@ namespace TechApp2.Views.JobDetailed
                             DependencyService.Get<IAlertView>().Show("Email Id Cannot be blank.");
                             return;
                         }
-                        DependencyService.Get<IAlertView>().Show("Email Id Cannot be blank.");
-                        return;
+                        //DependencyService.Get<IAlertView>().Show("Email Id Cannot be blank.");
+                        //return;
                     }
                     MailMessage mail = new MailMessage();
                     SmtpClient SmtpServer = new SmtpClient("smtp-mail.outlook.com");
