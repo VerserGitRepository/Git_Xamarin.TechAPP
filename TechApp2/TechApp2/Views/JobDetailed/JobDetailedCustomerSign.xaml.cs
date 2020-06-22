@@ -9,6 +9,9 @@ using TechApp2.Model;
 using TechApp2.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using PdfSharp;
+using PdfSharp.Pdf;
+using PdfSharp.Pdf.IO;
 
 namespace TechApp2.Views.JobDetailed
 {
@@ -62,17 +65,31 @@ namespace TechApp2.Views.JobDetailed
 
             var button = new Button { Text = "Open PDF" };
             var closeButton = new Button { Text = "Close" };
+            PdfDocument outputDocument = new PdfDocument();
+
+            // Iterate files
+            foreach (JobUpdateReturnDto dto in ResturnResults)
+            {
+                // Open the document to import pages from it.
+                PdfDocument inputDocument = PdfReader.Open(new MemoryStream(dto.RetutnPDFFileContent), PdfDocumentOpenMode.Import);
+
+                // Iterate pages
+                int count = inputDocument.PageCount;
+                for (int idx = 0; idx < count; idx++)
+                {
+                    // Get the page from the external document...
+                    PdfPage page = inputDocument.Pages[idx];
+                    // ...and add it to the output document.
+                    outputDocument.AddPage(page);
+                }
+            }
 
             button.Clicked += (s, es) =>
             {
-                System.IO.File.WriteAllBytes(System.IO.Path.GetTempPath() + "//" + ResturnResults.RetutnPDFFileName, ResturnResults.RetutnPDFFileContent);
-                string str = System.IO.Path.GetTempPath() + "//" + ResturnResults.RetutnPDFFileName;
-
-                var exists = File.Exists(str);
-                //var document = new PdfDocument();
+                string filename1 = System.IO.Path.GetTempPath() + "//" + DateTime.Now.Ticks + ".pdf";
+                outputDocument.Save(filename1);
                 string filename =
-                //document.Save(str);
-                customWebView.Path = str;
+                customWebView.Path = filename1;
             };
 
             closeButton.Clicked += (s, es) =>
@@ -82,7 +99,7 @@ namespace TechApp2.Views.JobDetailed
 
             if (ResturnResults != null)
             {
-                if (ResturnResults.IsOperationSuccess)
+                if (ResturnResults[0].IsOperationSuccess)
                 {
                     await DisplayAlert("Info", "Job Update Operation Completed Successfull", "OK");
                     this.Navigation.PushAsync(new ContentPage
