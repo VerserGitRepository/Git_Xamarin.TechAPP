@@ -173,8 +173,6 @@ namespace TechApp2.Views.JobDetailed
                    // MemoryStream ms = new MemoryStream(JobService.jobDetailsModel.ProjectLogo);
                     LinkedResource r = new LinkedResource(Logostream);
                     r.ContentId = "myImage";
-                    var base64 = Convert.ToBase64String(JobService.jobDetailsModel.ProjectLogo);
-                    var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
                     mail.Subject = JobService.jobDetailsModel.JobNo + "- CAF";
                     mail.Body = "This is an automated email.Please do not reply to this. \r\nFor any further queries, please call us on 1200800900.\r\n\r\n\r\nRegards";
                    
