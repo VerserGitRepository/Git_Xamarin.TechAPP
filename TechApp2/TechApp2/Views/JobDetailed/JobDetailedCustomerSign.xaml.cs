@@ -152,7 +152,7 @@ namespace TechApp2.Views.JobDetailed
                     var file = filename1;                  
 
                     string result = await DisplayPromptAsync("Email", "Please enter the eMail Address of the recipient. For multiple emails, use ','",placeholder: $"{JobService.jobDetailsModel.Email}");
-                    if (result.Trim() == string.Empty)
+                    if (result != null && result.Trim() == string.Empty)
                     {
                         result = JobService.jobDetailsModel.Email;
                         if (result == string.Empty)
