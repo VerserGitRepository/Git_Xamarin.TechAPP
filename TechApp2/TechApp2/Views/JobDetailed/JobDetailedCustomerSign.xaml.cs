@@ -61,18 +61,18 @@ namespace TechApp2.Views.JobDetailed
             JobDetailsTabbed.updateModel.SiteName = JobService.jobDetailsModel.SiteName;
             JobDetailsTabbed.updateModel.SiteAddress = JobService.jobDetailsModel.SiteAddress;
 
-            //var ResturnResults = await JobService.UpdateTechJob(JobDetailsTabbed.updateModel);
+            var ResturnResults = await JobService.UpdateTechJob(JobDetailsTabbed.updateModel);
 
-            var assembly = IntrospectionExtensions.GetTypeInfo(typeof(JobDetailedCustomerSign)).Assembly;
-            //var name = System.IO.Path.GetFileName(path);
-            Stream stream = assembly.GetManifestResourceStream("TechApp2.insght.json");
-            string text = "";
-            using (var reader = new System.IO.StreamReader(stream))
-            {
-                text = reader.ReadToEnd();
-            }
+            //var assembly = IntrospectionExtensions.GetTypeInfo(typeof(JobDetailedCustomerSign)).Assembly;
+            ////var name = System.IO.Path.GetFileName(path);
+            //Stream stream = assembly.GetManifestResourceStream("TechApp2.insght.json");
+            //string text = "";
+            //using (var reader = new System.IO.StreamReader(stream))
+            //{
+            //    text = reader.ReadToEnd();
+            //}
 
-            var ResturnResults = JsonConvert.DeserializeObject<JobUpdateReturnDto[]>(text);
+            //var ResturnResults = JsonConvert.DeserializeObject<JobUpdateReturnDto[]>(text);
 
             var customWebView = new CustomWebView() { VerticalOptions = LayoutOptions.FillAndExpand };
             string filename1 = "";
