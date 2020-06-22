@@ -12,6 +12,8 @@ using Xamarin.Forms.Xaml;
 using PdfSharp;
 using PdfSharp.Pdf;
 using PdfSharp.Pdf.IO;
+using Xamarin.Essentials;
+using System.Reflection;
 
 namespace TechApp2.Views.JobDetailed
 {
@@ -57,14 +59,43 @@ namespace TechApp2.Views.JobDetailed
             JobDetailsTabbed.updateModel.Fax = JobService.jobDetailsModel.Fax;
             JobDetailsTabbed.updateModel.Email = JobService.jobDetailsModel.Email;
             JobDetailsTabbed.updateModel.SiteName = JobService.jobDetailsModel.SiteName;
-            JobDetailsTabbed.updateModel.SiteAddress = JobService.jobDetailsModel.SiteAddress;       
-            
-            var ResturnResults = await JobService.UpdateTechJob(JobDetailsTabbed.updateModel);
+            JobDetailsTabbed.updateModel.SiteAddress = JobService.jobDetailsModel.SiteAddress;
+
+            //var ResturnResults = await JobService.UpdateTechJob(JobDetailsTabbed.updateModel);
+
+            var assembly = IntrospectionExtensions.GetTypeInfo(typeof(JobDetailedCustomerSign)).Assembly;
+            //var name = System.IO.Path.GetFileName(path);
+            Stream stream = assembly.GetManifestResourceStream("TechApp2.insght.json");
+            string text = "";
+            using (var reader = new System.IO.StreamReader(stream))
+            {
+                text = reader.ReadToEnd();
+            }
+
+            var ResturnResults = JsonConvert.DeserializeObject<JobUpdateReturnDto[]>(text);
 
             var customWebView = new CustomWebView() { VerticalOptions = LayoutOptions.FillAndExpand };
+            string filename1 = "";
 
-            var button = new Button { Text = "Open PDF" };
-            var closeButton = new Button { Text = "Close" };
+              //< Button Text = "Pick Photo"  Grid.Row = "0" Grid.Column = "0"
+              //      BackgroundColor = "Orange" WidthRequest = "30" HeightRequest = "50"
+              //      TextColor = "White"
+              //      Clicked = "PickDocument_Clicked"
+              //      FontSize = "10"
+              //       CornerRadius = "10"
+              //      Margin = "0,20,10,0" />
+
+                //< Button Text = "Take Photo" Grid.Row = "0" Grid.Column = "2"
+                //    BackgroundColor = "Orange"
+                //    TextColor = "White"
+                //    Clicked = "TakePhoto_Clicked"
+                //    FontSize = "10"
+                //     CornerRadius = "10"
+                //    Margin = "0,20,10,0" />
+
+            var button = new Button { Text = "Open PDF", BackgroundColor = Color.Orange, WidthRequest = 30, HeightRequest = 50, TextColor = Color.White, FontSize = 10, CornerRadius = 10 };
+            var closeButton = new Button { Text = "Close", BackgroundColor = Color.Orange, WidthRequest = 30, HeightRequest = 50, TextColor = Color.White, FontSize = 10, CornerRadius = 10 };
+            var emailButton = new Button { Text = "Email", BackgroundColor = Color.Orange, WidthRequest = 30, HeightRequest = 50, TextColor = Color.White, FontSize = 10, CornerRadius = 10 };
             PdfDocument outputDocument = new PdfDocument();
 
             // Iterate files
@@ -83,11 +114,10 @@ namespace TechApp2.Views.JobDetailed
                     outputDocument.AddPage(page);
                 }
             }
-
+            filename1 = System.IO.Path.GetTempPath() + "//" + DateTime.Now.Ticks + ".pdf";
+            outputDocument.Save(filename1);
             button.Clicked += (s, es) =>
             {
-                string filename1 = System.IO.Path.GetTempPath() + "//" + DateTime.Now.Ticks + ".pdf";
-                outputDocument.Save(filename1);
                 string filename =
                 customWebView.Path = filename1;
             };
@@ -111,6 +141,7 @@ namespace TechApp2.Views.JobDetailed
                             Children = {
                         button,
                         closeButton,
+                        emailButton,
                         customWebView
                     }
                         }
@@ -118,7 +149,24 @@ namespace TechApp2.Views.JobDetailed
 
                 }               
             }
-            
+            emailButton.Clicked += (s, es) =>
+            {
+               
+                var message = new EmailMessage
+                {
+                    Subject = "Hello",
+                    Body = "World",
+                };
+
+               // var fn = "Attachment.txt";
+                var file = filename1;
+                File.WriteAllText(file, "Hello World");
+
+                message.Attachments.Add(new EmailAttachment(file));
+
+                Email.ComposeAsync(message);
+            };
+
         }
     }
 }
