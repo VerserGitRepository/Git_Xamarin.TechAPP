@@ -14,6 +14,10 @@ using PdfSharp.Pdf;
 using PdfSharp.Pdf.IO;
 using Xamarin.Essentials;
 using System.Reflection;
+using System.Net.Mail;
+using System.Net;
+using System.Security.Cryptography.X509Certificates;
+using TechApp2.Interfaces;
 
 namespace TechApp2.Views.JobDetailed
 {
@@ -60,13 +64,15 @@ namespace TechApp2.Views.JobDetailed
             JobDetailsTabbed.updateModel.Email = JobService.jobDetailsModel.Email;
             JobDetailsTabbed.updateModel.SiteName = JobService.jobDetailsModel.SiteName;
             JobDetailsTabbed.updateModel.SiteAddress = JobService.jobDetailsModel.SiteAddress;
-
+            
+            
             var ResturnResults = await JobService.UpdateTechJob(JobDetailsTabbed.updateModel);
 
-            //var assembly = IntrospectionExtensions.GetTypeInfo(typeof(JobDetailedCustomerSign)).Assembly;
-            ////var name = System.IO.Path.GetFileName(path);
+            var assembly = IntrospectionExtensions.GetTypeInfo(typeof(JobDetailedCustomerSign)).Assembly;
+            //var name = System.IO.Path.GetFileName(path);
             //Stream stream = assembly.GetManifestResourceStream("TechApp2.insght.json");
-            //string text = "";
+            Stream Logostream = assembly.GetManifestResourceStream("TechApp2.images.VerserLogo.png");
+            string text = "";
             //using (var reader = new System.IO.StreamReader(stream))
             //{
             //    text = reader.ReadToEnd();
@@ -76,22 +82,6 @@ namespace TechApp2.Views.JobDetailed
 
             var customWebView = new CustomWebView() { VerticalOptions = LayoutOptions.FillAndExpand };
             string filename1 = "";
-
-              //< Button Text = "Pick Photo"  Grid.Row = "0" Grid.Column = "0"
-              //      BackgroundColor = "Orange" WidthRequest = "30" HeightRequest = "50"
-              //      TextColor = "White"
-              //      Clicked = "PickDocument_Clicked"
-              //      FontSize = "10"
-              //       CornerRadius = "10"
-              //      Margin = "0,20,10,0" />
-
-                //< Button Text = "Take Photo" Grid.Row = "0" Grid.Column = "2"
-                //    BackgroundColor = "Orange"
-                //    TextColor = "White"
-                //    Clicked = "TakePhoto_Clicked"
-                //    FontSize = "10"
-                //     CornerRadius = "10"
-                //    Margin = "0,20,10,0" />
 
             var button = new Button { Text = "Open PDF", BackgroundColor = Color.Orange, WidthRequest = 30, HeightRequest = 50, TextColor = Color.White, FontSize = 10, CornerRadius = 10 };
             var closeButton = new Button { Text = "Close", BackgroundColor = Color.Orange, WidthRequest = 30, HeightRequest = 50, TextColor = Color.White, FontSize = 10, CornerRadius = 10 };
@@ -149,22 +139,65 @@ namespace TechApp2.Views.JobDetailed
 
                 }               
             }
-            emailButton.Clicked += (s, es) =>
+            emailButton.Clicked += async (s, es) =>
             {
-               
-                var message = new EmailMessage
+                try
                 {
-                    Subject = "Hello",
-                    Body = "World",
-                };
+                    var message = new EmailMessage
+                    {
+                        Subject = "Hello",
+                        Body = "World",
+                    };
 
-               // var fn = "Attachment.txt";
-                var file = filename1;
-                File.WriteAllText(file, "Hello World");
+                    var file = filename1;                  
 
-                message.Attachments.Add(new EmailAttachment(file));
-
-                Email.ComposeAsync(message);
+                    string result = await DisplayPromptAsync("Email", "Please enter the eMail Address of the recipient. For multiple emails, use ','",placeholder: $"{JobService.jobDetailsModel.Email}");
+                    if (result.Trim() == string.Empty)
+                    {
+                        result = JobService.jobDetailsModel.Email;
+                        if (result == string.Empty)
+                        {
+                            DependencyService.Get<IAlertView>().Show("Email Id Cannot be blank.");
+                            return;
+                        }
+                        DependencyService.Get<IAlertView>().Show("Email Id Cannot be blank.");
+                        return;
+                    }
+                    MailMessage mail = new MailMessage();
+                    SmtpClient SmtpServer = new SmtpClient("smtp-mail.outlook.com");
+                    mail.From = new MailAddress("kalyan.vedula@verser.com.au");
+                    mail.To.Add(result);
+                   
+                   
+                    AlternateView htmlView = AlternateView.CreateAlternateViewFromString($"Hi {JobService.jobDetailsModel.ContactPerson}, <br> Automated CAF Signed Job Completion Email With PDF reference Copy .<br><br>Regards<br><br><img src=cid:myImage>", null, "text/html");
+                   // MemoryStream ms = new MemoryStream(JobService.jobDetailsModel.ProjectLogo);
+                    LinkedResource r = new LinkedResource(Logostream);
+                    r.ContentId = "myImage";
+                    var base64 = Convert.ToBase64String(JobService.jobDetailsModel.ProjectLogo);
+                    var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                    mail.Subject = JobService.jobDetailsModel.JobNo + "- CAF";
+                    mail.Body = "This is an automated email.Please do not reply to this. \r\nFor any further queries, please call us on 1200800900.\r\n\r\n\r\nRegards";
+                   
+                    System.Net.Mail.Attachment attachment;
+                    attachment = new System.Net.Mail.Attachment(filename1);
+                    mail.Attachments.Add(attachment);
+                    //end email attachment part
+                    htmlView.LinkedResources.Add(r);
+                    mail.AlternateViews.Add(htmlView);
+                    SmtpServer.Port = 587;
+                    SmtpServer.Credentials = new System.Net.NetworkCredential("kalyan.vedula@verser.com.au", "VerserKV19");
+                    SmtpServer.EnableSsl = true;
+                    ServicePointManager.ServerCertificateValidationCallback = delegate (object sender1, X509Certificate certificate, X509Chain chain, System.Net.Security.SslPolicyErrors sslPolicyErrors)
+                    {
+                        return true;
+                    };
+                    await SmtpServer.SendMailAsync(mail);
+                    DependencyService.Get<IAlertView>().Show("The email has been delivered successfully.");
+                }
+                catch (Exception ex)
+                {
+                    DependencyService.Get<IAlertView>().Show(ex.Message);
+                }
             };
 
         }
