@@ -133,7 +133,7 @@ namespace TechApp2.Views.JobDetailed
             item.Add(new JobDocumentsDto { FileContent = imageButeArray, JobDocument_Job = int.Parse(JobService.jobDetailsModel.JobNo), CreatedBy = "TestUser",FileName = JobService.jobDetailsModel.JobNo+"_Image_"+DateTime.Now.Ticks+".jpg" });
             //updateModel.JobAssetPhots = item;
             JobDetailsTabbed.updateModel.Jobphots = item;
-            if (JobService.jobDetailsModel.Project.ProjectName.Contains("Insight") && !isPageVisited)
+            if (JobService.jobDetailsModel.Project.ProjectName.ToLower().Contains("insight") && !isPageVisited)
             {
                 isPageVisited = true;
                 await Navigation.PushModalAsync(new PetBarnINsights());

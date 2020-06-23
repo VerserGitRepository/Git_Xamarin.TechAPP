@@ -17,7 +17,7 @@
        Padding="15" HasShadow="True">
                 <StackLayout>
                 <Label Text="TECHNICIAN JOB RATING" Margin="0" HorizontalOptions="Center" TextColor="Orange" FontAttributes="Bold" FontSize="Micro" />
-                    <Picker x:Name="Punctuality" FontSize="Micro" Title="PANCTUALITY" Margin="30,0,30,0" VerticalOptions="CenterAndExpand">
+                    <Picker x:Name="Punctuality" FontSize="Micro" Title="PUNCTUALITY" Margin="30,0,30,0" VerticalOptions="CenterAndExpand">
                     <Picker.ItemsSource>
                         <x:Array Type="{x:Type x:String}">
                             <x:String>1</x:String>

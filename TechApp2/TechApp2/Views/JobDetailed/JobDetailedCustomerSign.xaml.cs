@@ -67,10 +67,11 @@ namespace TechApp2.Views.JobDetailed
             
             
             var ResturnResults = await JobService.UpdateTechJob(JobDetailsTabbed.updateModel);
+            ResturnResults.RetutnPDFFileName = DateTime.Now.Ticks.ToString()+".pdf";
 
             var assembly = IntrospectionExtensions.GetTypeInfo(typeof(JobDetailedCustomerSign)).Assembly;
-            //var name = System.IO.Path.GetFileName(path);
-            Stream stream = assembly.GetManifestResourceStream("TechApp2.insght.json");
+            ////var name = System.IO.Path.GetFileName(path);
+            //Stream stream = assembly.GetManifestResourceStream("TechApp2.insght.json");
             Stream Logostream = assembly.GetManifestResourceStream("TechApp2.images.VerserLogo.png");
             string text = "";
             //using (var reader = new System.IO.StreamReader(stream))
@@ -78,7 +79,7 @@ namespace TechApp2.Views.JobDetailed
             //    text = reader.ReadToEnd();
             //}
 
-            //var ResturnResults = JsonConvert.DeserializeObject<JobUpdateReturnDto[]>(text);
+           // var ResturnResults = JsonConvert.DeserializeObject<JobUpdateReturnDto[]>(text);
 
             var customWebView = new CustomWebView() { VerticalOptions = LayoutOptions.FillAndExpand };
             string filename1 = "";
@@ -89,27 +90,33 @@ namespace TechApp2.Views.JobDetailed
             PdfDocument outputDocument = new PdfDocument();
 
             // Iterate files
-            foreach (JobUpdateReturnDto dto in ResturnResults)
-            {
-                // Open the document to import pages from it.
-                PdfDocument inputDocument = PdfReader.Open(new MemoryStream(dto.RetutnPDFFileContent), PdfDocumentOpenMode.Import);
+            //foreach (JobUpdateReturnDto dto in ResturnResults)
+            //{
+            //    // Open the document to import pages from it.
+            //    PdfDocument inputDocument = PdfReader.Open(new MemoryStream(dto.RetutnPDFFileContent), PdfDocumentOpenMode.Import);
 
-                // Iterate pages
-                int count = inputDocument.PageCount;
-                for (int idx = 0; idx < count; idx++)
-                {
-                    // Get the page from the external document...
-                    PdfPage page = inputDocument.Pages[idx];
-                    // ...and add it to the output document.
-                    outputDocument.AddPage(page);
-                }
-            }
-            filename1 = System.IO.Path.GetTempPath() + "//" + DateTime.Now.Ticks + ".pdf";
-            outputDocument.Save(filename1);
+            //    // Iterate pages
+            //    int count = inputDocument.PageCount;
+            //    for (int idx = 0; idx < count; idx++)
+            //    {
+            //        // Get the page from the external document...
+            //        PdfPage page = inputDocument.Pages[idx];
+            //        // ...and add it to the output document.
+            //        outputDocument.AddPage(page);
+            //    }
+            //}
+            //filename1 = System.IO.Path.GetTempPath() + "//" + DateTime.Now.Ticks + ".pdf";
+            //outputDocument.Save(filename1);
             button.Clicked += (s, es) =>
             {
+                System.IO.File.WriteAllBytes(System.IO.Path.GetTempPath() + "//" + ResturnResults.RetutnPDFFileName, ResturnResults.RetutnPDFFileContent);
+                string str = System.IO.Path.GetTempPath() + "//" + ResturnResults.RetutnPDFFileName;
+                filename1 = str;
+                var exists = File.Exists(str);
+                //var document = new PdfDocument();
                 string filename =
-                customWebView.Path = filename1;
+                //document.Save(str);
+                customWebView.Path = str;
             };
 
             closeButton.Clicked += (s, es) =>
@@ -119,7 +126,7 @@ namespace TechApp2.Views.JobDetailed
 
             if (ResturnResults != null)
             {
-                if (ResturnResults[0].IsOperationSuccess)
+                if (ResturnResults.IsOperationSuccess)
                 {
                     await DisplayAlert("Info", "Job Update Operation Completed Successfull", "OK");
                     this.Navigation.PushAsync(new ContentPage
