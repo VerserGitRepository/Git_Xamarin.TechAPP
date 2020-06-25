@@ -84,9 +84,22 @@ namespace TechApp2.Views.JobDetailed
             var customWebView = new CustomWebView() { VerticalOptions = LayoutOptions.FillAndExpand };
             string filename1 = "";
 
-            var button = new Button { Text = "Open PDF", BackgroundColor = Color.Orange, WidthRequest = 30, HeightRequest = 50, TextColor = Color.White, FontSize = 10, CornerRadius = 10 };
-            var closeButton = new Button { Text = "Close", BackgroundColor = Color.Orange, WidthRequest = 30, HeightRequest = 50, TextColor = Color.White, FontSize = 10, CornerRadius = 10 };
-            var emailButton = new Button { Text = "Email", BackgroundColor = Color.Orange, WidthRequest = 30, HeightRequest = 50, TextColor = Color.White, FontSize = 10, CornerRadius = 10 };
+            var button = new Button { Text = "Open PDF", BackgroundColor = Color.Orange, HorizontalOptions = LayoutOptions.FillAndExpand };
+            var closeButton = new Button { Text = "Close", BackgroundColor = Color.Orange, HorizontalOptions = LayoutOptions.FillAndExpand };
+            var emailButton = new Button { Text = "Email", BackgroundColor = Color.Orange, HorizontalOptions = LayoutOptions.FillAndExpand };
+
+            StackLayout RevealButtonStackLayout = new StackLayout
+            {
+
+                Spacing = 2,
+                Padding = 2,
+                Orientation = StackOrientation.Horizontal,
+                VerticalOptions = LayoutOptions.StartAndExpand,
+                Margin = new Thickness(0, 20, 0, 0),
+                Children =
+                    {button,closeButton,emailButton,customWebView }
+            };
+
             PdfDocument outputDocument = new PdfDocument();
 
             // Iterate files
@@ -132,16 +145,8 @@ namespace TechApp2.Views.JobDetailed
                     this.Navigation.PushAsync(new ContentPage
                     {
                         Title = "Open PDF",
-                        Content = new StackLayout
-                        {
-                            VerticalOptions = LayoutOptions.FillAndExpand,
-                            Children = {
-                        button,
-                        closeButton,
-                        emailButton,
-                        customWebView
-                    }
-                        }
+                        Content = RevealButtonStackLayout
+
                     });
 
                 }               
@@ -201,7 +206,8 @@ namespace TechApp2.Views.JobDetailed
                 }
                 catch (Exception ex)
                 {
-                    DependencyService.Get<IAlertView>().Show(ex.Message);
+                    DependencyService.Get<IAlertView>().Show(ex.ToString());
+                    throw ex;
                 }
             };
 
