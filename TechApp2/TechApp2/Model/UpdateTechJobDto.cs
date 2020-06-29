@@ -44,5 +44,6 @@ namespace TechApp2.Model
         public string SiteAddress { get; set; }
         public string TechnicianComments { get; set; }
         public string RiskOtherComments { get; set; }
+        public bool IsMailRequested { get; set; }
     }
 }

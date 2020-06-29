@@ -46,7 +46,7 @@ namespace TechApp2.Views.JobDetailed
             //JobDetailsTabbed.updateModel.Rating.PoliteAndCourteous = PoliteAndCourteous.SelectedItem == null ? 0 : Convert.ToInt32(PoliteAndCourteous.SelectedItem);
             //JobDetailsTabbed.updateModel.Rating.ProfessionalService = ProfessionalService.SelectedItem == null ? 0 : Convert.ToInt32(ProfessionalService.SelectedItem);
             //JobDetailsTabbed.updateModel.Rating.WorkQuality = WorkQuality.SelectedItem == null ? 0 : Convert.ToInt32(WorkQuality.SelectedItem);
-            //JobDetailsTabbed.updateModel.JobNo = JobService.jobDetailsModel.JobNo;
+            JobDetailsTabbed.updateModel.JobNo = JobService.jobDetailsModel.JobNo;
             //JobDetailsTabbed.updateModel.Rating.Punctuality = Punctuality.SelectedItem == null ? 0 : Convert.ToInt32(Punctuality.SelectedItem);
             JobDetailsTabbed.updateModel.UserName = Settings.LastUsedUserId;
             JobDetailsTabbed.updateModel.ProjectLogo = JobService.jobDetailsModel.ProjectLogo;
@@ -60,7 +60,7 @@ namespace TechApp2.Views.JobDetailed
             JobDetailsTabbed.updateModel.Phone1 = JobService.jobDetailsModel.Phone1;
             JobDetailsTabbed.updateModel.Phone2 = JobService.jobDetailsModel.Phone2;
             JobDetailsTabbed.updateModel.Fax = JobService.jobDetailsModel.Fax;
-            JobDetailsTabbed.updateModel.Email = JobService.jobDetailsModel.Email;
+            //JobDetailsTabbed.updateModel.Email = JobService.jobDetailsModel.Email;
             JobDetailsTabbed.updateModel.SiteName = JobService.jobDetailsModel.SiteName;
             JobDetailsTabbed.updateModel.SiteAddress = JobService.jobDetailsModel.SiteAddress;
 
@@ -207,14 +207,16 @@ namespace TechApp2.Views.JobDetailed
         {
             if (sendEMailCheckBox.IsChecked)
             {
-                string result = await DisplayPromptAsync("Email", "Please enter the eMail Address of the recipient. For multiple emails, use ','", placeholder: "bharatvedula04@gmail.com");
+                string result = await DisplayPromptAsync("Email", "Please enter the eMail Address of the recipient. For multiple emails, use ','", placeholder: $"{JobService.jobDetailsModel.Email}");
                 if (result.Trim() != string.Empty)
                 {
 
                     string email = result;
                     if (Regex.Match(email, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$").Success)
                     {
-                        DependencyService.Get<IAlertView>().Show("Email sent successfully.");
+                        JobDetailsTabbed.updateModel.Email = result;
+                        JobDetailsTabbed.updateModel.IsMailRequested = true;
+                        //DependencyService.Get<IAlertView>().Show("Email sent successfully.");
                         sendEMailCheckBox.IsEnabled = false;
                     }
                     else
@@ -237,8 +239,8 @@ namespace TechApp2.Views.JobDetailed
                     }
                     else
                     {
-                        DependencyService.Get<IAlertView>().Show("Email sent successfully.");
-                        //return;
+                        //DependencyService.Get<IAlertView>().Show("Email sent successfully.");
+                        JobDetailsTabbed.updateModel.IsMailRequested = true;
                         sendEMailCheckBox.IsEnabled = false;
                     }
                 }
