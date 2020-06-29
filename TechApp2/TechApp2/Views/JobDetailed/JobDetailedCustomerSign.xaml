@@ -9,85 +9,32 @@
              x:Class="TechApp2.Views.JobDetailed.JobDetailedCustomerSign">
     <ContentPage.Content>
         <StackLayout>
-            <Frame BorderColor="LightGray"
-       CornerRadius="10" Margin="3" IsClippedToBounds="True"
-                             HorizontalOptions="Center" WidthRequest="400"
-                   HeightRequest="400"
-       VerticalOptions="Center"
-       Padding="15" HasShadow="True">
-                <StackLayout>
-                <Label Text="TECHNICIAN JOB RATING" Margin="0" HorizontalOptions="Center" TextColor="Orange" FontAttributes="Bold" FontSize="Micro" />
-                    <Picker x:Name="Punctuality" FontSize="Micro" Title="PUNCTUALITY" Margin="30,0,30,0" VerticalOptions="CenterAndExpand">
-                    <Picker.ItemsSource>
-                        <x:Array Type="{x:Type x:String}">
-                            <x:String>1</x:String>
-                            <x:String>2</x:String>
-                            <x:String>3</x:String>
-                            <x:String>4</x:String>
-                            <x:String>5</x:String>
-                        </x:Array>
-                    </Picker.ItemsSource>
-                </Picker>
-                    <Picker x:Name="ProfessionalService" FontSize="Micro" Title="PROFESSIONAL SERVICE" Margin="30,0,30,0" VerticalOptions="CenterAndExpand">
-                    <Picker.ItemsSource>
-                        <x:Array Type="{x:Type x:String}">
-                            <x:String>1</x:String>
-                            <x:String>2</x:String>
-                            <x:String>3</x:String>
-                            <x:String>4</x:String>
-                            <x:String>5</x:String>
-                        </x:Array>
-                    </Picker.ItemsSource>
-                </Picker>
-                    <Picker x:Name="PoliteAndCourteous" FontSize="Micro" Title="POLITE AND COURTEOUS" Margin="30,0,30,0" VerticalOptions="CenterAndExpand">
-                    <Picker.ItemsSource>
-                        <x:Array Type="{x:Type x:String}">
-                            <x:String>1</x:String>
-                            <x:String>2</x:String>
-                            <x:String>3</x:String>
-                            <x:String>4</x:String>
-                            <x:String>5</x:String>
-                        </x:Array>
-                    </Picker.ItemsSource>
-                </Picker>
-                    <Picker x:Name="WorkQuality" Title="WORK QUALITY" FontSize="Micro" Margin="30,0,30,0" VerticalOptions="CenterAndExpand">
-                    <Picker.ItemsSource>
-                        <x:Array Type="{x:Type x:String}">
-                            <x:String>1</x:String>
-                            <x:String>2</x:String>
-                            <x:String>3</x:String>
-                            <x:String>4</x:String>
-                            <x:String>5</x:String>
-                        </x:Array>
-                    </Picker.ItemsSource>
-                </Picker>
-                </StackLayout>
-            </Frame>
-                <Frame BorderColor="LightGray" HeightRequest="700"
+
+            <Frame BorderColor="LightGray" HeightRequest="700"
        CornerRadius="10" Margin="5" IsClippedToBounds="True"
                              HorizontalOptions="Center" WidthRequest="400"
        VerticalOptions="Center"
        Padding="10" HasShadow="True">
-       <StackLayout>
+                <StackLayout>
                     <Label  FontSize="Micro" Text="I acknowledge that the services rendered by Verser have been completed to my satisfaction"/>
                     <Label FontSize="Micro" Text="I acknowledge the receipt and good condition of the equipment listed below."/>
                     <Label FontSize="Micro" Text="I acknowledge the collection of the equipment listed below."/>
-           
-     <forms:SignaturePadView x:Name="MainSignaturePad" Margin="0"  CaptionText="CUSTOMER SIGNATURE" 
+
+                    <forms:SignaturePadView x:Name="MainSignaturePad" Margin="0"  CaptionText="CUSTOMER SIGNATURE" 
       BackgroundColor="White"  
       StrokeColor="Black"  
       StrokeWidth="1"  
       WidthRequest="100"  
       HeightRequest="100"/>
 
-      <forms:SignaturePadView x:Name="TechSign" Margin="0" CaptionText="TECHNICIAN SIGNATURE"
+                    <forms:SignaturePadView x:Name="TechSign" Margin="0" CaptionText="TECHNICIAN SIGNATURE"
       BackgroundColor="White"  
       StrokeColor="Black"  
       StrokeWidth="1"  
       WidthRequest="120"  
       HeightRequest="90"/>
-           
-      <Button x:Name="SaveBtn"  CornerRadius="10"
+
+                    <Button x:Name="SaveBtn"  CornerRadius="10"
       Text="Save" TextColor="White" FontAttributes="Bold" Margin="40,5,40,0" 
       BackgroundColor="Orange"  HeightRequest="35"
       Clicked="SaveBtn_Clicked"/>
@@ -102,10 +49,29 @@
 	                    HorizontalOptions="FillAndExpand" 
                         HeightRequest="30"/>
                 </StackLayout>
-               
-                   
-               
             </Frame>
-</StackLayout>
+            <Grid Margin="20,55,40,50">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.55*" />
+                    <ColumnDefinition Width="0.45*" />
+                    <ColumnDefinition Width="0.35*" />
+                    <ColumnDefinition Width="0.25*" />
+
+                </Grid.ColumnDefinitions>
+
+                <Label  Text="Provide Feedback:"
+               VerticalOptions="StartAndExpand" />
+                <CheckBox x:Name ="technicalAssessmentNeededChkBox" Grid.Column="1"
+                  CheckedChanged="OntechnicalAssessmentNeededChkBoxChanged"
+                  VerticalOptions="Center" />
+                <Label Grid.Column="2"
+               Text="Send Email:"
+               VerticalOptions="Center" />
+                <CheckBox x:Name="sendEMailCheckBox" Grid.Column="3"
+                  CheckedChanged="OnsendEMailCheckBoxChanged" 
+                  VerticalOptions="Center" />
+            </Grid>
+        </StackLayout>
+
     </ContentPage.Content>
 </ContentPage>

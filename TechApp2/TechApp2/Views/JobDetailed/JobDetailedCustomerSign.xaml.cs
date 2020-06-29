@@ -9,21 +9,20 @@ using TechApp2.Model;
 using TechApp2.Services;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
-using PdfSharp;
-using PdfSharp.Pdf;
-using PdfSharp.Pdf.IO;
 using Xamarin.Essentials;
 using System.Reflection;
 using System.Net.Mail;
 using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using TechApp2.Interfaces;
+using System.Text.RegularExpressions;
 
 namespace TechApp2.Views.JobDetailed
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class JobDetailedCustomerSign : ContentPage
-    {   private RatingDto theRating = new RatingDto();        
+    {
+        private RatingDto theRating = new RatingDto();
         public JobDetailedCustomerSign()
         {
             InitializeComponent();
@@ -44,11 +43,11 @@ namespace TechApp2.Views.JobDetailed
             JobDetailsTabbed.updateModel.TechnicianSignatureVector = JobService.jobDetailsModel.JobNo + "_Technician_" + DateTime.Now.Ticks + ".pdf";
             JobDetailsTabbed.updateModel.TechnicianSignatureImage = Techimage;
             JobDetailsTabbed.updateModel.Rating = theRating;
-            JobDetailsTabbed.updateModel.Rating.PoliteAndCourteous = PoliteAndCourteous.SelectedItem == null ? 0 : Convert.ToInt32(PoliteAndCourteous.SelectedItem);
-            JobDetailsTabbed.updateModel.Rating.ProfessionalService = ProfessionalService.SelectedItem == null ? 0 : Convert.ToInt32(ProfessionalService.SelectedItem);
-            JobDetailsTabbed.updateModel.Rating.WorkQuality = WorkQuality.SelectedItem == null ? 0 : Convert.ToInt32(WorkQuality.SelectedItem);
-            JobDetailsTabbed.updateModel.JobNo = JobService.jobDetailsModel.JobNo;
-            JobDetailsTabbed.updateModel.Rating.Punctuality = Punctuality.SelectedItem == null ? 0 : Convert.ToInt32(Punctuality.SelectedItem);
+            //JobDetailsTabbed.updateModel.Rating.PoliteAndCourteous = PoliteAndCourteous.SelectedItem == null ? 0 : Convert.ToInt32(PoliteAndCourteous.SelectedItem);
+            //JobDetailsTabbed.updateModel.Rating.ProfessionalService = ProfessionalService.SelectedItem == null ? 0 : Convert.ToInt32(ProfessionalService.SelectedItem);
+            //JobDetailsTabbed.updateModel.Rating.WorkQuality = WorkQuality.SelectedItem == null ? 0 : Convert.ToInt32(WorkQuality.SelectedItem);
+            //JobDetailsTabbed.updateModel.JobNo = JobService.jobDetailsModel.JobNo;
+            //JobDetailsTabbed.updateModel.Rating.Punctuality = Punctuality.SelectedItem == null ? 0 : Convert.ToInt32(Punctuality.SelectedItem);
             JobDetailsTabbed.updateModel.UserName = Settings.LastUsedUserId;
             JobDetailsTabbed.updateModel.ProjectLogo = JobService.jobDetailsModel.ProjectLogo;
             JobDetailsTabbed.updateModel.WorkInstructions = JobService.jobDetailsModel.WorkInstructions;
@@ -64,10 +63,10 @@ namespace TechApp2.Views.JobDetailed
             JobDetailsTabbed.updateModel.Email = JobService.jobDetailsModel.Email;
             JobDetailsTabbed.updateModel.SiteName = JobService.jobDetailsModel.SiteName;
             JobDetailsTabbed.updateModel.SiteAddress = JobService.jobDetailsModel.SiteAddress;
-            
-            
+
+
             var ResturnResults = await JobService.UpdateTechJob(JobDetailsTabbed.updateModel);
-            ResturnResults.RetutnPDFFileName = DateTime.Now.Ticks.ToString()+".pdf";
+            ResturnResults.RetutnPDFFileName = DateTime.Now.Ticks.ToString() + ".pdf";
 
             var assembly = IntrospectionExtensions.GetTypeInfo(typeof(JobDetailedCustomerSign)).Assembly;
             ////var name = System.IO.Path.GetFileName(path);
@@ -79,15 +78,15 @@ namespace TechApp2.Views.JobDetailed
             //    text = reader.ReadToEnd();
             //}
 
-           // var ResturnResults = JsonConvert.DeserializeObject<JobUpdateReturnDto[]>(text);
+            // var ResturnResults = JsonConvert.DeserializeObject<JobUpdateReturnDto[]>(text);
 
             var customWebView = new CustomWebView() { VerticalOptions = LayoutOptions.FillAndExpand };
             string filename1 = "";
 
             var button = new Button { Text = "Open PDF", BackgroundColor = Color.Orange, WidthRequest = 30, HeightRequest = 50, TextColor = Color.White, FontSize = 10, CornerRadius = 10 };
             var closeButton = new Button { Text = "Close", BackgroundColor = Color.Orange, WidthRequest = 30, HeightRequest = 50, TextColor = Color.White, FontSize = 10, CornerRadius = 10 };
-            var emailButton = new Button { Text = "Email", BackgroundColor = Color.Orange, WidthRequest = 30, HeightRequest = 50, TextColor = Color.White, FontSize = 10, CornerRadius = 10 };
-            PdfDocument outputDocument = new PdfDocument();
+            //var emailButton = new Button { Text = "Email", BackgroundColor = Color.Orange, WidthRequest = 30, HeightRequest = 50, TextColor = Color.White, FontSize = 10, CornerRadius = 10 };
+            //PdfDocument outputDocument = new PdfDocument();
 
             // Iterate files
             //foreach (JobUpdateReturnDto dto in ResturnResults)
@@ -138,74 +137,112 @@ namespace TechApp2.Views.JobDetailed
                             Children = {
                         button,
                         closeButton,
-                        emailButton,
+                        //emailButton,
                         customWebView
                     }
                         }
                     });
 
-                }               
+                }
             }
-            emailButton.Clicked += async (s, es) =>
+            //emailButton.Clicked += async (s, es) =>
+            //{
+            //    try
+            //    {
+            //        var message = new EmailMessage
+            //        {
+            //            Subject = "Hello",
+            //            Body = "World",
+            //        };
+
+            //        var file = filename1;                  
+
+
+            //        MailMessage mail = new MailMessage();
+            //        SmtpClient SmtpServer = new SmtpClient("smtp-mail.outlook.com");
+            //        mail.From = new MailAddress("kalyan.vedula@verser.com.au");
+            //        mail.To.Add(result);
+
+
+            //        AlternateView htmlView = AlternateView.CreateAlternateViewFromString($"Hi {JobService.jobDetailsModel.ContactPerson}, <br> Automated CAF Signed Job Completion Email With PDF reference Copy .<br><br>Regards<br><br><img src=cid:myImage>", null, "text/html");
+            //       // MemoryStream ms = new MemoryStream(JobService.jobDetailsModel.ProjectLogo);
+            //        LinkedResource r = new LinkedResource(Logostream);
+            //        r.ContentId = "myImage";
+            //        mail.Subject = JobService.jobDetailsModel.JobNo + "- CAF";
+            //        mail.Body = "This is an automated email.Please do not reply to this. \r\nFor any further queries, please call us on 1200800900.\r\n\r\n\r\nRegards";
+
+            //        System.Net.Mail.Attachment attachment;
+            //        attachment = new System.Net.Mail.Attachment(filename1);
+            //        mail.Attachments.Add(attachment);
+            //        //end email attachment part
+            //        htmlView.LinkedResources.Add(r);
+            //        mail.AlternateViews.Add(htmlView);
+            //        SmtpServer.Port = 587;
+            //        SmtpServer.Credentials = new System.Net.NetworkCredential("kalyan.vedula@verser.com.au", "VerserKV19");
+            //        SmtpServer.EnableSsl = true;
+            //        ServicePointManager.ServerCertificateValidationCallback = delegate (object sender1, X509Certificate certificate, X509Chain chain, System.Net.Security.SslPolicyErrors sslPolicyErrors)
+            //        {
+            //            return true;
+            //        };
+            //        await SmtpServer.SendMailAsync(mail);
+            //        DependencyService.Get<IAlertView>().Show("The email has been delivered successfully.");
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        DependencyService.Get<IAlertView>().Show(ex.ToString());
+            //        throw ex;
+            //    }
+            //};
+
+        }
+        public async void OntechnicalAssessmentNeededChkBoxChanged(object sender, EventArgs e)
+        {
+            if (technicalAssessmentNeededChkBox.IsChecked)
             {
-                try
+                await Navigation.PushModalAsync(new FeedbackAssessmentForm());
+                technicalAssessmentNeededChkBox.IsEnabled = false;
+            }
+        }
+        public async void OnsendEMailCheckBoxChanged(object sender, EventArgs e)
+        {
+            if (sendEMailCheckBox.IsChecked)
+            {
+                string result = await DisplayPromptAsync("Email", "Please enter the eMail Address of the recipient. For multiple emails, use ','", placeholder: "bharatvedula04@gmail.com");
+                if (result.Trim() != string.Empty)
                 {
-                    var message = new EmailMessage
-                    {
-                        Subject = "Hello",
-                        Body = "World",
-                    };
 
-                    var file = filename1;                  
-
-                    string result = await DisplayPromptAsync("Email", "Please enter the eMail Address of the recipient. For multiple emails, use ','",placeholder: $"{JobService.jobDetailsModel.Email}");
-                    if (result != null && result.Trim() == string.Empty)
+                    string email = result;
+                    if (Regex.Match(email, @"^([\w\.\-]+)@([\w\-]+)((\.(\w){2,3})+)$").Success)
                     {
-                        result = JobService.jobDetailsModel.Email;
-                        if (result == string.Empty)
-                        {
-                            DependencyService.Get<IAlertView>().Show("Email Id Cannot be blank.");
-                            return;
-                        }
-                        //DependencyService.Get<IAlertView>().Show("Email Id Cannot be blank.");
-                        //return;
+                        DependencyService.Get<IAlertView>().Show("Email sent successfully.");
+                        sendEMailCheckBox.IsEnabled = false;
                     }
-                    MailMessage mail = new MailMessage();
-                    SmtpClient SmtpServer = new SmtpClient("smtp-mail.outlook.com");
-                    mail.From = new MailAddress("kalyan.vedula@verser.com.au");
-                    mail.To.Add(result);
-                   
-                   
-                    AlternateView htmlView = AlternateView.CreateAlternateViewFromString($"Hi {JobService.jobDetailsModel.ContactPerson}, <br> Automated CAF Signed Job Completion Email With PDF reference Copy .<br><br>Regards<br><br><img src=cid:myImage>", null, "text/html");
-                   // MemoryStream ms = new MemoryStream(JobService.jobDetailsModel.ProjectLogo);
-                    LinkedResource r = new LinkedResource(Logostream);
-                    r.ContentId = "myImage";
-                    mail.Subject = JobService.jobDetailsModel.JobNo + "- CAF";
-                    mail.Body = "This is an automated email.Please do not reply to this. \r\nFor any further queries, please call us on 1200800900.\r\n\r\n\r\nRegards";
-                   
-                    System.Net.Mail.Attachment attachment;
-                    attachment = new System.Net.Mail.Attachment(filename1);
-                    mail.Attachments.Add(attachment);
-                    //end email attachment part
-                    htmlView.LinkedResources.Add(r);
-                    mail.AlternateViews.Add(htmlView);
-                    SmtpServer.Port = 587;
-                    SmtpServer.Credentials = new System.Net.NetworkCredential("kalyan.vedula@verser.com.au", "VerserKV19");
-                    SmtpServer.EnableSsl = true;
-                    ServicePointManager.ServerCertificateValidationCallback = delegate (object sender1, X509Certificate certificate, X509Chain chain, System.Net.Security.SslPolicyErrors sslPolicyErrors)
+                    else
                     {
-                        return true;
-                    };
-                    await SmtpServer.SendMailAsync(mail);
-                    DependencyService.Get<IAlertView>().Show("The email has been delivered successfully.");
-                }
-                catch (Exception ex)
-                {
-                    DependencyService.Get<IAlertView>().Show(ex.ToString());
-                    throw ex;
-                }
-            };
+                        DependencyService.Get<IAlertView>().Show("Invalid Email entered. Please enter correct Email id");
+                        sendEMailCheckBox.IsChecked = false;
+                        return;
+                    }
 
+
+                }
+                else
+                {
+                    result = JobService.jobDetailsModel.Email;
+                    if (result == null || result.Trim() == string.Empty)
+                    {
+                        DependencyService.Get<IAlertView>().Show("Email Id Cannot be left blank.");
+                        sendEMailCheckBox.IsChecked = false;
+                        return;
+                    }
+                    else
+                    {
+                        DependencyService.Get<IAlertView>().Show("Email sent successfully.");
+                        //return;
+                        sendEMailCheckBox.IsEnabled = false;
+                    }
+                }
+            }
         }
     }
 }
