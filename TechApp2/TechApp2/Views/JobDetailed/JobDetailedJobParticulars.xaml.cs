@@ -48,5 +48,22 @@ namespace TechApp2.Views.JobDetailed
                 Launcher.OpenAsync(uri);
             }
         }
+        private async void PhoneButtonClicked(object sender, EventArgs e)
+        {
+            if (jobslistObject.Phone1 == null || jobslistObject.Phone1 == string.Empty)
+                return;
+
+            var actionSheet = await DisplayActionSheet("Action"+Environment.NewLine+"Call: "+jobslistObject.Phone1+" ?", "Cancel", "Call");
+            switch (actionSheet)
+            {
+                case "Cancel":
+                    break;
+
+                case "Call":
+                    
+                   PhoneDialer.Open(jobslistObject.Phone1);
+                   break;
+            }
+        }
     }
 }

@@ -1,10 +1,15 @@
-﻿using System;
+﻿using Android.Graphics;
+using Plugin.Media;
+using Plugin.Media.Abstractions;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using TechApp2.Model;
 using TechApp2.Services;
+using Xamarin.Essentials;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,7 +18,9 @@ namespace TechApp2.Views.JobDetailed
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class JobDetailedAssets : ContentPage
     {
+        private byte[] imageButeArray;
         public static JobDetailsViewModel jobslistObject = new JobDetailsViewModel();
+        private MediaFile _mediaFile;        
         public JobDetailedAssets()
         {
             InitializeComponent();
@@ -41,6 +48,49 @@ namespace TechApp2.Views.JobDetailed
                 JObAsetsList.ItemsSource= jobslistObject.AssetsList;
             }            
 
+        }
+        private async void ListItemTapped(object sender, EventArgs e)
+        {
+            var actionSheet = await DisplayActionSheet("Action "+Environment.NewLine+" Take Picture", "Cancel", "Click");
+
+            switch (actionSheet)
+            {
+                case "Cancel":
+                    break;
+
+                case "Click":
+                    await CrossMedia.Current.Initialize();
+                    if (!CrossMedia.Current.IsCameraAvailable || !CrossMedia.Current.IsTakePhotoSupported)
+                    {
+                        await DisplayAlert("Warning", "NonSerializedAttribute Pic", "OK");
+                        return;
+
+                    }
+                    _mediaFile = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
+                    {
+                        Directory = "Sample",
+                        Name = "MyImage.jpg"
+                    });
+                    if (_mediaFile == null)
+                        return;
+                    imageButeArray = new byte[_mediaFile.GetStream().Length];  //declare arraysize
+                    _mediaFile.GetStream().Read(imageButeArray, 0, imageButeArray.Length);
+                    Bitmap originalImage = BitmapFactory.DecodeByteArray(imageButeArray, 0, imageButeArray.Length);
+                    Bitmap resizedImage = Bitmap.CreateScaledBitmap(originalImage, 350, 350, false);
+
+                    using (MemoryStream ms = new MemoryStream())
+                    {
+                        resizedImage.Compress(Bitmap.CompressFormat.Jpeg, 100, ms);
+                        imageButeArray = ms.ToArray();
+                    }
+                    JobDetailsTabbed.updateModel.AssetsList = new List<AssetViewModel>();
+                    JobDetailsTabbed.updateModel.AssetsList.Add((AssetViewModel)(sender as ListView).SelectedItem);
+
+                    JobDetailsTabbed.updateModel.AssetsList.Find(x => x.AssetID == ((AssetViewModel)(sender as ListView).SelectedItem).AssetID).AssetPicture = imageButeArray;
+
+                    break;
+
+            }
         }
     }
 }

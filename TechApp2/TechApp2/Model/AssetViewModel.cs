@@ -60,6 +60,7 @@ namespace TechApp2.Model
         public AssetStatusModel AssetStatus { get; set; }
         public ServiceJobModel ServiceJob { get; set; }
         public DispatchModel Dispatch { get; set; }
-        
+        public byte[] AssetPicture { get; set; }
+
     }
 }
