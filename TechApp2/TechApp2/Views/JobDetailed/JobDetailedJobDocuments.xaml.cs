@@ -1,5 +1,4 @@
-﻿using Android.Graphics;
-using Plugin.FilePicker;
+﻿using Plugin.FilePicker;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
 using System;
@@ -49,7 +48,7 @@ namespace TechApp2.Views.JobDetailed
                     return;
 
                 }
-                _mediaFile = await CrossMedia.Current.PickPhotoAsync();
+                _mediaFile = await CrossMedia.Current.PickPhotoAsync(new PickMediaOptions() { PhotoSize = PhotoSize.MaxWidthHeight, MaxWidthHeight = 400 });
                 //if (_mediaFile == null)
                 //    return;
 
@@ -59,14 +58,7 @@ namespace TechApp2.Views.JobDetailed
                 {
                     imageButeArray = new byte[_mediaFile.GetStream().Length];
                     _mediaFile.GetStream().Read(imageButeArray, 0, imageButeArray.Length);
-                    Bitmap originalImage = BitmapFactory.DecodeByteArray(imageButeArray, 0, imageButeArray.Length);
-                    Bitmap resizedImage = Bitmap.CreateScaledBitmap(originalImage, 350, 350, false);
-
-                    using (MemoryStream ms = new MemoryStream())
-                    {
-                        resizedImage.Compress(Bitmap.CompressFormat.Jpeg, 100, ms);
-                        imageButeArray = ms.ToArray();
-                    }
+                   
                     return _mediaFile.GetStream();
                 });
             }
@@ -93,11 +85,7 @@ namespace TechApp2.Views.JobDetailed
                 return;
 
             }
-            _mediaFile = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions
-            {
-                Directory = "Sample",
-                Name = "MyImage.jpg"
-            });
+            _mediaFile = await CrossMedia.Current.TakePhotoAsync(new StoreCameraMediaOptions { PhotoSize = PhotoSize.MaxWidthHeight, MaxWidthHeight = 400 });
             if (_mediaFile == null)
                 return;
 
@@ -106,15 +94,7 @@ namespace TechApp2.Views.JobDetailed
             FileImage.Source = ImageSource.FromStream(() =>
             {
                 imageButeArray = new byte[_mediaFile.GetStream().Length];  //declare arraysize
-                _mediaFile.GetStream().Read(imageButeArray, 0, imageButeArray.Length);
-                Bitmap originalImage = BitmapFactory.DecodeByteArray(imageButeArray, 0, imageButeArray.Length);
-                Bitmap resizedImage = Bitmap.CreateScaledBitmap(originalImage, 350, 350, false);
-
-                using (MemoryStream ms = new MemoryStream())
-                {
-                    resizedImage.Compress(Bitmap.CompressFormat.Jpeg, 100, ms);
-                    imageButeArray = ms.ToArray();
-                }
+                _mediaFile.GetStream().Read(imageButeArray, 0, imageButeArray.Length);               
                 return _mediaFile.GetStream();
             });
            // byte[]

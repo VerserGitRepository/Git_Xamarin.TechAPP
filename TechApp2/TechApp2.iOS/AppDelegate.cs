@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 using Foundation;
+using TechApp2.Interfaces;
 using UIKit;
 
 namespace TechApp2.iOS
@@ -24,7 +25,7 @@ namespace TechApp2.iOS
         {
             global::Xamarin.Forms.Forms.Init();
             LoadApplication(new App());
-
+            Xamarin.Forms.DependencyService.Register<ISave>();
             return base.FinishedLaunching(app, options);
         }
     }
