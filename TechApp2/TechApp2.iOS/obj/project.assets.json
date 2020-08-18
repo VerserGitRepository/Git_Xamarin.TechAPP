@@ -90,6 +90,18 @@
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
+      "PdfSharp.netstandard/1.3.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Drawing.Common": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/PdfSharp.netstandard.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/PdfSharp.netstandard.dll": {}
+        }
+      },
       "Plugin.Permissions/3.0.0.12": {
         "type": "package",
         "compile": {
@@ -100,6 +112,15 @@
         }
       },
       "System.ComponentModel.Annotations/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/xamarinios10/_._": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/_._": {}
+        }
+      },
+      "System.Drawing.Common/4.5.0": {
         "type": "package",
         "compile": {
           "ref/xamarinios10/_._": {}
@@ -379,6 +400,7 @@
           "Microsoft.AspNet.WebApi.Client": "5.2.7",
           "Microsoft.Net.Http": "2.2.29",
           "Newtonsoft.Json": "12.0.3",
+          "PdfSharp.netstandard": "1.3.2",
           "System.ComponentModel.Annotations": "4.7.0",
           "System.Net.Http": "4.3.4",
           "Xam.Plugin.Media": "4.0.1.5",
@@ -487,6 +509,18 @@
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
+      "PdfSharp.netstandard/1.3.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Drawing.Common": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/PdfSharp.netstandard.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/PdfSharp.netstandard.dll": {}
+        }
+      },
       "Plugin.Permissions/3.0.0.12": {
         "type": "package",
         "compile": {
@@ -497,6 +531,15 @@
         }
       },
       "System.ComponentModel.Annotations/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/xamarinios10/_._": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/_._": {}
+        }
+      },
+      "System.Drawing.Common/4.5.0": {
         "type": "package",
         "compile": {
           "ref/xamarinios10/_._": {}
@@ -766,6 +809,7 @@
           "Microsoft.AspNet.WebApi.Client": "5.2.7",
           "Microsoft.Net.Http": "2.2.29",
           "Newtonsoft.Json": "12.0.3",
+          "PdfSharp.netstandard": "1.3.2",
           "System.ComponentModel.Annotations": "4.7.0",
           "System.Net.Http": "4.3.4",
           "Xam.Plugin.Media": "4.0.1.5",
@@ -874,6 +918,18 @@
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
+      "PdfSharp.netstandard/1.3.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Drawing.Common": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/PdfSharp.netstandard.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/PdfSharp.netstandard.dll": {}
+        }
+      },
       "Plugin.Permissions/3.0.0.12": {
         "type": "package",
         "compile": {
@@ -884,6 +940,15 @@
         }
       },
       "System.ComponentModel.Annotations/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/xamarinios10/_._": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/_._": {}
+        }
+      },
+      "System.Drawing.Common/4.5.0": {
         "type": "package",
         "compile": {
           "ref/xamarinios10/_._": {}
@@ -1153,6 +1218,7 @@
           "Microsoft.AspNet.WebApi.Client": "5.2.7",
           "Microsoft.Net.Http": "2.2.29",
           "Newtonsoft.Json": "12.0.3",
+          "PdfSharp.netstandard": "1.3.2",
           "System.ComponentModel.Annotations": "4.7.0",
           "System.Net.Http": "4.3.4",
           "Xam.Plugin.Media": "4.0.1.5",
@@ -1261,6 +1327,18 @@
           "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
         }
       },
+      "PdfSharp.netstandard/1.3.2": {
+        "type": "package",
+        "dependencies": {
+          "System.Drawing.Common": "4.5.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/PdfSharp.netstandard.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/PdfSharp.netstandard.dll": {}
+        }
+      },
       "Plugin.Permissions/3.0.0.12": {
         "type": "package",
         "compile": {
@@ -1271,6 +1349,15 @@
         }
       },
       "System.ComponentModel.Annotations/4.7.0": {
+        "type": "package",
+        "compile": {
+          "ref/xamarinios10/_._": {}
+        },
+        "runtime": {
+          "lib/xamarinios10/_._": {}
+        }
+      },
+      "System.Drawing.Common/4.5.0": {
         "type": "package",
         "compile": {
           "ref/xamarinios10/_._": {}
@@ -1540,6 +1627,7 @@
           "Microsoft.AspNet.WebApi.Client": "5.2.7",
           "Microsoft.Net.Http": "2.2.29",
           "Newtonsoft.Json": "12.0.3",
+          "PdfSharp.netstandard": "1.3.2",
           "System.ComponentModel.Annotations": "4.7.0",
           "System.Net.Http": "4.3.4",
           "Xam.Plugin.Media": "4.0.1.5",
@@ -1600,14 +1688,14 @@
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "Microsoft.AspNet.WebApi.Client.5.2.7.nupkg.sha512",
+        "Microsoft.AspNet.WebApi.Client.nuspec",
         "lib/net45/System.Net.Http.Formatting.dll",
         "lib/net45/System.Net.Http.Formatting.xml",
         "lib/netstandard2.0/System.Net.Http.Formatting.dll",
         "lib/netstandard2.0/System.Net.Http.Formatting.xml",
         "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.dll",
-        "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.xml",
-        "microsoft.aspnet.webapi.client.5.2.7.nupkg.sha512",
-        "microsoft.aspnet.webapi.client.nuspec"
+        "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.xml"
       ]
     },
     "Microsoft.Bcl/1.1.10": {
@@ -1709,7 +1797,6 @@
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
-        ".signature.p7s",
         "License-Stable.rtf",
         "content/net40/_._",
         "content/netcore45/_._",
@@ -1801,6 +1888,8 @@
         ".nupkg.metadata",
         ".signature.p7s",
         "LICENSE.md",
+        "Newtonsoft.Json.12.0.3.nupkg.sha512",
+        "Newtonsoft.Json.nuspec",
         "lib/net20/Newtonsoft.Json.dll",
         "lib/net20/Newtonsoft.Json.xml",
         "lib/net35/Newtonsoft.Json.dll",
@@ -1819,8 +1908,6 @@
         "lib/portable-net40+sl5+win8+wp8+wpa81/Newtonsoft.Json.xml",
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.dll",
         "lib/portable-net45+win8+wp8+wpa81/Newtonsoft.Json.xml",
-        "newtonsoft.json.12.0.3.nupkg.sha512",
-        "newtonsoft.json.nuspec",
         "packageIcon.png"
       ]
     },
@@ -1837,6 +1924,19 @@
         "lib/netstandard1.3/Newtonsoft.Json.Bson.xml",
         "newtonsoft.json.bson.1.0.1.nupkg.sha512",
         "newtonsoft.json.bson.nuspec"
+      ]
+    },
+    "PdfSharp.netstandard/1.3.2": {
+      "sha512": "Brn7VN2BVJbjtB3FT+S+PGC9kUV9IyM9v8IIKOMpJENBm9rbtDQO7dUeh9QKLB3QTfLQbALXJHcZYZBvvx8aTA==",
+      "type": "package",
+      "path": "pdfsharp.netstandard/1.3.2",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/netstandard2.0/PdfSharp.netstandard.dll",
+        "mit-license.txt",
+        "pdfsharp.netstandard.1.3.2.nupkg.sha512",
+        "pdfsharp.netstandard.nuspec"
       ]
     },
     "Plugin.Permissions/3.0.0.12": {
@@ -1951,6 +2051,39 @@
         "version.txt"
       ]
     },
+    "System.Drawing.Common/4.5.0": {
+      "sha512": "AiJFxxVPdeITstiRS5aAu8+8Dpf5NawTMoapZ53Gfirml24p7HIfhjmCRxdXnmmf3IUA3AX3CcW7G73CjWxW/Q==",
+      "type": "package",
+      "path": "system.drawing.common/4.5.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/MonoAndroid10/_._",
+        "lib/MonoTouch10/_._",
+        "lib/net461/System.Drawing.Common.dll",
+        "lib/netstandard2.0/System.Drawing.Common.dll",
+        "lib/xamarinios10/_._",
+        "lib/xamarinmac20/_._",
+        "lib/xamarintvos10/_._",
+        "lib/xamarinwatchos10/_._",
+        "ref/MonoAndroid10/_._",
+        "ref/MonoTouch10/_._",
+        "ref/net461/System.Drawing.Common.dll",
+        "ref/netstandard2.0/System.Drawing.Common.dll",
+        "ref/xamarinios10/_._",
+        "ref/xamarinmac20/_._",
+        "ref/xamarintvos10/_._",
+        "ref/xamarinwatchos10/_._",
+        "runtimes/unix/lib/netcoreapp2.0/System.Drawing.Common.dll",
+        "runtimes/win/lib/netcoreapp2.0/System.Drawing.Common.dll",
+        "system.drawing.common.4.5.0.nupkg.sha512",
+        "system.drawing.common.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
     "System.Net.Http/4.3.4": {
       "sha512": "aOa2d51SEbmM+H+Csw7yJOuNZoHkrP2XnAurye5HWYgGVVU54YZDvsLUYRv6h18X3sPnjNCANmN7ZhIPiqMcjA==",
       "type": "package",
@@ -1958,6 +2091,8 @@
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
+        "System.Net.Http.4.3.4.nupkg.sha512",
+        "System.Net.Http.nuspec",
         "ThirdPartyNotices.txt",
         "dotnet_library_license.txt",
         "lib/Xamarinmac20/_._",
@@ -1988,9 +2123,7 @@
         "runtimes/unix/lib/netstandard1.6/System.Net.Http.dll",
         "runtimes/win/lib/net46/System.Net.Http.dll",
         "runtimes/win/lib/netcore50/System.Net.Http.dll",
-        "runtimes/win/lib/netstandard1.3/System.Net.Http.dll",
-        "system.net.http.4.3.4.nupkg.sha512",
-        "system.net.http.nuspec"
+        "runtimes/win/lib/netstandard1.3/System.Net.Http.dll"
       ]
     },
     "System.Numerics.Vectors/4.5.0": {
@@ -2073,6 +2206,7 @@
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/monoandroid44/Plugin.Settings.dll",
+        "lib/monoandroid44/Plugin.Settings.dll.mdb",
         "lib/monoandroid44/Plugin.Settings.pdb",
         "lib/monoandroid44/Plugin.Settings.xml",
         "lib/net45/Plugin.Settings.dll",
@@ -2095,6 +2229,7 @@
         "lib/uap10.0.15063/Plugin.Settings.pri",
         "lib/uap10.0.15063/Plugin.Settings.xml",
         "lib/xamarinios10/Plugin.Settings.dll",
+        "lib/xamarinios10/Plugin.Settings.dll.mdb",
         "lib/xamarinios10/Plugin.Settings.pdb",
         "lib/xamarinios10/Plugin.Settings.xml",
         "lib/xamarinmac20/Plugin.Settings.dll",
@@ -2459,9 +2594,11 @@
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/MonoAndroid10/Plugin.FilePicker.Abstractions.dll",
+        "lib/MonoAndroid10/Plugin.FilePicker.Abstractions.dll.mdb",
         "lib/MonoAndroid10/Plugin.FilePicker.Abstractions.pdb",
         "lib/MonoAndroid10/Plugin.FilePicker.Abstractions.xml",
         "lib/MonoAndroid10/Plugin.FilePicker.dll",
+        "lib/MonoAndroid10/Plugin.FilePicker.dll.mdb",
         "lib/MonoAndroid10/Plugin.FilePicker.pdb",
         "lib/MonoAndroid10/Plugin.FilePicker.xml",
         "lib/MonoTouch10/Plugin.FilePicker.Abstractions.dll",
@@ -2475,9 +2612,11 @@
         "lib/UAP10/Plugin.FilePicker.pdb",
         "lib/UAP10/Plugin.FilePicker.xml",
         "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.FilePicker.Abstractions.dll",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.FilePicker.Abstractions.dll.mdb",
         "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.FilePicker.Abstractions.pdb",
         "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.FilePicker.Abstractions.xml",
         "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.FilePicker.dll",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.FilePicker.dll.mdb",
         "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.FilePicker.pdb",
         "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+Xamarin.iOS10+UAP10/Plugin.FilePicker.xml",
         "lib/win8/Plugin.FilePicker.Abstractions.dll",
