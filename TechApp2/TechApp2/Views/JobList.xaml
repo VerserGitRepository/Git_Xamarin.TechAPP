@@ -57,7 +57,8 @@
                                Text="{Binding TechnicianName}"
                                FontAttributes="Italic" 
                                VerticalOptions="End" />
-                    </Grid>
+                       
+                        </Grid>
                     </Frame>
                 </DataTemplate>
             </CollectionView.ItemTemplate>

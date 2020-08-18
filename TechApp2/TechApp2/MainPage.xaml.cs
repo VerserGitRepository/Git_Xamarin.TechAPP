@@ -1,19 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using TechApp2.Views;
 using TechApp2.Models;
 using Xamarin.Forms;
 using TechApp2.ServiceHelper;
-using System.Net.Http;
-using Lottie.Forms;
-using TechApp2;
 
 namespace TechApp2
-{ 
+{
     [DesignTimeVisible(false)]
     public partial class MainPage : ContentPage
     {
