@@ -10,7 +10,7 @@
     <ContentPage.Content>
         <StackLayout>
 
-            <Frame BorderColor="LightGray" HeightRequest="700"
+            <Frame BorderColor="LightGray" HeightRequest="750"
        CornerRadius="10" Margin="5" IsClippedToBounds="True"
                              HorizontalOptions="Center" WidthRequest="400"
        VerticalOptions="Center"
@@ -34,9 +34,9 @@
       WidthRequest="120"  
       HeightRequest="90"/>
 
-                    <Button x:Name="SaveBtn"  CornerRadius="10"
-      Text="Save" TextColor="White" FontAttributes="Bold" Margin="40,5,40,0" 
-      BackgroundColor="Orange"  HeightRequest="35"
+                    <Button x:Name="SaveBtn"  CornerRadius="15" 
+      Text="Save Changes" TextColor="White" FontAttributes="Bold" Margin="30,25,30,0" 
+      BackgroundColor="Orange"  HeightRequest="40"
       Clicked="SaveBtn_Clicked"/>
 
                     <animationforms:AnimationView 
@@ -50,7 +50,7 @@
                         HeightRequest="30"/>
                 </StackLayout>
             </Frame>
-            <Grid Margin="20,55,40,50">
+            <Grid Margin="20,15,20,30">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="0.55*" />
                     <ColumnDefinition Width="0.45*" />
