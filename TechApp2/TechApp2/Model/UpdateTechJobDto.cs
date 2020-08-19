@@ -13,6 +13,7 @@ namespace TechApp2.Model
         public List<JobDocumentsDto> Jobphots { get; set; }
         public List<AssetViewModel> AssetsList { get; set; }
         public InsightDeliverablesDto InsightDeliverables { get; set; }
+        public AecomDto AecomDeliverables { get; set; }
         public UpdateTechJobDto()
         {
 
@@ -20,6 +21,7 @@ namespace TechApp2.Model
             Jobphots = new List<JobDocumentsDto>();
             RiskAssess = new List<RiskAssessmentDto>();
             InsightDeliverables = new InsightDeliverablesDto();
+            AecomDeliverables = new AecomDto();
         }
         public DateTime DateRaised { get; set; }
         public string JobNo { get; set; }

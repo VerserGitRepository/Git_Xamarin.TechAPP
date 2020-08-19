@@ -1,0 +1,178 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:forms="clr-namespace:SignaturePad.Forms;assembly=SignaturePad.Forms" 
+             x:Class="TechApp2.Views.JobDetailed.AECOM">
+    <ContentPage.Content>
+        <ScrollView>
+
+            <StackLayout>
+        <StackLayout>        
+        <Frame BorderColor="LightGray"
+       CornerRadius="10" Margin="5" IsClippedToBounds="True"
+                             HorizontalOptions="Center" WidthRequest="350"
+       VerticalOptions="Center"
+       Padding="15" HasShadow="True">
+            <StackLayout>
+                       
+                        <Picker x:Name="ImagingComplete" Title="TASK 1 - IMAGING COMPLETE?" FontSize="Micro">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Yes</x:String>
+                            <x:String>No</x:String>
+                           
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                        <Picker x:Name="SoftwareApplicationsComplete" Title="TASK 2 - SOFTWARE APPLICATIONS COMPLETE?" FontSize="Micro">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Yes</x:String>
+                            <x:String>No</x:String>
+                            
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                        <Picker x:Name="DataMigrationsComplete" Title="TASK 3 - DATA MIGRATION COMPLETE? " FontSize="Micro">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Yes</x:String>
+                            <x:String>No</x:String>
+                            
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                        <Label Text="STEP 1: DELL TECHNICIAN TO COMPLETE " Margin="0" HorizontalOptions="CenterAndExpand" 
+                       WidthRequest="400" VerticalOptions="CenterAndExpand" TextColor="White" 
+                       BackgroundColor="Orange" FontAttributes="Bold" />
+                        <Label Text="ACTIVITY 1.0 QA Check System" Margin="0" HorizontalOptions="CenterAndExpand" 
+                       WidthRequest="400" VerticalOptions="CenterAndExpand" TextColor="White" 
+                       BackgroundColor="Orange" FontAttributes="Italic" />
+
+                        <Picker x:Name="Installation" Title="Reboot system, log in" FontSize="Micro">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Yes</x:String>
+                            <x:String>No</x:String>
+                            
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                        <Label Text="ACTIVITY 2.0 Validate Access to Microsoft Outlook – Application Accessible" Margin="0" HorizontalOptions="CenterAndExpand" 
+                       WidthRequest="400" VerticalOptions="CenterAndExpand" TextColor="White" 
+                       BackgroundColor="Orange" FontAttributes="Italic" />
+
+                        <Picker x:Name="EMail" Title="Email" HorizontalOptions="FillAndExpand"  VerticalOptions="CenterAndExpand" FontSize="Micro">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Yes</x:String>
+                            <x:String>No</x:String>
+                            
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                        <Picker x:Name="Calender" Title="Calender" FontSize="Micro">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>Yes</x:String>
+                            <x:String>No</x:String>
+                           
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+                        <Picker x:Name="AddressBook" Title="AddressBook" FontSize="Micro">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Yes</x:String>
+                                    <x:String>No</x:String>
+
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+
+                        <Label Text="STEP 2: AECOM END-USER TO COMPLETE " Margin="0" HorizontalOptions="CenterAndExpand" 
+                       WidthRequest="400" VerticalOptions="CenterAndExpand" TextColor="White" 
+                       BackgroundColor="Orange" FontAttributes="Bold" />
+                        <Label Text="ACTIVITY 1.0 Validate your below data " Margin="0" HorizontalOptions="CenterAndExpand" 
+                       WidthRequest="400" VerticalOptions="CenterAndExpand" TextColor="White" 
+                       BackgroundColor="Orange" FontAttributes="Italic" />
+
+                        <Picker x:Name="Favorites " Title="Favorites" FontSize="Micro">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Yes</x:String>
+                                    <x:String>No</x:String>
+
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                        <Picker x:Name="MyDocuments" Title="My Documents" FontSize="Micro">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Yes</x:String>
+                                    <x:String>No</x:String>
+
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                        <Label Text="ACTIVITY 2.0 Validate your access to Microsoft Outlook  " Margin="0" HorizontalOptions="CenterAndExpand" 
+                       WidthRequest="400" VerticalOptions="CenterAndExpand" TextColor="White" 
+                       BackgroundColor="Orange" FontAttributes="Italic" />
+                        <Picker x:Name="EMail2" Title="Email" HorizontalOptions="FillAndExpand"  VerticalOptions="CenterAndExpand" FontSize="Micro">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Yes</x:String>
+                                    <x:String>No</x:String>
+
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                        <Picker x:Name="Calender2" Title="Calender" FontSize="Micro">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Yes</x:String>
+                                    <x:String>No</x:String>
+
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                        <Picker x:Name="AddressBook2" Title="AddressBook" FontSize="Micro">
+                            <Picker.ItemsSource>
+                                <x:Array Type="{x:Type x:String}">
+                                    <x:String>Yes</x:String>
+                                    <x:String>No</x:String>
+
+                                </x:Array>
+                            </Picker.ItemsSource>
+                        </Picker>
+                        <forms:SignaturePadView x:Name="MainSignaturePad" Margin="0"  CaptionText="ENDUSER SIGNATURE" 
+                          BackgroundColor="White"  
+                          StrokeColor="Black"  
+                          StrokeWidth="1"  
+                          WidthRequest="100"  
+                          HeightRequest="100"/>
+
+                        <forms:SignaturePadView x:Name="TechSign" Margin="0" CaptionText="STAFF SIGNATURE"
+                          BackgroundColor="White"  
+                          StrokeColor="Black"  
+                          StrokeWidth="1"  
+                          WidthRequest="120"  
+                          HeightRequest="90"/>      
+                    </StackLayout>
+        </Frame>
+            </StackLayout>
+       
+            <Button Text="Close" x:Name="btnupdateRiskAssess" Margin="30,10,30,0" CornerRadius="15" 
+                    BackgroundColor="Orange" TextColor="White" FontAttributes="Bold"
+                    Clicked="BtnupdateRiskAssess_Clicked" />
+
+        </StackLayout>
+            </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
