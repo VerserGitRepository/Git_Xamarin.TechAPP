@@ -37,8 +37,8 @@ namespace TechApp2
         private static readonly string Base = "https://customers.verser.com.au/";
       
         //production API Endpoint
-        //private static readonly string Service = "AssetManagementService";
-        private static readonly string Service = "AssetManagementServiceTechAPPBeta";
+       //private static readonly string Service = "AssetManagementService";
+       private static readonly string Service = "AssetManagementServiceDev";
 
         //Dev API Endpoint
        // private static readonly string Service = "AssetManagementServiceDev";

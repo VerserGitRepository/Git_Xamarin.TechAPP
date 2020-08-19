@@ -13,6 +13,7 @@ namespace TechApp2.Model
         public string JobStatus { get; set; }
         public string SiteName { get; set; }
         public string ProjectName { get; set; }
+     
         [DataType(DataType.Date)]
         [DisplayFormat(DataFormatString = "{0:dd-MM-yyyy}", ApplyFormatInEditMode = true)]
         public DateTime? JobDate { get; set; }

@@ -24,8 +24,7 @@ namespace TechApp2.Services
                 {
                     string result = await response.Content.ReadAsStringAsync();
                     jobslistObject = JsonConvert.DeserializeObject<List<JobListViewModel>>(result);
-                }          
-            
+                }                      
             }
             return jobslistObject;
         }
