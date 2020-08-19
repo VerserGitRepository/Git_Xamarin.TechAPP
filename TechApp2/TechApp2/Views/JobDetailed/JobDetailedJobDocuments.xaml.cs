@@ -119,6 +119,11 @@ namespace TechApp2.Views.JobDetailed
                 await Navigation.PushModalAsync(new PetBarnINsights());
 
             }
+            else if(true && !isPageVisited)
+            {
+                isPageVisited = true;
+                await Navigation.PushModalAsync(new AECOM());
+            }
             else
             {
                 var masterPage = this.Parent as TabbedPage;
