@@ -103,7 +103,7 @@
                        WidthRequest="400" VerticalOptions="CenterAndExpand" TextColor="White" 
                        BackgroundColor="Orange" FontAttributes="Italic" />
 
-                        <Picker x:Name="Favorites " Title="Favorites" FontSize="Micro">
+                        <Picker x:Name="Favorites" Title="Favorites" FontSize="Micro">
                             <Picker.ItemsSource>
                                 <x:Array Type="{x:Type x:String}">
                                     <x:String>Yes</x:String>

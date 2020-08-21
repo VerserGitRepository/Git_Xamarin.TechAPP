@@ -19,7 +19,7 @@ using Xamarin.Forms.Platform.iOS;
 namespace TechApp2.iOS
 {
 
-    public class CustomWebViewRenderer : ViewRenderer<CustomWebView, UIWebView>
+    public class CustomWebViewRenderer : ViewRenderer<CustomWebView, WKWebView>
     {
         //public CustomWebViewRenderer(Context context) : base(context)
         //{
@@ -37,7 +37,10 @@ namespace TechApp2.iOS
 
             if (Control == null)
             {
-                SetNativeControl(new UIWebView());
+                NSCoder coder = new NSCoder();
+                //coder.
+                //View
+                SetNativeControl(new WKWebView(coder));
             }
             if (e.OldElement != null)
             {
