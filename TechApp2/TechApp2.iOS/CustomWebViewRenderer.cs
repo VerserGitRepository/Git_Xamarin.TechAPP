@@ -28,7 +28,7 @@ namespace TechApp2.iOS
         protected override void OnElementChanged(ElementChangedEventArgs<CustomWebView> e)
         {
             base.OnElementChanged(e);
-
+            WKWebView _wkWebView;
             if (e.NewElement != null)
             {
                // Control.Settings.AllowUniversalAccessFromFileURLs = true;
@@ -37,10 +37,9 @@ namespace TechApp2.iOS
 
             if (Control == null)
             {
-                NSCoder coder = new NSCoder();
-                //coder.
-                //View
-                SetNativeControl(new WKWebView(coder));
+                var config = new WKWebViewConfiguration();
+                _wkWebView = new WKWebView(Frame, config);
+                SetNativeControl(_wkWebView);
             }
             if (e.OldElement != null)
             {
